@@ -11,6 +11,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
+import {responsiveTitle1} from '../components/typography.module.css'
+
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
     crop {
@@ -37,11 +39,12 @@ export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
+      intro
       description
       keywords
     }
     posts: allSanityPost(
-      limit: 6
+      limit: 3
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -89,14 +92,14 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout>
+    <Layout isHome='true'>
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        <h2 className={responsiveTitle1}>{site.intro}</h2>
         {postNodes && (
           <BlogPostPreviewList
             title='Latest blog posts'

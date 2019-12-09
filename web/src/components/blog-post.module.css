@@ -11,6 +11,8 @@
   display: block;
   position: relative;
   background: var(--color-very-light-gray);
+  margin-left: -2em;
+  margin-right: -2em;
   padding-bottom: calc(9 / 16 * 100%);
 
   @nest & img {
@@ -22,6 +24,11 @@
     height: 100%;
     vertical-align: top;
     object-fit: cover;
+  }
+
+  @media (--media-min-small) {
+    margin-left: -10vw;
+    margin-right: -10vw;
   }
 }
 
@@ -35,6 +42,7 @@
 }
 
 .mainContent {
+
   @nest & a {
     color: var(--color-accent);
 
@@ -59,12 +67,16 @@
   }
 }
 
+.blockContent {
+  margin-top: 2rem;
+}
+
 .metaContent {
 }
 
 .publishedAt {
   composes: small from './typography.module.css';
-  margin: 2rem 0 3rem;
+  margin: 0 0 1rem;
   color: var(--color-gray);
 }
 

@@ -2,6 +2,7 @@
 @import '../styles/custom-properties.css';
 
 .content {
+  overflow-x: hidden;
   background: var(--color-white);
   min-height: calc(100% - 73px - 120px);
 

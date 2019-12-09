@@ -16,6 +16,12 @@ export default {
       description: 'Describe your blog for search engines and social media.'
     },
     {
+      name: 'intro',
+      type: 'text',
+      title: 'Introduction',
+      description: 'Write a short introduction to your blog\'s homepage.'
+    },
+    {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
