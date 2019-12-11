@@ -13,8 +13,24 @@ async function createEntries(graphql, actions, reporter) {
     {
       posts: allSanityPost(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
         edges {
+          next {
+            id
+            title
+            publishedAt
+            slug {
+              current
+            }
+          }
           node {
             id
+            publishedAt
+            slug {
+              current
+            }
+          }
+          previous {
+            id
+            title
             publishedAt
             slug {
               current
@@ -53,7 +69,9 @@ async function createEntries(graphql, actions, reporter) {
 
   postEdges
     .filter(edge => !isFuture(edge.node.publishedAt))
-    .forEach((edge, index) => {
+    .forEach((edge) => {
+      const next = edge.next
+      const previous = edge.previous
       const { id, slug = {}, publishedAt } = edge.node;
       const dateSegment = format(publishedAt, 'YYYY/MM');
       const path = `/blog/${dateSegment}/${slug.current}/`;
@@ -63,13 +81,13 @@ async function createEntries(graphql, actions, reporter) {
       createPage({
         path,
         component: require.resolve('./src/templates/blog-post.js'),
-        context: { id }
+        context: { id, next, previous }
       });
     });
 
   const pageEdges = (result.data.pages || {}).edges || [];
 
-  pageEdges.forEach((edge, index) => {
+  pageEdges.forEach((edge) => {
     const { id, slug = {} } = edge.node;
     const path = `/${slug.current}/`;
 
@@ -86,7 +104,7 @@ async function createEntries(graphql, actions, reporter) {
 
   categoryEdges.forEach((edge, index) => {
     const { id, slug, title, description } = edge.node;
-    const path = `/${slug.current}/`;
+    const path = `/category/${slug.current}/`;
 
     reporter.info(`Creating category: ${path}`);
 

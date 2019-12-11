@@ -1,11 +1,12 @@
+import { graphql } from 'gatsby'
 import React from 'react'
-import {graphql} from 'gatsby'
+import BlogPost from '../components/blog-post'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import BlogPost from '../components/blog-post'
+import PostNav from '../components/post-navigation'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {toPlainText} from '../lib/helpers'
+import { toPlainText } from '../lib/helpers'
 
 export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
@@ -61,8 +62,10 @@ export const query = graphql`
 `
 
 const BlogPostTemplate = props => {
-  const {data, errors} = props
+  const {data, errors, pageContext} = props
+  const {next, previous} = pageContext
   const post = data && data.post
+  const postNav = next || previous
   return (
     <Layout>
       {errors && <SEO title='GraphQL Error' />}
@@ -74,7 +77,9 @@ const BlogPostTemplate = props => {
         </Container>
       )}
 
-      {post && <BlogPost {...post} />}
+      {post && <BlogPost {...post}/>}
+
+      {postNav && <PostNav next={next} previous={previous}/>}
     </Layout>
   )
 }

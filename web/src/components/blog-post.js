@@ -47,7 +47,7 @@ function BlogPost(props) {
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>
-                      <Link to={category.slug.current}>{category.title}</Link>
+                      <Link to={`/category/${category.slug.current}`}>{category.title}</Link>
                     </li>
                   ))}
                 </ul>
