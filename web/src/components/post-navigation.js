@@ -16,14 +16,16 @@ const PostNav = ({next, previous}) => {
           <Link
             to={`/blog/${previousDate}/${previous.slug.current}/`}
             title="Previous post">
-            {previous.title}
+              Previous post:
+              {previous.title}
           </Link>
         </div>}
         {next && <div className={styles.nextNav}>
           <Link
             to={`/blog/${nextDate}/${next.slug.current}/`}
             title="Next post">
-            {next.title}
+              Next Post:
+              {next.title}
           </Link>
         </div>}
       </div>
