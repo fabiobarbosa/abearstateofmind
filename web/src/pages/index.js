@@ -11,7 +11,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import {responsiveTitle1} from '../components/typography.module.css'
+import {title1} from '../components/typography.module.css'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -99,7 +99,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <h2 className={responsiveTitle1}>{site.intro}</h2>
+        <h2 className={title1}>{site.intro}</h2>
         {postNodes && (
           <BlogPostPreviewList
             title='Latest blog posts'

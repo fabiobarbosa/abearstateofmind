@@ -1,5 +1,5 @@
 :root {
-  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-serif: 'EB Garamond', 'Garamond', 'Athelas', Georgia, Times, serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -10,20 +10,21 @@
   --color-accent: #F90D24;
 
   /* Typography */
-  --unit: 16;
-  --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
-  --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
-  --font-small-line-height: calc(21 / 14); /* 21px */
-  --font-base-size: 1em; /* 16px */
-  --font-base-line-height: calc(24 / var(--unit)); /* 24px */
-  --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
-  --font-large-line-height: calc(27 / 18); /* 27px */
+  --font-unit: 16px;
+  --font-ratio: 0.65vw;
+  --font-micro-size: calc(var(--font-unit) * 0.625 + var(--font-ratio)); /* 10px */
+  --font-micro-line-height: calc(var(--font-unit) * 0.75 + var(--font-ratio)); /* 12px */
+  --font-small-size: calc(var(--font-unit) * 0.875 + var(--font-ratio)); /* 14px */
+  --font-small-line-height: calc(var(--font-unit) * 1.3125 + var(--font-ratio)); /* 21px */
+  --font-base-size: calc(var(--font-unit) + var(--font-ratio)); /* 16px */
+  --font-base-line-height: calc(var(--font-unit) * 1.5 + var(--font-ratio)); /* 24px */
+  --font-large-size: calc(var(--font-unit) * 1.125 + var(--font-ratio)); /* 18px */
+  --font-large-line-height: calc(var(--font-unit) * 1.6875 + var(--font-ratio)); /* 27px */
 
-  --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */
-  --font-title3-line-height: calc(30 / 21); /* 30px */
-  --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
-  --font-title2-line-height: calc(33 / 24); /* 33px */
-  --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
-  --font-title1-line-height: calc(57 / 49); /* 57px */
+  --font-title3-size: calc(var(--font-unit) * 1.3125 + var(--font-ratio)); /* 21px */
+  --font-title3-line-height: calc(var(--font-unit) * 1.875 + var(--font-ratio)); /* 30px */
+  --font-title2-size: calc(var(--font-unit) * 1.5 + var(--font-ratio)); /* 24px */
+  --font-title2-line-height: calc(var(--font-unit) * 2.0625 + var(--font-ratio)); /* 33px */
+  --font-title1-size: calc(var(--font-unit) * 3.0625 + var(--font-ratio)); /* 49px */
+  --font-title1-line-height: calc(var(--font-unit) * 3.5625 + var(--font-ratio)); /* 57px */
 }

@@ -4,7 +4,7 @@ import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
-import { responsiveTitle1, responsiveTitle2 } from '../components/typography.module.css'
+import { title1, title2 } from '../components/typography.module.css'
 import Layout from '../containers/layout'
 import { mapEdgesToNodes } from '../lib/helpers'
 
@@ -55,8 +55,8 @@ const CategoryPage = props => {
     <Layout>
       <SEO title={title} />
       <Container>
-        <h1 className={responsiveTitle1}>{title}</h1>
-        {description && <h2 className={responsiveTitle2}>{description}</h2>}
+        <h1 className={title1}>{title}</h1>
+        {description && <h2 className={title2}>{description}</h2>}
         {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
       </Container>
     </Layout>
