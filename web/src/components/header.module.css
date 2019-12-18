@@ -10,11 +10,11 @@
 .wrapper {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 2em;
+  padding: 2rem;
   display: flex;
 
   @media (--media-min-small) {
-    padding: 1.5em 0;
+    padding: 1.5rem 0;
     width: 80vw;
   }
 }
@@ -28,6 +28,7 @@
     margin: 0;
     font-size: 1em;
     line-height: 1.5;
+    font-weight: 500;
   }
 
   @nest & a {
@@ -51,7 +52,7 @@
   border: none;
   background: none;
   margin: 0;
-  padding: calc(14 / 17 / 2 * 1rem);
+  padding: 0 calc(14 / 17 / 2 * 1rem);
   outline: none;
   color: inherit;
 

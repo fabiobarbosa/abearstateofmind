@@ -6,3 +6,4 @@
 
 // Load Inknut Antiqua typeface
 require('typeface-eb-garamond')
+require('typeface-roboto-mono')

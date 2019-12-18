@@ -2,11 +2,11 @@
 
 .root {
   box-sizing: border-box;
-  padding: 2em;
+  padding: 2rem;
   margin: 0 auto;
 
   @media (--media-min-small) {
     width: 80vw;
-    padding: 4em 0;
+    padding: 4rem 0;
   }
 }

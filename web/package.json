@@ -38,6 +38,7 @@
   "dependencies": {
     "gatsby-image": "^2.0.41",
     "react-player": "^1.14.2",
-    "typeface-eb-garamond": "0.0.72"
+    "typeface-eb-garamond": "0.0.72",
+    "typeface-roboto-mono": "0.0.75"
   }
 }

@@ -91,9 +91,10 @@
 }
 
 .sectionHeadline {
+  font-family: var(--font-family-mono);
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }

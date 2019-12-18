@@ -82,7 +82,7 @@
 }
 
 .publishedAt {
-  composes: small from './typography.module.css';
+  composes: sectionHeadline from './typography.module.css';
   margin: 0 0 1rem;
   color: var(--color-gray);
 }
@@ -97,8 +97,8 @@
 }
 
 .categoriesHeadline {
-  composes: base from './typography.module.css';
+  composes: sectionHeadline from './typography.module.css';
   padding-bottom: calc( var(--font-base-line-height) * .5);
-  margin-bottom: calc( var(--font-base-line-height) * .5);
+  margin-bottom: calc( var(--font-base-line-height) * .75);
   border-bottom: 1px solid var(--color-very-light-gray);
 }

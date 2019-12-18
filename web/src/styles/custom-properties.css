@@ -1,5 +1,6 @@
 :root {
   --font-family-serif: 'EB Garamond', 'Garamond', 'Athelas', Georgia, Times, serif;
+  --font-family-mono: 'Roboto Mono', 'Menlo', 'Courier New', monospace;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
