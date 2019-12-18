@@ -30,7 +30,7 @@ function BlogPostPreview (props) {
         <h3 className={cn(title3, styles.title)}>{props.title}</h3>
         {props._rawExcerpt && (
           <div className={styles.excerpt}>
-            <PortableText blocks={props._rawExcerpt} />
+            <PortableText blocks={props._rawExcerpt} className={styles.excerptContent}/>
           </div>
         )}
         <div className={styles.date}>{format(props.publishedAt, 'MMMM Do, YYYY')}</div>

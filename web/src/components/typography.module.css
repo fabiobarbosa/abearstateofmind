@@ -1,13 +1,7 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
-
-
-/*
- * Statically sized elements
- */
-
- .title1 {
+.title1 {
   font-weight: 600;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
@@ -96,19 +90,36 @@
   text-transform: uppercase;
 }
 
+.sectionHeadline {
+  font-size: var(--font-micro-size);
+  line-height: var(--font-micro-line-height);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
+caption,
+dl,
+dd,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+table,
+ol,
+ul {
+  margin: 0 0 var(--font-base-line-height) 0;
+}
 
-/*
- * Responsively sized elements
- */
-
-p {
-  margin: 0.5rem 0 1rem 0;
-
-  @media (--media-min-medium) {
-    font-size: var(--font-large-size);
-    line-height: var(--font-large-line-height);
-  }
+ol,
+ul {
+  padding-left: var(--font-base-line-height);
 }
 
 .blockQuote {
@@ -116,7 +127,7 @@ p {
 }
 
 figcaption {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid var(--color-dark-gray);
   margin-bottom: 1rem;
 }

@@ -1,9 +1,8 @@
 import {format} from 'date-fns'
 import {Link} from 'gatsby'
 import React from 'react'
-import Container from '../components/container'
 
-import styles from './post-navigation.module.css'
+import styles from './blog-post-navigation.module.css'
 
 const PostNav = ({next, previous}) => {
   const nextDate = next ? format(next.publishedAt, 'YYYY/MM') : null
@@ -16,7 +15,7 @@ const PostNav = ({next, previous}) => {
           <Link
             to={`/blog/${previousDate}/${previous.slug.current}/`}
             title="Previous post">
-              Previous post:
+              Previous post:<br/>
               {previous.title}
           </Link>
         </div>}
@@ -24,7 +23,7 @@ const PostNav = ({next, previous}) => {
           <Link
             to={`/blog/${nextDate}/${next.slug.current}/`}
             title="Next post">
-              Next Post:
+              Next Post:<br/>
               {next.title}
           </Link>
         </div>}
