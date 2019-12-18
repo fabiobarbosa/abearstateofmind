@@ -51,8 +51,8 @@
   font-size: 25px;
   border: none;
   background: none;
-  margin: 0;
-  padding: 0 calc(14 / 17 / 2 * 1rem);
+  margin: calc(14 / 17 / 2 * -1rem) 0 0;
+  padding: calc(14 / 17 / 2 * 1rem);
   outline: none;
   color: inherit;
 
@@ -78,6 +78,10 @@
     display: block;
     color: inherit;
     text-decoration: none;
+  }
+
+  @nest & ul li a[aria-current="page"] {
+    text-decoration: underline;
   }
 
   @media (hover: hover) {

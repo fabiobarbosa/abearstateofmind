@@ -13,7 +13,7 @@
   @media (--media-min-medium) {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 2em;
+    grid-gap: 2rem;
   }
 }
 
@@ -56,7 +56,7 @@
 
 .excerpt {
   @nest & p {
-    margin: 0.5em 0;
+    margin: calc(var(--font-small-line-height) * .5) 0 var(--font-small-line-height);;
   }
 
   @nest & strong {

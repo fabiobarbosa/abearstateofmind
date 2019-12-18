@@ -11,19 +11,19 @@ const PostNav = ({next, previous}) => {
   return (
     <nav className={styles.root}>
       <div className={styles.container}>
-        {previous && <div className={styles.previousNav}>
+        {previous && <div className={styles.previous}>
           <Link
             to={`/blog/${previousDate}/${previous.slug.current}/`}
             title="Previous post">
-              Previous post:<br/>
+              <span className={styles.headline}>Previous Post:</span>
               {previous.title}
           </Link>
         </div>}
-        {next && <div className={styles.nextNav}>
+        {next && <div className={styles.next}>
           <Link
             to={`/blog/${nextDate}/${next.slug.current}/`}
             title="Next post">
-              Next Post:<br/>
+              <span className={styles.headline}>Next Post:</span>
               {next.title}
           </Link>
         </div>}

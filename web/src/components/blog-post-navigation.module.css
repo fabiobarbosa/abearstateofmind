@@ -10,6 +10,21 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.nextNav,
-.previousNav {
+.next,
+.previous {
+  @nest & a {
+    color: var(--color-black);
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    @nest & a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.headline {
+  composes: sectionHeadline from './typography.module.css';
+  display: block;
 }
