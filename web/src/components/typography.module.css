@@ -99,6 +99,23 @@
   letter-spacing: 0.5px;
 }
 
+.button {
+  composes: sectionHeadline;
+  background: var(--color-very-light-gray);
+  color: var(--color-gray);
+  padding: .5rem .8rem;
+  border: 1px solid var(--color-light-gray);
+  border-radius: .25rem;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    @nest &:hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+  }
+}
+
 caption,
 dl,
 dd,

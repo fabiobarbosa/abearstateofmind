@@ -2,7 +2,9 @@
 @import "../styles/custom-properties.css";
 
 .root {
-  border-top: 1px solid var(--color-very-light-gray);
+  border-top: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-light-gray);
+  background-color: var(--color-very-light-gray);
 }
 
 .container {
@@ -17,7 +19,7 @@
 .next,
 .previous {
   @nest & a {
-    color: var(--color-black);
+    color: var(--color-gray);
     text-decoration: none;
   }
 
@@ -37,4 +39,5 @@
 .headline {
   composes: sectionHeadline from "./typography.module.css";
   display: block;
+  color: var(--color-accent);
 }

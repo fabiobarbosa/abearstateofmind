@@ -4,11 +4,13 @@
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
-  --color-gray: #697a90;
+  --color-gray: #5a697c;
   --color-light-gray: #b4bcc7;
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
-  --color-accent: #ff3530;
+  --color-red: #ff3530;
+  --color-blue: #3fa9f5;
+  --color-accent: var(--color-red);
 
   /* Typography */
   --font-unit: 16px;

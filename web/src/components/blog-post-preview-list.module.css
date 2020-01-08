@@ -21,19 +21,10 @@
 }
 
 .browseMoreNav {
-  composes: small from './typography.module.css';
   margin-top: 2rem;
   text-align: center;
+}
 
-  @nest & a {
-    display: inline-block;
-    padding: 0.5rem 0;
-    color: inherit;
-
-    @media (hover: hover) {
-      @nest &:hover {
-        color: var(--color-accent);
-      }
-    }
-  }
+.browseMoreLink {
+  composes: button from './typography.module.css';
 }
