@@ -1,4 +1,5 @@
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   border-top: 1px solid var(--color-very-light-gray);
@@ -6,8 +7,11 @@
 
 .container {
   composes: root from "./container.module.css";
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  @media (--media-min-small) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .next,
@@ -24,7 +28,13 @@
   }
 }
 
+.previous:first-child:not(:last-child) {
+  @media (--media-max-small) {
+    margin-bottom: calc(16px * 1.5 + 0.5vw);
+  }
+}
+
 .headline {
-  composes: sectionHeadline from './typography.module.css';
+  composes: sectionHeadline from "./typography.module.css";
   display: block;
 }

@@ -26,13 +26,13 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (--media-min-medium) {
+  @media (--media-min-large) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .browseMoreNav {
-  composes: small from './typography.module.css';
+  composes: sectionHeadline from './typography.module.css';
   margin-top: 1rem;
   text-align: right;
 
