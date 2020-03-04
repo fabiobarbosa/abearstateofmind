@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
 
 .root {
   display: blog;
@@ -69,6 +69,6 @@
 }
 
 .date {
-  composes: sectionHeadline from './typography.module.css';
+  composes: textAlt from '../../styles/typography.module.css';
   color: var(--color-gray);
 }

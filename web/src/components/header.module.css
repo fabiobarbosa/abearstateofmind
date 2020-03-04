@@ -5,7 +5,7 @@
   position: relative;
   z-index: 100;
 
-  composes: sectionHeadline from './typography.module.css';
+  composes: textAlt from '../styles/typography.module.css';
 }
 .wrapper {
   box-sizing: border-box;

@@ -80,7 +80,7 @@ async function createEntries(graphql, actions, reporter) {
 
       createPage({
         path,
-        component: require.resolve('./src/templates/blog-post.js'),
+        component: require.resolve('./src/templates/post.js'),
         context: { id, next, previous }
       });
     });

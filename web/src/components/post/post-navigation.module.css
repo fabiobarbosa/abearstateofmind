@@ -1,5 +1,5 @@
-@import "../styles/custom-media.css";
-@import "../styles/custom-properties.css";
+@import '../../styles/custom-media.css';
+@import '../../styles/custom-properties.css';
 
 .root {
   border-top: 1px solid var(--color-light-gray);
@@ -8,7 +8,7 @@
 }
 
 .container {
-  composes: root from "./container.module.css";
+  composes: root from '../container.module.css';
 
   @media (--media-min-small) {
     display: grid;
@@ -37,7 +37,7 @@
 }
 
 .headline {
-  composes: sectionHeadline from "./typography.module.css";
+  composes: textAlt from '../../styles/typography.module.css';
   display: block;
   color: var(--color-accent);
 }

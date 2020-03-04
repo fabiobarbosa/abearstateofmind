@@ -4,7 +4,7 @@ import { imageUrlFor } from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 
-import styles from './blog-post.module.css'
+import styles from './post.module.css'
 
 function Page(props) {
   const { _rawBody, title, mainImage } = props;

@@ -5,13 +5,13 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
-import BlogPostPreviewList from '../components/blog-post-preview-list'
+import BlogPostPreviewList from '../components/post/post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import {title1} from '../components/typography.module.css'
+import {title1} from '../styles/typography.module.css'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {

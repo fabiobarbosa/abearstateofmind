@@ -1,0 +1,56 @@
+@import "./custom-media.css";
+@import "./custom-properties.css";
+
+html {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-white);
+  color: var(--color-black);
+  margin: 0;
+}
+
+html,
+body,
+body > div,
+body > div > div {
+  height: 100%;
+}
+
+caption,
+dl,
+dd,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+table,
+ol,
+ul {
+  margin: 0 0 var(--font-base-line-height) 0;
+}
+
+ol,
+ul {
+  padding-left: var(--font-base-line-height);
+}
+
+figcaption {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-dark-gray);
+  margin-bottom: 1rem;
+}
+
+.blockQuote {
+  background: var(--color-very-light-gray);
+}

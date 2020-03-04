@@ -1,5 +1,5 @@
-@import "../styles/custom-media.css";
-@import "../styles/custom-properties.css";
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
 
 .root {
 
@@ -9,7 +9,7 @@
 }
 
 .container {
-  composes: root from "./container.module.css";
+  composes: root from './container.module.css';
 }
 
 .subscribeBox {
@@ -44,7 +44,7 @@
 }
 
 .subscribeLink {
-  composes: button from './typography.module.css';
+  composes: button from '../styles/forms.module.css';
 }
 
 .colophon {
