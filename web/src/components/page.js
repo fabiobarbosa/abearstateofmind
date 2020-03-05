@@ -1,8 +1,10 @@
 import React from 'react';
-import { buildImageObj } from '../lib/helpers'
-import { imageUrlFor } from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
+
+import Img from 'gatsby-image'
+import {getFluidGatsbyImage} from 'gatsby-source-sanity'
+import clientConfig from '../../client-config'
 
 import styles from './post.module.css'
 
@@ -16,15 +18,11 @@ function Page(props) {
         </header>
         {mainImage && mainImage.asset && (
           <div className={styles.mainImage}>
-            <img
-              src={imageUrlFor(buildImageObj(mainImage))
-                .width(1200)
-                .height(Math.floor((9 / 16) * 1200))
-                .fit("crop")
-                .auto("format")
-                .url()}
-              alt={mainImage.alt}
-            />
+            <Img fluid={getFluidGatsbyImage(
+              mainImage.asset._id,
+              {maxWidth: 1200},
+              clientConfig.sanity
+            )} alt={mainImage.alt} />
           </div>
         )}
         <div className={styles.grid}>

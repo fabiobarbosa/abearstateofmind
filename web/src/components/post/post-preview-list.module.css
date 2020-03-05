@@ -6,7 +6,7 @@
 }
 
 .headline {
-  composes: textAlt from '../../styles/typography.module.css';
+  composes: textAlt from '../typography.module.css';
   margin: 2rem 0;
 }
 
@@ -26,5 +26,5 @@
 }
 
 .browseMoreLink {
-  composes: button from '../../styles/forms.module.css';
+  composes: button from '../forms.module.css';
 }

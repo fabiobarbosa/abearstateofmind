@@ -1,8 +1,10 @@
-@import "./custom-media.css";
-@import "./custom-properties.css";
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
+
+/* This is a module in order for CSS Loader to respect the hierarchy */
 
 .title1 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   letter-spacing: -.015em;
@@ -20,7 +22,7 @@
 }
 
 .title2 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -.015em;

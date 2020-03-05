@@ -44,7 +44,7 @@
 }
 
 .subscribeLink {
-  composes: button from '../styles/forms.module.css';
+  composes: button from './forms.module.css';
 }
 
 .colophon {

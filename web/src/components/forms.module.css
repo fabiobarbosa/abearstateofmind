@@ -1,5 +1,7 @@
-@import "./custom-media.css";
-@import "./custom-properties.css";
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
+
+/* This is a module in order for CSS Loader to respect the hierarchy */
 
 .button {
   composes: textAlt from './typography.module.css';

@@ -5,13 +5,13 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
-import BlogPostPreviewList from '../components/post/post-preview-list'
+import PostPreviewGrid from '../components/post/post-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import {title1} from '../styles/typography.module.css'
+import {title1} from '../components/typography.module.css'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -101,7 +101,7 @@ const IndexPage = props => {
       <Container>
         <h2 className={title1}>{site.intro}</h2>
         {postNodes && (
-          <BlogPostPreviewList
+          <PostPreviewGrid
             title='Latest blog posts'
             nodes={postNodes}
             browseMoreHref='/archive/'

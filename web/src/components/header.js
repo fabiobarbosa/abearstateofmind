@@ -7,7 +7,7 @@ import styles from './header.module.css'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
   <div className={styles.root}>
-    <div className={styles.wrapper}>
+    <div className={styles.container}>
       <div className={styles.branding}>
         {isHome ? <h1>{siteTitle}</h1> : <Link to='/'>{siteTitle}</Link>}
       </div>

@@ -1,13 +1,13 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/post/post-preview-grid'
+import PostPreviewList from '../components/post/post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import {title1} from '../styles/typography.module.css'
+import {title1} from '../components/typography.module.css'
 
 export const query = graphql`
   query ArchivePageQuery {
@@ -52,7 +52,7 @@ const ArchivePage = props => {
       <SEO title='Archive' />
       <Container>
         <h1 className={title1}>Archive</h1>
-        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+        {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
       </Container>
     </Layout>
   )

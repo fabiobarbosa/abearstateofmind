@@ -37,7 +37,7 @@
 }
 
 .headline {
-  composes: textAlt from '../../styles/typography.module.css';
+  composes: textAlt from '../typography.module.css';
   display: block;
   color: var(--color-accent);
 }

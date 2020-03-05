@@ -1,12 +1,12 @@
 @import '../styles/custom-media.css';
+@import "../styles/custom-properties.css";
 
 .root {
-  box-sizing: border-box;
-  padding: 2rem;
+  padding: var(--font-base-line-height);
   margin: 0 auto;
 
   @media (--media-min-small) {
-    width: 80vw;
-    padding: 4rem 0;
+    width: 85vw;
+    padding: calc(var(--font-base-line-height) * 2) 0;
   }
 }

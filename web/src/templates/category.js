@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import BlogPostPreviewGrid from '../components/post/post-preview-grid'
+import PostPreviewList from '../components/post/post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
-import { title1, title2 } from '../styles/typography.module.css'
+import { title1, title2 } from '../components/typography.module.css'
 import Layout from '../containers/layout'
 import { mapEdgesToNodes } from '../lib/helpers'
 
@@ -57,7 +57,7 @@ const CategoryPage = props => {
       <Container>
         <h1 className={title1}>{title}</h1>
         {description && <h2 className={title2}>{description}</h2>}
-        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+        {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
       </Container>
     </Layout>
   )
