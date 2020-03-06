@@ -7,3 +7,13 @@
 // Load Inknut Antiqua typeface
 require('typeface-eb-garamond')
 require('typeface-roboto-mono')
+
+// Make sure focus is directed to skip links
+exports.onRouteUpdate = ({ location, prevLocation }) => {
+  if (prevLocation !== null) {
+    const skipLink = document.querySelector("#reach-skip-nav")
+    if (skipLink) {
+      skipLink.focus()
+    }
+  }
+}
