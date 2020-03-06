@@ -27,11 +27,12 @@ function BlogPost(props) {
         </header>
         {mainImage && mainImage.asset && (
           <div className={styles.mainImage}>
-            <Img fluid={getFluidGatsbyImage(
-              mainImage.asset._id,
-              {maxWidth: 1200},
-              clientConfig.sanity
-            )} alt={mainImage.alt} />
+            <Img loading='lazy'
+              fluid={getFluidGatsbyImage(
+                mainImage.asset._id,
+                {maxWidth: 1200},
+                clientConfig.sanity
+              )} alt={mainImage.alt} />
           </div>
         )}
         <div className={styles.grid}>

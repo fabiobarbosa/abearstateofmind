@@ -8,7 +8,7 @@
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   letter-spacing: -.015em;
-  margin: 1rem 0 2rem;
+  margin:var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
 
   @media (--media-min-small) {
     font-size: var(--font-title2-size);
@@ -26,7 +26,7 @@
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -.015em;
-  margin: 1.5rem 0 0.5rem;
+  margin: calc(var(--font-base-line-height) * 1.5) 0 calc(var(--font-base-line-height) * .5);
 
   @media (--media-min-small) {
     font-size: var(--font-title3-size);
@@ -44,7 +44,7 @@
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -.015em;
-  margin: 1rem 0 0.5rem;
+  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * .5);
 
   @media (--media-min-small) {
     font-size: var(--font-large-size);
@@ -61,7 +61,7 @@
   font-weight: 600;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
-  margin: 1rem 0 0.5rem;
+  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * .5);
 
   @media (--media-min-small) {
     font-size: var(--font-base-size);
@@ -110,4 +110,11 @@
   composes: textAlt;
   display: block;
   color: var(--color-accent);
+  text-decoration: none;
+
+  @media (hover: hover) {
+    @nest &:hover {
+      text-decoration: underline;
+    }
+  }
 }

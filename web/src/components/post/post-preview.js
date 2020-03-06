@@ -1,9 +1,12 @@
 import {format} from 'date-fns'
 import {Link} from 'gatsby'
 import React from 'react'
-import {buildImageObj, cn, getBlogUrl} from '../../lib/helpers'
-import {imageUrlFor} from '../../lib/image-url'
+import {getBlogUrl} from '../../lib/helpers'
 import PortableText from '../portableText'
+
+import Img from 'gatsby-image'
+import {getFluidGatsbyImage} from 'gatsby-source-sanity'
+import clientConfig from '../../../client-config'
 
 import styles from './post-preview.module.css'
 
@@ -15,14 +18,12 @@ function BlogPostPreview (props) {
     >
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
-          <img
-            src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(600)
-              .height(Math.floor((9 / 16) * 600))
-              .auto('format')
-              .url()}
-            alt={props.mainImage.alt}
-          />
+          <Img loading='lazy'
+            fluid={getFluidGatsbyImage(
+              props.mainImage.asset._id,
+              {maxWidth: 600},
+              clientConfig.sanity
+            )} alt={props.mainImage.alt} />
         )}
       </div>
       <div className={styles.text}>
