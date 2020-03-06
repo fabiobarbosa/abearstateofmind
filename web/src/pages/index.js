@@ -44,7 +44,7 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
-      limit: 3
+      limit: 4
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {

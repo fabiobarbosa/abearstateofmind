@@ -105,3 +105,9 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+.navLink {
+  composes: textAlt;
+  display: block;
+  color: var(--color-accent);
+}

@@ -37,7 +37,5 @@
 }
 
 .headline {
-  composes: textAlt from '../typography.module.css';
-  display: block;
-  color: var(--color-accent);
+  composes: navLink from '../typography.module.css';
 }
