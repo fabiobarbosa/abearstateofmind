@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
-import styles from './block-embed.module.css'
+import styles from './block-embed.module.scss'
 
 export default ({node}) => {
-  const { url } = node
+  const {url} = node
   return (
     <div className={styles.playerWrapper}>
       <ReactPlayer

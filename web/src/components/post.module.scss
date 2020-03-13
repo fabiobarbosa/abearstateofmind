@@ -1,10 +1,7 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
-
 .root {}
 
 .title {
-  composes: title1 from './typography.module.css';
+  @include title1;
 }
 
 .mainImage {
@@ -26,14 +23,14 @@
     object-fit: cover;
   }*/
 
-  @media (--media-min-small) {
+  @media ($media-min-small) {
     margin-left: -7.5vw;
     margin-right: -7.5vw;
   }
 }
 
 .grid {
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     display: grid;
     grid-column-gap: calc(var(--font-base-line-height) * 2);
     grid-template-columns: 2fr 5fr;
@@ -41,11 +38,11 @@
 }
 
 .mainContent {
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     grid-column: 2/3;
   }
 
-  @nest & a {
+  & a {
     color: inherit;
 
     @media (hover: hover) {
@@ -55,15 +52,15 @@
     }
   }
 
-  @nest & h2, & h3, & h4, & h5, & h6 {
+  & h2, & h3, & h4, & h5, & h6 {
     font-weight: 600;
   }
 
-  @nest & figure {
+  & figure {
     margin: 0;
     padding: 0;
 
-    @nest & img {
+    & img {
       max-width: 100%;
     }
   }
@@ -76,37 +73,37 @@
 .metaContent {
   margin: calc(var(--font-base-line-height) * 2) 0;
 
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     grid-column: 1/2;
     grid-row: 1/2;
   }
 }
 
 .publishedAt {
-  composes: textAlt from './typography.module.css';
+  @include textAlt;
   margin: 0 0 var(--font-base-line-height);
   color: var(--color-gray);
 }
 
 .categories {
-  @nest & ul {
+  & ul {
     list-style: none;
     padding: 0;
   }
 
-  @nest & a {
+  & a {
     color: inherit;
   }
 
   @media (hover: hover) {
-    @nest & a:hover {
+    & a:hover {
       color: var(--color-accent);
     }
   }
 }
 
 .categoriesHeadline {
-  composes: textAlt from './typography.module.css';
+  @includes textAlt;
   padding-bottom: calc( var(--font-base-line-height) * .5);
   margin-bottom: calc( var(--font-base-line-height) * .75);
   border-bottom: 1px solid var(--color-very-light-gray);

@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 import {getFluidGatsbyImage} from 'gatsby-source-sanity'
 import clientConfig from '../../../client-config'
 
-import styles from './post-preview.module.css'
+import styles from './post-preview.module.scss'
 
 function PostPreview (props) {
   return (
@@ -16,15 +16,17 @@ function PostPreview (props) {
       className={props.isInList ? styles.inList : styles.inGrid}
       to={getBlogUrl(props.publishedAt, props.slug.current)}
     >
-
       <div className={styles.leadMediaThumb}>
         {props.mainImage && props.mainImage.asset && (
-          <Img loading='lazy'
+          <Img
+            loading='lazy'
             fluid={getFluidGatsbyImage(
               props.mainImage.asset._id,
               {maxWidth: 600},
               clientConfig.sanity
-            )} alt={props.mainImage.alt} />
+            )}
+            alt={props.mainImage.alt}
+          />
         )}
       </div>
 
@@ -33,13 +35,17 @@ function PostPreview (props) {
 
         {props._rawExcerpt && (
           <div className={styles.excerpt}>
-            <PortableText blocks={props._rawExcerpt} className={styles.excerptContent}/>
+            <PortableText
+              blocks={props._rawExcerpt}
+              className={styles.excerptContent}
+            />
           </div>
         )}
 
-        <div className={styles.date}>{format(props.publishedAt, 'MMMM Do, YYYY')}</div>
+        <div className={styles.date}>
+          {format(props.publishedAt, 'MMMM Do, YYYY')}
+        </div>
       </div>
-
     </Link>
   )
 }

@@ -4,7 +4,6 @@ import PostPreviewList from '../components/post/post-preview-list'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
-import { title1, title2 } from '../components/typography.module.css'
 import Layout from '../containers/layout'
 import { mapEdgesToNodes } from '../lib/helpers'
 
@@ -55,8 +54,8 @@ const CategoryPage = props => {
     <Layout>
       <SEO title={title} />
       <Container>
-        <h1 className={title1}>{title}</h1>
-        {description && <h2 className={title2}>{description}</h2>}
+        <h1 className={'title1'}>{title}</h1>
+        {description && <h2 className={'title2'}>{description}</h2>}
         {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
       </Container>
     </Layout>

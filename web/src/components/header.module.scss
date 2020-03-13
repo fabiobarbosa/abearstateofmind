@@ -1,22 +1,18 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
-
 .root {
   position: relative;
   z-index: 100;
+  @include textAlt;
 }
 
 .container {
   display: flex;
-  composes: root from './container.module.css';
-  composes: textAlt from './typography.module.css';
 }
 
 .branding {
   font-weight: 600;
   flex: 1;
 
-  @nest & h1 {
+  & h1 {
     padding: 0.5rem 0;
     margin: 0;
     font-size: 1em;
@@ -24,7 +20,7 @@
     font-weight: 500;
   }
 
-  @nest & a {
+  & a {
     display: inline-block;
     padding: 0.5rem 0;
     line-height: var(--font-base-line-height);
@@ -32,17 +28,17 @@
     text-decoration: none;
 
     @media (hover: hover) {
-      @nest &:hover {
+      &:hover {
         color: var(--color-accent);
       }
     }
   }
 
-  @media (--media-min-small) {
+  @media ($media-min-small) {
     margin-right: var(--font-base-line-height);
   }
 
-  @media (--media-min-large) {
+  @media ($media-min-large) {
     flex: 2;
     margin-right: calc(var(--font-base-line-height) * 2);
   }
@@ -63,7 +59,7 @@
     fill: inherit;
   }
 
-  @media (--media-min-small) {
+  @media ($media-min-small) {
     display: none;
   }
 }
@@ -71,29 +67,29 @@
 .nav {
   display: none;
 
-  @nest & ul {
+  & ul {
     margin: 0;
     padding: 0;
   }
 
-  @nest & ul li a {
+  & ul li a {
     display: block;
     color: inherit;
     text-decoration: none;
     line-height: var(--font-base-line-height);
   }
 
-  @nest & ul li a[aria-current="page"] {
+  & ul li a[aria-current="page"] {
     text-decoration: underline;
   }
 
   @media (hover: hover) {
-    @nest & ul li a:hover {
+    & ul li a:hover {
       color: var(--color-accent);
     }
   }
 
-  @media (--media-max-small) {
+  @media ($media-max-small) {
     position: absolute;
     background: var(--color-white);
     color: var(--color-black);
@@ -102,35 +98,35 @@
     right: 0;
     top: 4.3rem;
 
-    @nest & ul {
+    & ul {
       padding: 1rem 0;
     }
 
-    @nest & ul li a {
+    & ul li a {
       padding: 0.5rem 1.5rem;
     }
   }
 
-  @media (--media-min-small) {
+  @media ($media-min-small) {
     display: block;
     flex: 1;
 
-    @nest & ul {
+    & ul {
       list-style: none;
       display: flex;
       justify-content: flex-start;
     }
 
-    @nest & ul li a {
+    & ul li a {
       padding: 0.5rem;
     }
 
-    @nest & ul li:first-child a {
+    & ul li:first-child a {
       padding-left: 0rem;
     }
   }
 
-  @media (--media-min-large) {
+  @media ($media-min-large) {
     flex: 5;
   }
 }

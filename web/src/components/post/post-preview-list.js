@@ -2,7 +2,7 @@ import {Link} from 'gatsby'
 import React from 'react'
 import PostPreview from './post-preview'
 
-import styles from './post-preview-list.module.css'
+import styles from './post-preview-list.module.scss'
 
 function PostPreviewList (props) {
   return (
@@ -18,7 +18,9 @@ function PostPreviewList (props) {
       </ul>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>
-          <Link className={styles.browseMoreLink} to={props.browseMoreHref}>Browse more &#10230;</Link>
+          <Link className={styles.browseMoreLink} to={props.browseMoreHref}>
+            Browse more &#10230;
+          </Link>
         </div>
       )}
     </div>

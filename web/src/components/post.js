@@ -1,4 +1,4 @@
-import { format, distanceInWords, differenceInDays } from 'date-fns'
+import {format, distanceInWords, differenceInDays} from 'date-fns'
 import React from 'react'
 import {Link} from 'gatsby'
 import PortableText from './portableText'
@@ -8,10 +8,10 @@ import Img from 'gatsby-image'
 import {getFluidGatsbyImage} from 'gatsby-source-sanity'
 import clientConfig from '../../client-config'
 
-import styles from './post.module.css'
+import styles from './post.module.scss'
 
-function BlogPost(props) {
-  const { _rawBody, categories, title, mainImage, publishedAt } = props;
+function Post (props) {
+  const {_rawBody, categories, title, mainImage, publishedAt} = props
   return (
     <article className={styles.root}>
       <Container>
@@ -25,20 +25,28 @@ function BlogPost(props) {
           )}
           <h1 className={styles.title}>{title}</h1>
         </header>
+
         {mainImage && mainImage.asset && (
           <div className={styles.mainImage}>
-            <Img loading='lazy'
+            <Img
+              loading='lazy'
               fluid={getFluidGatsbyImage(
                 mainImage.asset._id,
                 {maxWidth: 1200},
                 clientConfig.sanity
-              )} alt={mainImage.alt} />
+              )}
+              alt={mainImage.alt}
+            />
           </div>
         )}
+
         <div className={styles.grid}>
           <div className={styles.mainContent}>
-            {_rawBody && <PortableText blocks={_rawBody} className={styles.blockContent} />}
+            {_rawBody && (
+              <PortableText blocks={_rawBody} className={styles.blockContent} />
+            )}
           </div>
+
           <aside className={styles.metaContent}>
             {categories && (
               <div className={styles.categories}>
@@ -46,7 +54,9 @@ function BlogPost(props) {
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>
-                      <Link to={`/category/${category.slug.current}`}>{category.title}</Link>
+                      <Link to={`/category/${category.slug.current}`}>
+                        {category.title}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -56,7 +66,7 @@ function BlogPost(props) {
         </div>
       </Container>
     </article>
-  );
+  )
 }
 
-export default BlogPost;
+export default Post

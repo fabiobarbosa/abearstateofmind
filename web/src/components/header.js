@@ -1,13 +1,15 @@
 import {Link} from 'gatsby'
 import React from 'react'
 import Icon from './icon'
+import Container from './container'
 import {cn} from '../lib/helpers'
 
-import styles from './header.module.css'
+import styles from './header.module.scss'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
   <header className={styles.root}>
-    <div className={styles.container}>
+    <Container className={styles.container}>
+
       <div className={styles.branding}>
         {isHome ? <h1>{siteTitle}</h1> : <Link to='/'>{siteTitle}</Link>}
       </div>
@@ -26,7 +28,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
           </li>
         </ul>
       </nav>
-    </div>
+    </Container>
   </header>
 )
 

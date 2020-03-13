@@ -1,9 +1,15 @@
 import React from 'react'
 
-import styles from './container.module.css'
+function Container (props) {
+  return (
+    <div className={`container ${props.className}`}>
+      {props.children}
+    </div>
+  )
+}
 
-const Container = ({children}) => {
-  return <div className={styles.root}>{children}</div>
+Container.defaultProps = {
+  className: ''
 }
 
 export default Container

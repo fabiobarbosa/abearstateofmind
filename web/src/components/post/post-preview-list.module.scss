@@ -1,12 +1,9 @@
-@import '../../styles/custom-media.css';
-@import '../../styles/custom-properties.css';
-
 .root {
   margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
 }
 
 .headline {
-  composes: textAlt from '../typography.module.css';
+  @include textAlt;
   margin: 2rem 0;
 }
 
@@ -23,11 +20,11 @@
 .browseMoreNav {
   margin-top: calc(var(--font-base-line-height) * 2);
 
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     grid-column: 2/3;
   }
 }
 
 .browseMoreLink {
-  composes: navLink from '../typography.module.css';
+  @include navLink;
 }

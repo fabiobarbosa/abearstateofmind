@@ -7,14 +7,12 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import {title1} from '../components/typography.module.css'
-
 export const query = graphql`
   query ArchivePageQuery {
     posts: allSanityPost(
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
+      sort: {fields: [publishedAt], order: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
+    ) {
       edges {
         node {
           id
@@ -50,9 +48,15 @@ const ArchivePage = props => {
   return (
     <Layout>
       <SEO title='Archive' />
+
       <Container>
-        <h1 className={title1}>Archive</h1>
-        {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
+        <h1 className={'title1'}>Archive</h1>
+      </Container>
+
+      <Container>
+        {postNodes && postNodes.length > 0 && (
+          <PostPreviewList nodes={postNodes} />
+        )}
       </Container>
     </Layout>
   )

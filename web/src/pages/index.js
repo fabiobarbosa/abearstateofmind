@@ -11,8 +11,6 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
-import {title1} from '../components/typography.module.css'
-
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
     crop {
@@ -37,7 +35,7 @@ export const query = graphql`
   }
 
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
       intro
       description
@@ -45,8 +43,8 @@ export const query = graphql`
     }
     posts: allSanityPost(
       limit: 4
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      sort: {fields: [publishedAt], order: DESC}
+      filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
     ) {
       edges {
         node {
@@ -92,22 +90,24 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout isHome='true'>
+    <Layout isHome="true">
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
+
       <Container>
-        <h2 className={title1}>{site.intro}</h2>
-        {postNodes && (
-          <PostPreviewGrid
-            title='Latest blog posts'
-            nodes={postNodes}
-            browseMoreHref='/archive/'
-          />
-        )}
+        <h2 className='homeTitle'>{site.intro}</h2>
       </Container>
+
+      {postNodes && (
+        <PostPreviewGrid
+          title='Latest blog posts'
+          nodes={postNodes}
+          browseMoreHref='/archive/'
+        />
+      )}
     </Layout>
   )
 }

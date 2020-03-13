@@ -31,3 +31,10 @@
   --font-title1-size: calc(var(--font-unit) * 3.0625 + var(--font-ratio)); /* 49px */
   --font-title1-line-height: calc(var(--font-unit) * 3.5625 + var(--font-ratio)); /* 57px */
 }
+
+// Media Queries
+
+$media-min-small: "min-width: 450px";
+$media-max-small: "max-width: 449px";
+$media-min-medium: "min-width: 675px";
+$media-min-large: "min-width: 900px";

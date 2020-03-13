@@ -1,0 +1,29 @@
+.headline {
+  @include textAlt;
+  @include gridMinor;
+  margin: 0 0 calc(var(--font-base-line-height) * 2);
+}
+
+.grid {
+  @include grid;
+}
+
+.feed {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: contents;
+}
+
+
+.browseMoreNav {
+  margin-top: calc(var(--font-base-line-height) * 2);
+
+  @media ($media-min-small) {
+    grid-column: 2/3;
+  }
+}
+
+.browseMoreLink {
+  @include navLink;
+}

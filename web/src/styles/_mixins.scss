@@ -1,103 +1,86 @@
-@import "../styles/custom-media.css";
-@import "../styles/custom-properties.css";
 
-/* This is a module in order for CSS Loader to respect the hierarchy */
+// Typography mixins
 
-.title1 {
+@mixin title1 {
   font-weight: 400;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   letter-spacing: -.015em;
   margin:var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
 
-  @media (--media-min-small) {
-    font-size: var(--font-title2-size);
-    line-height: var(--font-title2-line-height);
-  }
-
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
   }
 }
 
-.title2 {
+@mixin title2 {
   font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -.015em;
   margin: calc(var(--font-base-line-height) * 1.5) 0 calc(var(--font-base-line-height) * .5);
 
-  @media (--media-min-small) {
+  @media ($media-min-small) {
     font-size: var(--font-title3-size);
     line-height: var(--font-title3-line-height);
   }
 
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
 }
 
-.title3 {
+@mixin title3 {
   font-weight: 600;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -.015em;
   margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * .5);
 
-  @media (--media-min-small) {
-    font-size: var(--font-large-size);
-    line-height: var(--font-large-line-height);
-  }
-
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     font-size: var(--font-title3-size);
     line-height: var(--font-title3-line-height);
   }
 }
 
-.title4 {
+@mixin title4 {
   font-weight: 600;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * .5);
 
-  @media (--media-min-small) {
-    font-size: var(--font-base-size);
-    line-height: var(--font-base-line-height);
-  }
-
-  @media (--media-min-medium) {
+  @media ($media-min-medium) {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
 }
 
-.large {
+@mixin large {
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -.015em;
 }
 
-.base {
+@mixin base {
   font-size: inherit;
   line-height: inherit;
 }
 
-.small {
+@mixin small {
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
   letter-spacing: -.015em;
 }
 
-.micro {
+@mixin micro {
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
   text-transform: uppercase;
 }
 
-.textAlt {
+@mixin textAlt {
   font-family: var(--font-family-mono);
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
@@ -106,8 +89,8 @@
   letter-spacing: 0.5px;
 }
 
-.navLink {
-  composes: textAlt;
+@mixin navLink {
+  @include textAlt;
   display: block;
   color: var(--color-accent);
   text-decoration: none;
@@ -118,3 +101,89 @@
     }
   }
 }
+
+@mixin button {
+  @include textAlt;
+  background: var(--color-very-light-gray);
+  color: var(--color-gray);
+  padding: .5rem .8rem;
+  border: 1px solid var(--color-light-gray);
+  border-radius: .25rem;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+  }
+}
+
+
+// Grid mixins
+
+@mixin container {
+  padding: var(--font-base-line-height);
+  @media ($media-min-medium) {
+    padding: var(--font-base-line-height) calc(var(--font-base-line-height) * 2);
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--font-base-line-height);
+
+  @media ($media-min-small) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media ($media-min-medium) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@mixin gridFull {
+  grid-column: 1/2;
+
+  @media ($media-min-small) {
+    grid-column: 1/5;
+  }
+
+  @media ($media-min-medium) {
+    grid-column: 1/9;
+  }
+}
+
+@mixin gridMinor {
+  grid-column: 1/2;
+
+  @media ($media-min-small) {
+    grid-column: span 2;
+  }
+}
+
+@mixin gridHalf {
+  grid-column: 1/2;
+
+  @media ($media-min-small) {
+    grid-column: span 2;
+  }
+
+  @media ($media-min-medium) {
+    grid-column: span 4;
+  }
+}
+
+@mixin gridMain {
+  grid-column: 1/2;
+
+  @media ($media-min-small) {
+    grid-column: span 2;
+  }
+
+  @media ($media-min-medium) {
+    grid-column: span 6;
+  }
+}
+
