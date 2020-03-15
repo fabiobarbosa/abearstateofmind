@@ -98,7 +98,7 @@ const IndexPage = props => {
       />
 
       <Container>
-        <h2 className='homeTitle'>{site.intro}</h2>
+        <h2 className='heroTitle'>{site.intro}</h2>
       </Container>
 
       {postNodes && (

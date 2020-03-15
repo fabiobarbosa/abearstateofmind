@@ -1,12 +1,11 @@
-
 // Typography mixins
 
 @mixin title1 {
   font-weight: 400;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
-  letter-spacing: -.015em;
-  margin:var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
+  letter-spacing: -0.015em;
+  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
 
   @media ($media-min-medium) {
     font-size: var(--font-title1-size);
@@ -18,8 +17,9 @@
   font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
-  letter-spacing: -.015em;
-  margin: calc(var(--font-base-line-height) * 1.5) 0 calc(var(--font-base-line-height) * .5);
+  letter-spacing: -0.015em;
+  margin: calc(var(--font-base-line-height) * 1.5) 0
+    calc(var(--font-base-line-height) * 0.5);
 
   @media ($media-min-small) {
     font-size: var(--font-title3-size);
@@ -36,8 +36,9 @@
   font-weight: 600;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
-  letter-spacing: -.015em;
-  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * .5);
+  letter-spacing: -0.015em;
+  margin: var(--font-base-line-height) 0
+    calc(var(--font-base-line-height) * 0.5);
 
   @media ($media-min-medium) {
     font-size: var(--font-title3-size);
@@ -49,7 +50,8 @@
   font-weight: 600;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
-  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * .5);
+  margin: var(--font-base-line-height) 0
+    calc(var(--font-base-line-height) * 0.5);
 
   @media ($media-min-medium) {
     font-size: var(--font-large-size);
@@ -60,7 +62,7 @@
 @mixin large {
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
-  letter-spacing: -.015em;
+  letter-spacing: -0.015em;
 }
 
 @mixin base {
@@ -71,7 +73,7 @@
 @mixin small {
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
-  letter-spacing: -.015em;
+  letter-spacing: -0.015em;
 }
 
 @mixin micro {
@@ -106,9 +108,9 @@
   @include textAlt;
   background: var(--color-very-light-gray);
   color: var(--color-gray);
-  padding: .5rem .8rem;
+  padding: 0.5rem 0.8rem;
   border: 1px solid var(--color-light-gray);
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   text-decoration: none;
 
   @media (hover: hover) {
@@ -119,46 +121,50 @@
   }
 }
 
-
 // Grid mixins
 
-@mixin container {
+@mixin containerFull {
   padding: var(--font-base-line-height);
+}
+
+@mixin containerSection {
+  padding: var(--font-base-line-height) var(--font-base-line-height)
+    calc(var(--font-base-line-height) * 4) var(--font-base-line-height);
   @media ($media-min-medium) {
-    padding: var(--font-base-line-height) calc(var(--font-base-line-height) * 2);
+    padding-left: 25%;
   }
 }
 
 @mixin grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: var(--font-base-line-height);
+  grid-gap: calc(var(--font-base-line-height) * 4) var(--font-base-line-height);
 
-  @media ($media-min-small) {
+  @media ($media-min-medium) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @media ($media-min-medium) {
-    grid-template-columns: repeat(8, 1fr);
+  @media ($media-min-large) {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @mixin gridFull {
   grid-column: 1/2;
 
-  @media ($media-min-small) {
+  @media ($media-min-medium) {
     grid-column: 1/5;
   }
 
-  @media ($media-min-medium) {
-    grid-column: 1/9;
+  @media ($media-min-large) {
+    grid-column: 1/7;
   }
 }
 
 @mixin gridMinor {
   grid-column: 1/2;
 
-  @media ($media-min-small) {
+  @media ($media-min-medium) {
     grid-column: span 2;
   }
 }
@@ -166,24 +172,23 @@
 @mixin gridHalf {
   grid-column: 1/2;
 
-  @media ($media-min-small) {
+  @media ($media-min-medium) {
     grid-column: span 2;
   }
 
-  @media ($media-min-medium) {
-    grid-column: span 4;
+  @media ($media-min-large) {
+    grid-column: span 3;
   }
 }
 
 @mixin gridMain {
   grid-column: 1/2;
 
-  @media ($media-min-small) {
+  @media ($media-min-medium) {
     grid-column: span 2;
   }
 
-  @media ($media-min-medium) {
-    grid-column: span 6;
+  @media ($media-min-large) {
+    grid-column: span 4;
   }
 }
-

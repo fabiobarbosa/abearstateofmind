@@ -5,7 +5,7 @@
 }
 
 .container {
-  @include container;
+  @include containerFull;
 
   @media ($media-min-small) {
     display: grid;

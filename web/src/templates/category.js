@@ -54,8 +54,8 @@ const CategoryPage = props => {
     <Layout>
       <SEO title={title} />
       <Container>
-        <h1 className={'title1'}>{title}</h1>
-        {description && <h2 className={'title2'}>{description}</h2>}
+        <h1 className='heroTitle'>{title}</h1>
+        {description && <h2 className='heroSubtitle'>{description}</h2>}
         {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
       </Container>
     </Layout>

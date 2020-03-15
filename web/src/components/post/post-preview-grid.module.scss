@@ -6,22 +6,24 @@
 
 .grid {
   @include grid;
-}
-
-.feed {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: contents;
+
+  & li {
+    @include gridMinor;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      @include gridMain;
+    }
+  }
 }
 
 
 .browseMoreNav {
   margin-top: calc(var(--font-base-line-height) * 2);
-
-  @media ($media-min-small) {
-    grid-column: 2/3;
-  }
+  @include gridMain;
 }
 
 .browseMoreLink {

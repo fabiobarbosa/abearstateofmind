@@ -7,10 +7,10 @@ import styles from './post-preview-grid.module.scss'
 
 function PostPreviewGrid (props) {
   return (
-    <Container className={styles.grid}>
+    <Container className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
 
-      <ul className={styles.feed}>
+      <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map(node => (
             <li className={styles.item} key={node.id}>

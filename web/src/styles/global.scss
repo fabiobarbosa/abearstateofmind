@@ -54,14 +54,34 @@ figcaption {
   margin-bottom: 1rem;
 }
 
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .blockQuote {
   background: var(--color-very-light-gray);
 }
 
-.homeTitle {
+.heroTitle {
   @include title1;
+  margin-top: 0;
 }
 
-.container {
-  @include container;
+.heroSubtitle {
+  @include title2;
+}
+
+.container--full {
+  @include containerFull;
+}
+
+.container--section {
+  @include containerSection;
 }

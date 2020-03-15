@@ -50,7 +50,7 @@ const ArchivePage = props => {
       <SEO title='Archive' />
 
       <Container>
-        <h1 className={'title1'}>Archive</h1>
+        <h1 className='heroTitle'>Archive</h1>
       </Container>
 
       <Container>
