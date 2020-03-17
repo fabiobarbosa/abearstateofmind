@@ -31,6 +31,9 @@ export const query = graphql`
     }
     asset {
       _id
+      fluid(maxWidth: 1200) {
+        ...GatsbySanityImageFluid
+      }
     }
   }
 
@@ -90,7 +93,7 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout isHome="true">
+    <Layout isHome='true'>
       <SEO
         title={site.title}
         description={site.description}
