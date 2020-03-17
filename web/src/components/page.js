@@ -4,7 +4,7 @@ import Container from './container'
 
 import Img from 'gatsby-image'
 
-import styles from './post.module.scss'
+import styles from './page.module.scss'
 
 function Page (props) {
   const {_rawBody, title, mainImage} = props

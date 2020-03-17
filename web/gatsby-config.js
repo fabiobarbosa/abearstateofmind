@@ -11,7 +11,6 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   plugins: [
-    'gatsby-plugin-preact',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',
