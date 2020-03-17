@@ -5,8 +5,6 @@ import {getBlogUrl} from '../../lib/helpers'
 import PortableText from '../portableText'
 
 import Img from 'gatsby-image'
-import {getFluidGatsbyImage} from 'gatsby-source-sanity'
-import clientConfig from '../../../client-config'
 
 import styles from './post-preview.module.scss'
 
@@ -20,11 +18,17 @@ function PostPreview (props) {
         {props.mainImage && props.mainImage.asset && (
           <Img
             loading='lazy'
-            fluid={getFluidGatsbyImage(
-              props.mainImage.asset._id,
-              {maxWidth: 600},
-              clientConfig.sanity
-            )}
+            fluid={[
+              props.mainImage.asset.mobileImage,
+              {
+                ...props.mainImage.asset.tabletImage,
+                media: '(min-width: 768px)'
+              },
+              {
+                ...props.mainImage.asset.desktopImage,
+                media: '(min-width: 900px)'
+              }
+            ]}
             alt={props.mainImage.alt}
           />
         )}

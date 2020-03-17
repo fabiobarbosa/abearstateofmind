@@ -5,8 +5,6 @@ import PortableText from './portableText'
 import Container from './container'
 
 import Img from 'gatsby-image'
-import {getFluidGatsbyImage} from 'gatsby-source-sanity'
-import clientConfig from '../../client-config'
 
 import styles from './post.module.scss'
 
@@ -30,11 +28,17 @@ function Post (props) {
           <div className={styles.mainImage}>
             <Img
               loading='lazy'
-              fluid={getFluidGatsbyImage(
-                mainImage.asset._id,
-                {maxWidth: 1200},
-                clientConfig.sanity
-              )}
+              fluid={[
+                mainImage.asset.mobileImage,
+                {
+                  ...mainImage.asset.tabletImage,
+                  media: '(min-width: 768px)'
+                },
+                {
+                  ...mainImage.asset.desktopImage,
+                  media: '(min-width: 900px)'
+                }
+              ]}
               alt={mainImage.alt}
             />
           </div>
