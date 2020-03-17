@@ -18,17 +18,7 @@ function PostPreview (props) {
         {props.mainImage && props.mainImage.asset && (
           <Img
             loading='lazy'
-            fluid={[
-              props.mainImage.asset.mobileImage,
-              {
-                ...props.mainImage.asset.tabletImage,
-                media: '(min-width: 768px)'
-              },
-              {
-                ...props.mainImage.asset.desktopImage,
-                media: '(min-width: 900px)'
-              }
-            ]}
+            fluid={props.mainImage.asset.fluid}
             alt={props.mainImage.alt}
           />
         )}

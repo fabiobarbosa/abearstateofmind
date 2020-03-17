@@ -19,17 +19,7 @@ function Page (props) {
           <div className={styles.mainImage}>
             <Img
               loading='lazy'
-              fluid={[
-                mainImage.asset.mobileImage,
-                {
-                  ...mainImage.asset.tabletImage,
-                  media: '(min-width: 768px)'
-                },
-                {
-                  ...mainImage.asset.desktopImage,
-                  media: '(min-width: 900px)'
-                }
-              ]}
+              fluid={mainImage.asset.fluid}
               alt={mainImage.alt}
             />
           </div>

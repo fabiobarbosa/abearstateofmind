@@ -31,13 +31,7 @@ export const query = graphql`
     }
     asset {
       _id
-      mobileImage: fluid(maxWidth: 600) {
-        ...GatsbySanityImageFluid
-      }
-      tabletImage: fluid(maxWidth: 800) {
-        ...GatsbySanityImageFluid
-      }
-      desktopImage: fluid(maxWidth: 1000) {
+      fluid {
         ...GatsbySanityImageFluid
       }
     }
