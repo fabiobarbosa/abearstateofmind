@@ -1,12 +1,11 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import { mapEdgesToNodes } from '../lib/helpers'
+import GraphQLErrorList from '../components/graphql-error-list'
 import PostPreviewList from '../components/post/post-preview-list'
 import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import { mapEdgesToNodes } from '../lib/helpers'
-
 
 export const query = graphql`
   query categoryPageQuery($id: String!) {

@@ -78,7 +78,7 @@ async function createEntries (graphql, actions, reporter) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
       const path = `/blog/${dateSegment}/${slug.current}/`
 
-      reporter.info(`Creating blog entry: ${path}`)
+      // reporter.info(`Creating blog entry: ${path}`)
 
       createPage({
         path,
@@ -93,7 +93,7 @@ async function createEntries (graphql, actions, reporter) {
     const {id, slug = {}} = edge.node
     const path = `/${slug.current}/`
 
-    reporter.info(`Creating page entry: ${path}`)
+    // reporter.info(`Creating page entry: ${path}`)
 
     createPage({
       path,
@@ -108,7 +108,7 @@ async function createEntries (graphql, actions, reporter) {
     const {id, slug, title, description} = edge.node
     const path = `/category/${slug.current}/`
 
-    reporter.info(`Creating category: ${path}`)
+    // reporter.info(`Creating category: ${path}`)
 
     createPage({
       path,

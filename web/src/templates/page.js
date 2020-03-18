@@ -1,11 +1,11 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Container from '../components/container'
+import {toPlainText} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Page from '../components/page'
+import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import {toPlainText} from '../lib/helpers'
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {

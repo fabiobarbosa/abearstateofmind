@@ -1,12 +1,12 @@
 import {graphql} from 'gatsby'
 import React from 'react'
-import Container from '../components/container'
+import {toPlainText} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
+import PostNav from '../components/post/post-navigation'
+import Post from '../components/post'
+import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Post from '../components/post'
-import PostNav from '../components/post/post-navigation'
-import {toPlainText} from '../lib/helpers'
 
 export const query = graphql`
   query PostTemplateQuery($id: String!) {

@@ -30,16 +30,16 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
         className={styles.toggleNavButton}
         onClick={showNav ? onHideNav : onShowNav}
       >
-        <Icon symbol="hamburger" />
+        <Icon symbol='hamburger' />
       </button>
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to="/about/">About</Link>
+            <Link to='/about/'>About</Link>
           </li>
           <li>
-            <Link to="/archive/">Archive</Link>
+            <Link to='/archive/'>Archive</Link>
           </li>
         </ul>
       </nav>
