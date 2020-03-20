@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
 export const query = graphql`
-  query ArchivePageQuery {
+  query BlogPageQuery {
     posts: allSanityPost(
       sort: {fields: [publishedAt], order: DESC}
       filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}
@@ -32,7 +32,7 @@ export const query = graphql`
   }
 `
 
-const ArchivePage = props => {
+const BlogPage = props => {
   const {data, errors} = props
 
   if (errors) {
@@ -47,10 +47,10 @@ const ArchivePage = props => {
 
   return (
     <Layout>
-      <SEO title='Archive' />
+      <SEO title='Blog' />
 
       <Container containerClass={'hero--module'}>
-        <h1 className='heroTitle'>Archive</h1>
+        <h1 className='heroTitle'>Blog</h1>
       </Container>
 
       <Container>
@@ -62,4 +62,4 @@ const ArchivePage = props => {
   )
 }
 
-export default ArchivePage
+export default BlogPage

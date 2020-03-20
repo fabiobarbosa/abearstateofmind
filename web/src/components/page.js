@@ -26,19 +26,14 @@ function Page (props) {
         </div>
       )}
 
-      <header>
-        <Container
-          containerClass={styles.headerContainer}
-          contentClass={styles.headerContent}
-        >
-          <h1 className={styles.title}>{title}</h1>
-        </Container>
-      </header>
-
       <Container
         containerClass={styles.mainContainer}
         contentClass={styles.mainContent}
       >
+        <header>
+          <h1 className={styles.title}>{title}</h1>
+        </header>
+
         {_rawBody && (
           <PortableText blocks={_rawBody} className={styles.blockContent} />
         )}

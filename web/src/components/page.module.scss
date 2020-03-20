@@ -17,23 +17,20 @@
 
 .mainImageContainer {
   @include container('wide');
-  padding-top: 0;
-  padding-bottom: 0;
+
+  @media ($media-min-medium) {
+    & > div {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
 }
 
-.grid {
-  @media ($media-min-medium) {
-    display: grid;
-    grid-column-gap: calc(var(--font-base-line-height) * 2);
-    grid-template-columns: 2fr 5fr;
-  }
+.mainContainer {
+  @include container('normal');
 }
 
 .mainContent {
-  @media ($media-min-medium) {
-    grid-column: 2/3;
-  }
-
   & a {
     color: inherit;
 
@@ -56,8 +53,4 @@
       max-width: 100%;
     }
   }
-}
-
-.blockContent {
-  margin-top: calc(var(--font-base-line-height) * 2);
 }
