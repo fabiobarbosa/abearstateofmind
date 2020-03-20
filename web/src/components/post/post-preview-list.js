@@ -1,12 +1,13 @@
 import {Link} from 'gatsby'
 import React from 'react'
 import PostPreview from './post-preview'
+import Container from '../container'
 
 import styles from './post-preview-list.module.scss'
 
 function PostPreviewList (props) {
   return (
-    <div className={styles.root}>
+    <Container containerClass={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
       <ul className={styles.grid}>
         {props.nodes &&
@@ -23,7 +24,7 @@ function PostPreviewList (props) {
           </Link>
         </div>
       )}
-    </div>
+    </Container>
   )
 }
 

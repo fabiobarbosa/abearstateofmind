@@ -123,15 +123,46 @@
 
 // Grid mixins
 
-@mixin containerFull {
-  padding: var(--font-base-line-height);
-}
+@mixin container($width) {
+  padding-left: var(--font-base-line-height);
+  padding-right: var(--font-base-line-height);
 
-@mixin containerSection {
-  padding: var(--font-base-line-height) var(--font-base-line-height)
-    calc(var(--font-base-line-height) * 4) var(--font-base-line-height);
+  & > div {
+    padding-top: var(--font-base-line-height);
+    padding-bottom: var(--font-base-line-height);
+  }
+
   @media ($media-min-medium) {
-    padding-left: 25%;
+    padding-left: calc(var(--font-base-line-height) * 2);
+    padding-right: calc(var(--font-base-line-height) * 2);
+
+    & > div {
+      padding-top: calc(var(--font-base-line-height) * 3);
+      padding-bottom: calc(var(--font-base-line-height) * 3);
+    }
+  }
+
+  @if $width == full {
+    padding-left: 0;
+    padding-right: 0;
+    @media ($media-min-medium) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  } @else if $width == wide {
+    @media ($media-min-medium) {
+      & > div {
+        max-width: 85em;
+        margin: 0 auto;
+      }
+    }
+  } @else if $width == normal {
+    @media ($media-min-medium) {
+      & > div {
+        max-width: 30em;
+        margin: 0 auto;
+      }
+    }
   }
 }
 

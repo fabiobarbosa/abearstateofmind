@@ -7,7 +7,7 @@ import styles from './post-preview-grid.module.scss'
 
 function PostPreviewGrid (props) {
   return (
-    <Container className={styles.root}>
+    <Container containerClass={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
 
       <ul className={styles.grid}>

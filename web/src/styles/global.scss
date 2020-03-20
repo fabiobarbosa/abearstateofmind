@@ -1,4 +1,6 @@
 html {
+  color: var(--color-fg);
+  background-color: var(--color-bg);
   font-family: var(--font-family-serif);
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
@@ -11,17 +13,17 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: var(--color-white);
-  color: var(--color-black);
   margin: 0;
   overflow-x: hidden;
 }
 
-html,
-body,
-body > div,
-body > div > div {
-  height: 100%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-fg);
 }
 
 caption,
@@ -69,6 +71,13 @@ figcaption {
   background: var(--color-very-light-gray);
 }
 
+.hero--module {
+  --color-fg: var(--color-white);
+  --color-bg: var(--color-black);
+  @include container('normal');
+  background-color: var(--color-bg);
+}
+
 .heroTitle {
   @include title1;
   margin-top: 0;
@@ -76,12 +85,4 @@ figcaption {
 
 .heroSubtitle {
   @include title2;
-}
-
-.container--full {
-  @include containerFull;
-}
-
-.container--section {
-  @include containerSection;
 }

@@ -11,55 +11,83 @@ import styles from './post.module.scss'
 function Post (props) {
   const {_rawBody, categories, title, mainImage, publishedAt} = props
   return (
-    <article className={styles.root}>
-      <Container>
+    <>
+      <article className={styles.root}>
         <header>
-          {publishedAt && (
-            <div className={styles.publishedAt}>
-              {differenceInDays(new Date(publishedAt), new Date()) > 3
-                ? distanceInWords(new Date(publishedAt), new Date())
-                : format(new Date(publishedAt), 'MMMM Do, YYYY')}
-            </div>
-          )}
-          <h1 className={styles.title}>{title}</h1>
+          <Container
+            containerClass={styles.headerContainer}
+            contentClass={styles.headerContent}
+          >
+            {categories && (
+              <ul className={styles.categories}>
+                {categories.map(category => (
+                  <li key={category._id}>
+                    <Link to={`/category/${category.slug.current}`}>
+                      {category.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <h1 className={styles.title}>{title}</h1>
+
+            {publishedAt && (
+              <time
+                dateTime={format(new Date(publishedAt), 'YYYY-MM-DD')}
+                className={styles.publishedAt}
+              >
+                {differenceInDays(new Date(publishedAt), new Date()) > 3
+                  ? distanceInWords(new Date(publishedAt), new Date())
+                  : format(new Date(publishedAt), 'MMMM Do, YYYY')}
+              </time>
+            )}
+          </Container>
         </header>
 
         {mainImage && mainImage.asset && (
           <div className={styles.mainImage}>
-            <Img
-              loading='lazy'
-              fluid={mainImage.asset.fluid}
-              alt={mainImage.alt}
-            />
+            <Container
+              containerClass={styles.mainImageContainer}
+              contentClass={styles.mainImageContent}
+            >
+              <Img
+                loading='lazy'
+                fluid={mainImage.asset.fluid}
+                sizes={{...mainImage.asset.fluid, aspectRatio: 21 / 9}}
+                alt={mainImage.alt}
+              />
+            </Container>
           </div>
         )}
 
-        <div className={styles.grid}>
-          <div className={styles.mainContent}>
-            {_rawBody && (
-              <PortableText blocks={_rawBody} className={styles.blockContent} />
-            )}
-          </div>
+        <Container
+          containerClass={styles.mainContainer}
+          contentClass={styles.mainContent}
+        >
+          {_rawBody && (
+            <PortableText blocks={_rawBody} className={styles.blockContent} />
+          )}
+        </Container>
+      </article>
 
-          <aside className={styles.metaContent}>
-            {categories && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
-                  {categories.map(category => (
-                    <li key={category._id}>
-                      <Link to={`/category/${category.slug.current}`}>
-                        {category.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </aside>
+      <Container
+        containerClass={styles.subscribe}
+        contentClass={styles.subscribeContent}>
+        <div className={styles.subscribeHeader}>
+          <h3 className={styles.subscribeTitle}>Get updates in your inbox!</h3>
+          <p>Be the first to know about the latest posts and other resources.</p>
         </div>
+        <a
+          className={styles.subscribeLink}
+          rel='noopener noreferrer'
+          href='http://eepurl.com/gNzLRz'
+          target='_blank'
+        >
+          Sign up
+        </a>
       </Container>
-    </article>
+    </>
   )
 }
 

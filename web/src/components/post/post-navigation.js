@@ -1,6 +1,7 @@
 import {format} from 'date-fns'
 import {Link} from 'gatsby'
 import React from 'react'
+import Container from '../container'
 
 import styles from './post-navigation.module.scss'
 
@@ -10,7 +11,9 @@ const PostNav = ({next, previous}) => {
 
   return (
     <nav className={styles.root}>
-      <div className={styles.container}>
+      <Container
+        containerClass={styles.container}
+        contentClass={styles.content}>
         {previous && (
           <div className={styles.previous}>
             <Link
@@ -33,7 +36,7 @@ const PostNav = ({next, previous}) => {
             </Link>
           </div>
         )}
-      </div>
+      </Container>
     </nav>
   )
 }

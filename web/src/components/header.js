@@ -2,12 +2,13 @@ import {Link} from 'gatsby'
 import React from 'react'
 import Icon from './icon'
 import {cn} from '../lib/helpers'
+import Container from './container'
 
 import styles from './header.module.scss'
 
 const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
   <header className={styles.root}>
-    <div className={styles.container}>
+    <Container containerClass={styles.container} contentClass={styles.content}>
       <div className={styles.branding}>
         {isHome ? (
           <>
@@ -43,7 +44,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
           </li>
         </ul>
       </nav>
-    </div>
+    </Container>
   </header>
 )
 

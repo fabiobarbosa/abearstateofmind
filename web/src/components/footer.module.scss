@@ -1,27 +1,39 @@
 
 .root {
-  background-color: var(--color-red);
+  --color-fg: var(--color-white);
+  --color-bg: var(--color-black);
+  color: var(--color-fg);
+  background-color: var(--color-bg);
 }
 
-.container {
-  padding-bottom: var(--font-base-line-height) !important;
+.navContainer,
+.colophonContainer {
+  @include container('wide');
 }
 
-.subscribeBox {
-}
+.nav {
+  @include textAlt;
 
-.subscribeTitle {
-  margin-bottom: 0;
-}
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
 
-.subscribeLink {
-  @include button;
-}
+  & ul li {
+    margin-right: 1rem;
+  }
 
-.colophon {
-  & a {
-    color: inherit;
+  & ul li a {
+    display: block;
+    color: var(--color-fg);
     text-decoration: none;
+    line-height: var(--font-base-line-height);
+
+    &[aria-current='page'] {
+      text-decoration: underline;
+    }
 
     @media (hover: hover) {
       &:hover {
@@ -31,8 +43,19 @@
   }
 }
 
-.siteInfo {
-  text-align: center;
+.colophon {
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
+
+}
+
+.colophonContainer {
+  & > div {
+    border-top: 1px solid var(--color-dark-gray);
+
+    @media($media-min-medium) {
+      padding-top: calc(var(--font-small-line-height) * 1.5);
+      padding-bottom: calc(var(--font-small-line-height) * 1.5);
+    }
+  }
 }

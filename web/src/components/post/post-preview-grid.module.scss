@@ -1,3 +1,7 @@
+.root {
+  @include container('wide');
+}
+
 .headline {
   @include textAlt;
   @include gridMinor;

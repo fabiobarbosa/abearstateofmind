@@ -49,7 +49,7 @@ const ArchivePage = props => {
     <Layout>
       <SEO title='Archive' />
 
-      <Container>
+      <Container containerClass={'hero--module'}>
         <h1 className='heroTitle'>Archive</h1>
       </Container>
 

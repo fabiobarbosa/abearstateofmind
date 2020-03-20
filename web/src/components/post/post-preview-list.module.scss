@@ -1,5 +1,5 @@
 .root {
-  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
+  @include container('wide');
 }
 
 .headline {
