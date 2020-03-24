@@ -5,6 +5,7 @@ import Features from './blocks/block-features'
 
 const serializers = {
   types: {
+    mainImage: Figure,
     bodyImage: Figure,
     mediaEmbed: Embed,
     featureBlock: Features
