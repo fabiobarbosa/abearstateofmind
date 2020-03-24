@@ -22,7 +22,6 @@ export const query = graphql`
       }
       mainImage {
         ...SanityImage
-        alt
       }
       title
       slug {
@@ -30,33 +29,6 @@ export const query = graphql`
       }
       _rawExcerpt(resolveReferences: {maxDepth: 5})
       _rawBody(resolveReferences: {maxDepth: 5})
-      authors {
-        _key
-        author {
-          image {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-          }
-          name
-        }
-      }
     }
   }
 `

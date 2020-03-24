@@ -45,7 +45,7 @@ function Post (props) {
           </Container>
         </header>
 
-        {mainImage && mainImage.asset && (
+        {mainImage && mainImage.image && mainImage.image.asset && (
           <div className={styles.mainImage}>
             <Container
               containerClass={styles.mainImageContainer}
@@ -53,9 +53,9 @@ function Post (props) {
             >
               <Img
                 loading='lazy'
-                fluid={mainImage.asset.fluid}
-                sizes={{...mainImage.asset.fluid, aspectRatio: 21 / 9}}
-                alt={mainImage.alt}
+                fluid={mainImage.image.asset.fluid}
+                sizes={{...mainImage.image.asset.fluid, aspectRatio: 21 / 9}}
+                alt={mainImage.image.alt}
               />
             </Container>
           </div>

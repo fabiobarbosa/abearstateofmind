@@ -13,7 +13,6 @@ export const query = graphql`
       id
       mainImage {
         ...SanityImage
-        alt
       }
       title
       slug {

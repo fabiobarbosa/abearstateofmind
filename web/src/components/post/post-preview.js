@@ -15,11 +15,11 @@ function PostPreview (props) {
       to={getBlogUrl(props.publishedAt, props.slug.current)}
     >
       <div className={styles.leadMediaThumb}>
-        {props.mainImage && props.mainImage.asset && (
+        {props.mainImage && props.mainImage.image && props.mainImage.image.asset && (
           <Img
             loading='lazy'
-            fluid={props.mainImage.asset.fluid}
-            alt={props.mainImage.alt}
+            fluid={props.mainImage.image.asset.fluid}
+            alt={props.mainImage.image.alt}
           />
         )}
       </div>

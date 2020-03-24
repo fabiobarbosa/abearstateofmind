@@ -1,42 +1,21 @@
 export default {
   name: 'mainImage',
-  type: 'image',
-  title: 'Image',
-  options: {
-    hotspot: true
-  },
+  type: 'object',
+  title: 'Banner',
   fields: [
     {
-      name: 'caption',
-      type: 'string',
-      title: 'Caption',
+      name: 'image',
+      title: 'Image',
+      type: 'imageField',
       options: {
-        isHighlighted: true
-      }
-    },
-    {
-      name: 'attribution',
-      type: 'string',
-      title: 'Attribution',
-      options: {
-        isHighlighted: true
-      }
-    },
-    {
-      name: 'alt',
-      type: 'string',
-      title: 'Alternative text',
-      description: 'Important for SEO and accessiblity.',
-      validation: Rule => Rule.error('You have to fill out the alternative text.').required(),
-      options: {
-        isHighlighted: true
+        hotspot: true
       }
     }
   ],
   preview: {
     select: {
-      imageUrl: 'asset.url',
-      title: 'caption'
+      imageUrl: 'image.asset.url',
+      title: 'image.caption'
     }
   }
 }

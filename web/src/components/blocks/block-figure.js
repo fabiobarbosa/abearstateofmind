@@ -6,7 +6,7 @@ import clientConfig from '../../../client-config'
 import styles from './block-figure.module.scss'
 
 export default ({node}) => {
-  if (!node || !node.image.asset || !node.image.asset._id) {
+  if (!node.image || !node.image.asset || !node.image.asset._id) {
     return null
   }
   const fluidProps = getFluidGatsbyImage(

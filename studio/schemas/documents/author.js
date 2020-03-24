@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'image',
-      type: 'mainImage',
+      type: 'imageField',
       title: 'Image'
     },
     {
