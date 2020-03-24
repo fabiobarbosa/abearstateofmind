@@ -61,14 +61,9 @@ function Post (props) {
           </div>
         )}
 
-        <Container
-          containerClass={styles.mainContainer}
-          contentClass={styles.mainContent}
-        >
-          {_rawBody && (
-            <PortableText blocks={_rawBody} className={styles.blockContent} />
-          )}
-        </Container>
+        {_rawBody && (
+          <PortableText blocks={_rawBody} className={styles.mainContainer} />
+        )}
       </article>
 
       <Container

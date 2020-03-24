@@ -3,17 +3,28 @@ import Img from 'gatsby-image'
 import {getFluidGatsbyImage} from 'gatsby-source-sanity'
 import clientConfig from '../../../client-config'
 
+import styles from './block-figure.module.scss'
+
 export default ({node}) => {
-  if (!node || !node.asset || !node.asset._id) { return null }
+  if (!node || !node.image.asset || !node.image.asset._id) {
+    return null
+  }
   const fluidProps = getFluidGatsbyImage(
-    node.asset._id,
-    {maxWidth: 675},
+    node.image.asset._id,
+    {maxWidth: 1200},
     clientConfig.sanity
   )
   return (
-    <figure>
-      <Img loading='lazy' fluid={fluidProps} alt={node.alt} />
-      {node.caption && <figcaption>{node.caption}</figcaption>}
+    <figure className={node.layout}>
+      <Img loading='lazy' fluid={fluidProps} alt={node.image.alt} />
+      {(node.image.caption || node.image.attribution) && (
+        <figcaption>
+          {node.image.caption}
+          {node.image.attribution && (
+            <span className={styles.attribution}>{node.image.attribution}</span>
+          )}
+        </figcaption>
+      )}
     </figure>
   )
 }

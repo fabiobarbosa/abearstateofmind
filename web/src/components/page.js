@@ -10,6 +10,15 @@ function Page (props) {
   const {_rawBody, title, mainImage} = props
   return (
     <article className={styles.root}>
+      <header>
+        <Container
+          containerClass={styles.headerContainer}
+          contentClass={styles.headerContent}
+        >
+          <h1 className={styles.title}>{title}</h1>
+        </Container>
+      </header>
+
       {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
           <Container
@@ -26,18 +35,9 @@ function Page (props) {
         </div>
       )}
 
-      <Container
-        containerClass={styles.mainContainer}
-        contentClass={styles.mainContent}
-      >
-        <header>
-          <h1 className={styles.title}>{title}</h1>
-        </header>
-
-        {_rawBody && (
-          <PortableText blocks={_rawBody} className={styles.blockContent} />
-        )}
-      </Container>
+      {_rawBody && (
+        <PortableText blocks={_rawBody} className={styles.mainContainer} />
+      )}
     </article>
   )
 }

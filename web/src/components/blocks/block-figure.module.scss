@@ -1,0 +1,12 @@
+.attribution {
+  position: relative;
+  padding-left: var(--font-base-line-height);
+  text-transform: uppercase;
+
+  &:before {
+    position: absolute;
+    content: '|';
+    top: 0;
+    left: calc(var(--font-base-line-height) * .35);
+  }
+}

@@ -1,12 +1,13 @@
 import React from 'react'
 import Figure from './blocks/block-figure'
 import Embed from './blocks/block-embed'
+import Features from './blocks/block-features'
 
 const serializers = {
   types: {
-    authorReference: ({node}) => <span>{node.author.name}</span>,
-    mainImage: Figure,
-    mediaEmbed: Embed
+    bodyImage: Figure,
+    mediaEmbed: Embed,
+    featureBlock: Features
   }
 }
 

@@ -1,3 +1,42 @@
+:root {
+  // These go here otherwise they'll be bundled separately on each component
+  --font-family-serif: 'EB Garamond', 'Garamond', 'Athelas', Georgia, Times, serif;
+  --font-family-mono: 'Roboto Mono', 'Menlo', 'Courier New', monospace;
+
+  --color-black: #13111e;
+  --color-dark-gray: #32373e;
+  --color-gray: #5a697c;
+  --color-light-gray: #b4bcc7;
+  --color-very-light-gray: #e7ebed;
+  --color-white: #fff;
+  --color-red: #ff3530;
+  --color-gold: #b79b30;
+  --color-beige: #f1ecd9;
+
+  --color-fg: var(--color-black);
+  --color-bg: var(--color-white);
+  --color-accent: var(--color-gold);
+
+  /* Typography */
+  --font-unit: 16px;
+  --font-ratio: 0.5vw;
+  --font-micro-size: calc(var(--font-unit) * 0.625 + var(--font-ratio)); /* 10px */
+  --font-micro-line-height: calc(var(--font-unit) * 0.75 + var(--font-ratio)); /* 12px */
+  --font-small-size: calc(var(--font-unit) * 0.875 + var(--font-ratio)); /* 14px */
+  --font-small-line-height: calc(var(--font-unit) * 1.3125 + var(--font-ratio)); /* 21px */
+  --font-base-size: calc(var(--font-unit) + var(--font-ratio)); /* 16px */
+  --font-base-line-height: calc(var(--font-unit) * 1.5 + var(--font-ratio)); /* 24px */
+  --font-large-size: calc(var(--font-unit) * 1.125 + var(--font-ratio)); /* 18px */
+  --font-large-line-height: calc(var(--font-unit) * 1.6875 + var(--font-ratio)); /* 27px */
+
+  --font-title3-size: calc(var(--font-unit) * 1.3125 + var(--font-ratio)); /* 21px */
+  --font-title3-line-height: calc(var(--font-unit) * 1.875 + var(--font-ratio)); /* 30px */
+  --font-title2-size: calc(var(--font-unit) * 1.5 + var(--font-ratio)); /* 24px */
+  --font-title2-line-height: calc(var(--font-unit) * 2.0625 + var(--font-ratio)); /* 33px */
+  --font-title1-size: calc(var(--font-unit) * 3.0625 + var(--font-ratio)); /* 49px */
+  --font-title1-line-height: calc(var(--font-unit) * 3.5625 + var(--font-ratio)); /* 57px */
+}
+
 html {
   color: var(--color-fg);
   background-color: var(--color-bg);
@@ -51,9 +90,12 @@ ul {
 }
 
 figcaption {
+  @include textAlt;
+  text-transform: none;
+  color: var(--color-gray);
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--color-dark-gray);
-  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-light-gray);
+  margin-bottom: var(--font-base-line-height);
 }
 
 .visuallyHidden {

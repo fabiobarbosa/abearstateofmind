@@ -15,6 +15,14 @@ export default {
       }
     },
     {
+      name: 'attribution',
+      type: 'string',
+      title: 'Attribution',
+      options: {
+        isHighlighted: true
+      }
+    },
+    {
       name: 'alt',
       type: 'string',
       title: 'Alternative text',
