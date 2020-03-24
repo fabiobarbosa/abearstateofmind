@@ -37,6 +37,8 @@ export const query = graphql`
         }
       }
       alt
+      caption
+      attribution
     }
   }
 

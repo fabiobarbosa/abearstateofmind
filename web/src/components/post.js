@@ -51,12 +51,25 @@ function Post (props) {
               containerClass={styles.mainImageContainer}
               contentClass={styles.mainImageContent}
             >
-              <Img
-                loading='lazy'
-                fluid={mainImage.image.asset.fluid}
-                sizes={{...mainImage.image.asset.fluid, aspectRatio: 21 / 9}}
-                alt={mainImage.image.alt}
-              />
+              <figure>
+                <Img
+                  loading='lazy'
+                  fluid={mainImage.image.asset.fluid}
+                  sizes={{...mainImage.image.asset.fluid, aspectRatio: 21 / 9}}
+                  alt={mainImage.image.alt}
+                />
+                {(mainImage.image.caption || mainImage.image.attribution) && (
+                  <figcaption>
+                    {mainImage.image.caption}
+                    {mainImage.image.caption && mainImage.image.attribution && (
+                      <span className='separator' />
+                    )}
+                    {mainImage.image.attribution && (
+                      <span className='attribution'>{mainImage.image.attribution}</span>
+                    )}
+                  </figcaption>
+                )}
+              </figure>
             </Container>
           </div>
         )}

@@ -3,8 +3,6 @@ import Img from 'gatsby-image'
 import {getFluidGatsbyImage} from 'gatsby-source-sanity'
 import clientConfig from '../../../client-config'
 
-import styles from './block-figure.module.scss'
-
 export default ({node}) => {
   if (!node.image || !node.image.asset || !node.image.asset._id) {
     return null
@@ -20,8 +18,11 @@ export default ({node}) => {
       {(node.image.caption || node.image.attribution) && (
         <figcaption>
           {node.image.caption}
+          {node.image.caption && node.image.attribution && (
+            <span className='separator' />
+          )}
           {node.image.attribution && (
-            <span className={styles.attribution}>{node.image.attribution}</span>
+            <span className='attribution'>{node.image.attribution}</span>
           )}
         </figcaption>
       )}
