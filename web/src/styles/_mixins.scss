@@ -170,6 +170,10 @@
 @mixin bodyContainer {
   padding: var(--font-base-line-height);
 
+  & > *[class*='size-wide'] {
+    margin-bottom: var(--font-base-line-height);
+  }
+
   & > *[class*='size-full'] {
     margin-left: calc(var(--font-base-line-height) * -1);
     margin-right: calc(var(--font-base-line-height) * -1);
@@ -233,7 +237,7 @@
 @mixin grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: calc(var(--font-base-line-height) * 4) var(--font-base-line-height);
+  grid-gap: var(--font-base-line-height);
 
   @media ($media-min-medium) {
     grid-template-columns: repeat(4, 1fr);

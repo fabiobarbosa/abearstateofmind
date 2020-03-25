@@ -35,6 +35,11 @@ export default {
   icon: featuresIcon,
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string'
+    },
+    {
       name: 'featureList',
       title: 'Feature List',
       type: 'array',

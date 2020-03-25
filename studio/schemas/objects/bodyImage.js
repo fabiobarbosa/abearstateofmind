@@ -7,6 +7,11 @@ export default {
   icon: imageIcon,
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string'
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'imageField',

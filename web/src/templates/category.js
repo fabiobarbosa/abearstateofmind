@@ -51,11 +51,12 @@ const CategoryPage = props => {
   return (
     <Layout>
       <SEO title={title} />
-      <Container>
+      <Container containerClass='hero--module'>
         <h1 className='heroTitle'>{title}</h1>
         {description && <h2 className='heroSubtitle'>{description}</h2>}
-        {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
       </Container>
+
+      {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
     </Layout>
   )
 }

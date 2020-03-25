@@ -3,6 +3,8 @@ import Img from 'gatsby-image'
 import {getFluidGatsbyImage} from 'gatsby-source-sanity'
 import clientConfig from '../../../client-config'
 
+import styles from './block-figure.module.scss'
+
 export default ({node}) => {
   if (!node.image || !node.image.asset || !node.image.asset._id) {
     return null
@@ -14,6 +16,7 @@ export default ({node}) => {
   )
   return (
     <figure className={node.layout}>
+      {node.title && (<h3 className={styles.title}>{node.title}</h3>)}
       <Img loading='lazy' fluid={fluidProps} alt={node.image.alt} />
       {(node.image.caption || node.image.attribution) && (
         <figcaption>

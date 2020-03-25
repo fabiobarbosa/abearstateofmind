@@ -40,7 +40,14 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
             <Link to='/about/'>About</Link>
           </li>
           <li>
+            <Link to='/services/'>Services</Link>
+          </li>
+          <li className={styles.separator}/>
+          <li>
             <Link to='/blog/'>Blog</Link>
+          </li>
+          <li>
+            <Link to='/contact/'>Contact</Link>
           </li>
         </ul>
       </nav>

@@ -44,8 +44,6 @@
   width: 7vw;
   max-width: 3.25rem;
   height: auto;
-  float: left;
-  margin-right: 1rem;
 
   svg {
     fill: var(--color-fg);
@@ -146,4 +144,15 @@
 
 .showNav {
   display: block;
+}
+
+.separator {
+  display: none;
+  visibility: hidden;
+
+  @media($media-min-medium) {
+    display: block;
+    width: 7vw;
+    max-width: 3.25rem;
+  }
 }

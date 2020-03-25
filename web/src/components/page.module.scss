@@ -1,7 +1,7 @@
 .root {}
 
 .headerContainer {
-  @include container('wide');
+  @include container('normal');
   background-color: var(--color-black);
   --color-fg: var(--color-white);
   color: var(--color-fg);
@@ -9,7 +9,7 @@
 
 .title {
   @include title1;
-  margin-bottom: calc( var(--font-base-line-height) * .5);
+  margin-top: 0;
 }
 
 .mainImage {
