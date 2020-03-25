@@ -11,30 +11,32 @@ import styles from './post-preview.module.scss'
 function PostPreview (props) {
   return (
     <Link
-      className={props.isInList ? styles.inList : styles.inGrid}
+      className={styles.link}
       to={getBlogUrl(props.publishedAt, props.slug.current)}
     >
-      <div className={styles.leadMediaThumb}>
-        {props.mainImage && props.mainImage.image && props.mainImage.image.asset && (
+      {props.mainImage && props.mainImage.image && props.mainImage.image.asset && (
+        <div className={styles.leadMediaThumb}>
           <Img
             loading='lazy'
             fluid={props.mainImage.image.asset.fluid}
             alt={props.mainImage.image.alt}
           />
-        )}
-      </div>
+        </div>
+      )}
 
       <div className={styles.text}>
-        <h3 className={styles.title}>{props.title}</h3>
+        <div className={styles.content}>
+          <h3 className={styles.title}>{props.title}</h3>
 
-        {props._rawExcerpt && (
-          <div className={styles.excerpt}>
-            <PortableText
-              blocks={props._rawExcerpt}
-              className={styles.excerptContent}
-            />
-          </div>
-        )}
+          {props._rawExcerpt && (
+            <div className={styles.excerpt}>
+              <PortableText
+                blocks={props._rawExcerpt}
+                className={styles.excerptContent}
+              />
+            </div>
+          )}
+        </div>
 
         <div className={styles.date}>
           {format(props.publishedAt, 'MMMM Do, YYYY')}

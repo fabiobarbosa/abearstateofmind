@@ -106,17 +106,18 @@
 
 @mixin button {
   @include textAlt;
-  background: var(--color-very-light-gray);
-  color: var(--color-gray);
-  padding: 0.5rem 0.8rem;
-  border: 1px solid var(--color-light-gray);
-  border-radius: 0.25rem;
+  display: inline-block;
+  color: var(--color-accent);
+  line-height: var(--font-base-line-height);
   text-decoration: none;
+  padding: .25rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--color-accent);
 
   @media (hover: hover) {
     &:hover {
-      color: var(--color-accent);
-      border-color: var(--color-accent);
+      color: var(--color-black);
+      background-color: var(--color-accent);
     }
   }
 }

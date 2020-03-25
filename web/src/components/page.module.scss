@@ -36,9 +36,7 @@
 
 .mainContainer {
   @include bodyContainer;
-}
 
-.mainContent {
   & a {
     color: inherit;
 
@@ -46,19 +44,6 @@
       @nest &:hover {
         color: var(--color-accent);
       }
-    }
-  }
-
-  & h2, & h3, & h4, & h5, & h6 {
-    font-weight: 600;
-  }
-
-  & figure {
-    margin: 0;
-    padding: 0;
-
-    & img {
-      max-width: 100%;
     }
   }
 }

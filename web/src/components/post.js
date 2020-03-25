@@ -1,6 +1,7 @@
 import {format, distanceInWords, differenceInDays} from 'date-fns'
 import React from 'react'
 import {Link} from 'gatsby'
+import Subscribe from './subscribe'
 import PortableText from './portableText'
 import Container from './container'
 
@@ -79,22 +80,7 @@ function Post (props) {
         )}
       </article>
 
-      <Container
-        containerClass={styles.subscribe}
-        contentClass={styles.subscribeContent}>
-        <div className={styles.subscribeHeader}>
-          <h3 className={styles.subscribeTitle}>Get updates in your inbox!</h3>
-          <p>Be the first to know about the latest posts and other resources.</p>
-        </div>
-        <a
-          className={styles.subscribeLink}
-          rel='noopener noreferrer'
-          href='http://eepurl.com/gNzLRz'
-          target='_blank'
-        >
-          Sign up
-        </a>
-      </Container>
+      <Subscribe />
     </>
   )
 }

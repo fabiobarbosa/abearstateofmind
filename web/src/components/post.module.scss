@@ -67,9 +67,7 @@
 
 .mainContainer {
   @include bodyContainer;
-}
 
-.mainContent {
   & a {
     color: inherit;
 
@@ -77,54 +75,6 @@
       @nest &:hover {
         color: var(--color-accent);
       }
-    }
-  }
-
-  & h2,
-  & h3,
-  & h4,
-  & h5,
-  & h6 {
-    font-weight: 600;
-  }
-
-  & figure {
-    margin: 0;
-    padding: 0;
-
-    & img {
-      max-width: 100%;
-    }
-  }
-}
-
-.subscribe {
-  @include container('normal');
-  text-align: center;
-}
-
-.subscribeContent {
-  border-top: 1px solid var(--color-light-gray);
-}
-
-.subscribeTitle {
-  margin-bottom: 0;
-}
-
-.subscribeLink {
-  @include textAlt;
-  display: inline-block;
-  color: var(--color-accent);
-  line-height: var(--font-base-line-height);
-  text-decoration: none;
-  padding: .25rem 1rem;
-  border-radius: 1rem;
-  border: 2px solid var(--color-accent);
-
-  @media (hover: hover) {
-    &:hover {
-      color: var(--color-black);
-      background-color: var(--color-accent);
     }
   }
 }

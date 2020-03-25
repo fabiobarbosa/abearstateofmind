@@ -1,0 +1,21 @@
+.atFeed {
+  @include container('wide');
+  text-align: center;
+}
+
+.atEntry {
+  @include container('normal');
+  text-align: center;
+}
+
+.content {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.link {
+  @include button;
+}

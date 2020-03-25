@@ -2,9 +2,21 @@
   @include container('wide');
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-light-gray);
+  margin-bottom: var(--font-base-line-height);
+}
+
 .headline {
   @include textAlt;
-  margin: 2rem 0;
+}
+
+.browseMoreLink {
+  @include button;
+  margin-bottom: var(--font-base-line-height);
 }
 
 .grid {
@@ -17,14 +29,10 @@
   grid-row-gap: var(--font-base-line-height);
 }
 
-.browseMoreNav {
-  margin-top: calc(var(--font-base-line-height) * 2);
+.item {
+  border-bottom: 1px solid var(--color-light-gray);
 
-  @media ($media-min-medium) {
-    grid-column: 2/3;
+  &:last-child {
+    border-bottom: 0;
   }
-}
-
-.browseMoreLink {
-  @include navLink;
 }

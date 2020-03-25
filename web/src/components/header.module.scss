@@ -89,7 +89,7 @@
     line-height: var(--font-base-line-height);
 
     &[aria-current='page'] {
-      text-decoration: underline;
+      color: var(--color-accent);
     }
 
     @media (hover: hover) {
@@ -127,8 +127,19 @@
     }
 
     & ul li a {
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       line-height: 1;
+
+      &[aria-current='page'] {
+        color: var(--color-fg);
+        border-bottom: 2px solid var(--color-accent);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
     }
   }
 }

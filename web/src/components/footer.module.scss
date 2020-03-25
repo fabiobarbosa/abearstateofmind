@@ -32,7 +32,7 @@
     line-height: var(--font-base-line-height);
 
     &[aria-current='page'] {
-      text-decoration: underline;
+      border-bottom: 2px solid var(--color-accent);
     }
 
     @media (hover: hover) {
