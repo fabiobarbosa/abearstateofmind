@@ -150,6 +150,10 @@ figcaption {
   background-color: var(--color-white);
 }
 
-.brandwall-image-block picture {
-  mix-blend-mode: multiply;
+.brandwall-image-block {
+  margin-top: calc(var(--font-base-line-height) * 3);
+
+  & picture {
+    mix-blend-mode: multiply;
+  }
 }

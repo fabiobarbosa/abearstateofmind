@@ -93,7 +93,6 @@
 @mixin micro {
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
-  text-transform: uppercase;
 }
 
 @mixin textAlt {

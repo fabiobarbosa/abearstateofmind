@@ -29,6 +29,18 @@ export default {
       type: 'layout'
     },
     {
+      name: 'iconSize',
+      title: 'Icon Size',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Normal', value: 'icon-normal'},
+          {title: 'Full', value: 'icon-full'}
+        ],
+        layout: 'dropdown'
+      }
+    },
+    {
       name: 'cssClass',
       title: 'CSS Class',
       type: 'string',

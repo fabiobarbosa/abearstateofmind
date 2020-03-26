@@ -8,9 +8,18 @@
 
 .item {
   @include gridMinor;
-  font-size: .75rem;
+  @include micro;
   font-family: var(--font-family-mono);
   padding-right: var(--font-base-line-height);
   border-right: 1px solid var(--color-accent);
   border-bottom: 1px solid var(--color-accent);
+}
+
+svg {
+  stroke: var(--color-gold);
+  stroke-width: 3px;
+}
+
+div[class*='icon-normal'] svg {
+  max-width: 7rem;
 }

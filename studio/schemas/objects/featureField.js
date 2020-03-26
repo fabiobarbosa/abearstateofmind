@@ -11,7 +11,7 @@ export default {
     {
       name: 'icon',
       title: 'Icon',
-      type: 'image'
+      type: 'svgUploadPreview'
     },
     {
       name: 'content',
