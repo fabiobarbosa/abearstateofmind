@@ -22,6 +22,13 @@ export default {
       }
     },
     {
+      name: 'excerpt',
+      type: 'text',
+      title: 'Excerpt',
+      description:
+        'This ends up on summary pages, on Google, when people share your post in social media.'
+    },
+    {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
@@ -31,13 +38,6 @@ export default {
       name: 'mainImage',
       type: 'mainImage',
       title: 'Main image'
-    },
-    {
-      name: 'excerpt',
-      type: 'excerptPortableText',
-      title: 'Excerpt',
-      description:
-        'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
       name: 'categories',
@@ -51,6 +51,12 @@ export default {
           }
         }
       ]
+    },
+    {
+      name: 'lead',
+      type: 'leadPortableText',
+      title: 'Lead',
+      description: 'This is a short highlighted paragraph to introduce the content'
     },
     {
       name: 'body',
@@ -93,7 +99,7 @@ export default {
       title: 'title',
       publishedAt: 'publishedAt',
       slug: 'slug',
-      media: 'mainImage'
+      media: 'mainImage.image'
     },
     prepare ({title = 'No title', publishedAt, slug = {}, media}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')

@@ -78,3 +78,7 @@
     }
   }
 }
+
+.lead {
+  @include title2;
+}

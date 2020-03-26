@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 import styles from './page.module.scss'
 
 function Page (props) {
-  const {_rawBody, title, mainImage} = props
+  const {_rawLead, _rawBody, title, publicTitle, mainImage} = props
   return (
     <article className={styles.root}>
       <header>
@@ -15,7 +15,11 @@ function Page (props) {
           containerClass={styles.headerContainer}
           contentClass={styles.headerContent}
         >
-          <h1 className={styles.title}>{title}</h1>
+          <h1 className={styles.title}>{publicTitle || title}</h1>
+
+          {_rawLead && (
+            <PortableText blocks={_rawLead} className={styles.lead} />
+          )}
         </Container>
       </header>
 
@@ -29,7 +33,7 @@ function Page (props) {
               <Img
                 loading='lazy'
                 fluid={mainImage.image.asset.fluid}
-                sizes={{...mainImage.image.asset.fluid, aspectRatio: 21 / 9}}
+                sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                 alt={mainImage.image.alt}
               />
               {(mainImage.image.caption || mainImage.image.attribution) && (

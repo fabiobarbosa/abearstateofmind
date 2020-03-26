@@ -28,10 +28,10 @@ function PostPreview (props) {
         <div className={styles.content}>
           <h3 className={styles.title}>{props.title}</h3>
 
-          {props._rawExcerpt && (
+          {props._rawLead && (
             <div className={styles.excerpt}>
               <PortableText
-                blocks={props._rawExcerpt}
+                blocks={props._rawLead}
                 className={styles.excerptContent}
               />
             </div>

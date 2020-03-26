@@ -63,7 +63,7 @@ export const query = graphql`
             ...SanityImage
           }
           title
-          _rawExcerpt
+          _rawLead
           slug {
             current
           }

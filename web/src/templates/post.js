@@ -27,7 +27,8 @@ export const query = graphql`
       slug {
         current
       }
-      _rawExcerpt(resolveReferences: {maxDepth: 5})
+      excerpt
+      _rawLead(resolveReferences: {maxDepth: 5})
       _rawBody(resolveReferences: {maxDepth: 5})
     }
   }
@@ -40,11 +41,11 @@ const PostTemplate = props => {
   const postNav = next || previous
   return (
     <Layout>
-      {errors && <SEO title="GraphQL Error" />}
+      {errors && <SEO title='GraphQL Error' />}
       {post && (
         <SEO
           title={post.title || 'Untitled'}
-          description={toPlainText(post._rawExcerpt)}
+          description={post.excerpt}
           image={post.mainImage}
         />
       )}

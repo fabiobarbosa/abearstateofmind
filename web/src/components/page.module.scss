@@ -1,15 +1,23 @@
 .root {}
 
 .headerContainer {
-  @include container('normal');
+  @include container('wide');
   background-color: var(--color-black);
   --color-fg: var(--color-white);
   color: var(--color-fg);
 }
 
 .title {
-  @include title1;
-  margin-top: 0;
+  @include titleMega;
+}
+
+.lead {
+  @include title2;
+  margin-top: var(--font-base-line-height);
+
+  p {
+    margin-bottom: 0
+  }
 }
 
 .mainImage {

@@ -14,7 +14,7 @@ import siteSettings from './documents/siteSettings'
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
 import bioPortableText from './objects/bioPortableText'
-import excerptPortableText from './objects/excerptPortableText'
+import leadPortableText from './objects/leadPortableText'
 import layoutField from './objects/layoutField'
 import imageField from './objects/imageField'
 import mainImage from './objects/mainImage'
@@ -44,7 +44,7 @@ export default createSchema({
     mediaEmbed,
     bodyPortableText,
     bioPortableText,
-    excerptPortableText,
+    leadPortableText,
     featureField,
     featureBlock
 

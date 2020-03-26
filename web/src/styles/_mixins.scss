@@ -1,11 +1,25 @@
 // Typography mixins
 
+@mixin titleMega {
+  font-weight: 400;
+  font-size: var(--font-title1-size);
+  line-height: var(--font-title1-line-height);
+  letter-spacing: -0.015em;
+  margin: 0;
+
+  @media ($media-min-medium) {
+    font-size: var(--font-title-mega-size);
+    line-height: var(--font-title-mega-line-height);
+  }
+}
+
 @mixin title1 {
   font-weight: 400;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
   letter-spacing: -0.015em;
-  margin: var(--font-base-line-height) 0 calc(var(--font-base-line-height) * 2);
+  margin-top: var(--font-base-line-height);
+  margin-bottom: calc(var(--font-base-line-height) * 2);
 
   @media ($media-min-medium) {
     font-size: var(--font-title1-size);
@@ -18,8 +32,8 @@
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -0.015em;
-  margin: calc(var(--font-base-line-height) * 1.5) 0
-    calc(var(--font-base-line-height) * 0.5);
+  margin-top: calc(var(--font-base-line-height) * 1.5);
+  margin-bottom: calc(var(--font-base-line-height) * 0.5);
 
   @media ($media-min-small) {
     font-size: var(--font-title3-size);
@@ -37,8 +51,8 @@
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   letter-spacing: -0.015em;
-  margin: var(--font-base-line-height) 0
-    calc(var(--font-base-line-height) * 0.5);
+  margin-top: var(--font-base-line-height);
+  margin-bottom: calc(var(--font-base-line-height) * 0.5);
 
   @media ($media-min-medium) {
     font-size: var(--font-title3-size);
@@ -50,8 +64,8 @@
   font-weight: 600;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
-  margin: var(--font-base-line-height) 0
-    calc(var(--font-base-line-height) * 0.5);
+  margin-top: var(--font-base-line-height);
+  margin-bottom: calc(var(--font-base-line-height) * 0.5);
 
   @media ($media-min-medium) {
     font-size: var(--font-large-size);

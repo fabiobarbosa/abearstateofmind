@@ -7,7 +7,13 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
-      description: 'Titles should be catchy, descriptive, and not too long'
+      description: 'The internal and default title for the page'
+    },
+    {
+      name: 'publicTitle',
+      type: 'string',
+      title: 'Public Title',
+      description: 'Public titles should be catchy, descriptive, and not too long'
     },
     {
       name: 'slug',
@@ -20,16 +26,22 @@ export default {
       }
     },
     {
+      name: 'excerpt',
+      type: 'text',
+      title: 'Excerpt',
+      description:
+        'This ends up on summary pages, on Google, when people share your post in social media.'
+    },
+    {
       name: 'mainImage',
       type: 'mainImage',
       title: 'Main image'
     },
     {
-      name: 'excerpt',
-      type: 'excerptPortableText',
-      title: 'Excerpt',
-      description:
-        'This ends up on summary pages, on Google, when people share your post in social media.'
+      name: 'lead',
+      type: 'leadPortableText',
+      title: 'Lead',
+      description: 'This is a short highlighted paragraph to introduce the content'
     },
     {
       name: 'body',
@@ -63,7 +75,7 @@ export default {
     select: {
       title: 'title',
       slug: 'slug',
-      media: 'mainImage'
+      media: 'mainImage.image'
     },
     prepare ({title = 'No title', slug = {}, media}) {
       const path = `/${slug.current}/`

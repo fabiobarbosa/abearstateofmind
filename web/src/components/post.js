@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 import styles from './post.module.scss'
 
 function Post (props) {
-  const {_rawBody, categories, title, mainImage, publishedAt} = props
+  const {_rawLead, _rawBody, categories, title, mainImage, publishedAt} = props
   return (
     <>
       <article className={styles.root}>
@@ -56,7 +56,7 @@ function Post (props) {
                 <Img
                   loading='lazy'
                   fluid={mainImage.image.asset.fluid}
-                  sizes={{...mainImage.image.asset.fluid, aspectRatio: 21 / 9}}
+                  sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                   alt={mainImage.image.alt}
                 />
                 {(mainImage.image.caption || mainImage.image.attribution) && (
@@ -75,9 +75,16 @@ function Post (props) {
           </div>
         )}
 
-        {_rawBody && (
-          <PortableText blocks={_rawBody} className={styles.mainContainer} />
-        )}
+        <section className={styles.mainContainer}>
+          {_rawLead && (
+            <PortableText blocks={_rawLead} className={`size-large ${styles.lead}`} />
+          )}
+
+          {_rawBody && (
+            <PortableText blocks={_rawBody} />
+          )}
+        </section>
+
       </article>
 
       <Subscribe />

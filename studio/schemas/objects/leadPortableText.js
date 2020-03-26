@@ -1,7 +1,7 @@
 export default {
-  name: 'excerptPortableText',
+  name: 'leadPortableText',
   type: 'array',
-  title: 'Excerpt',
+  title: 'Lead',
   of: [
     {
       title: 'Block',

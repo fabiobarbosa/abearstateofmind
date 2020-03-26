@@ -35,6 +35,9 @@
   --font-title2-line-height: calc(var(--font-unit) * 2.0625 + var(--font-ratio)); /* 33px */
   --font-title1-size: calc(var(--font-unit) * 3.0625 + var(--font-ratio)); /* 49px */
   --font-title1-line-height: calc(var(--font-unit) * 3.5625 + var(--font-ratio)); /* 57px */
+
+  --font-title-mega-size: calc(var(--font-unit) * 4.652 + var(--font-ratio)); /* 74px */
+  --font-title-mega-line-height: calc(var(--font-unit) * 5.35 + var(--font-ratio)); /* 85px */
 }
 
 html {
@@ -82,6 +85,10 @@ table,
 ol,
 ul {
   margin: 0 0 var(--font-base-line-height) 0;
+}
+
+p {
+  max-width: 30rem;
 }
 
 ol,

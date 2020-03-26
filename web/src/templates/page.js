@@ -15,10 +15,12 @@ export const query = graphql`
         ...SanityImage
       }
       title
+      publicTitle
       slug {
         current
       }
-      _rawExcerpt(resolveReferences: {maxDepth: 5})
+      excerpt
+      _rawLead(resolveReferences: {maxDepth: 5})
       _rawBody(resolveReferences: {maxDepth: 5})
     }
   }
@@ -30,7 +32,7 @@ const PageTemplate = props => {
   return (
     <Layout>
       {errors && <SEO title='GraphQL Error' />}
-      {page && <SEO title={page.title || 'Untitled'} description={toPlainText(page._rawExcerpt)} image={page.mainImage} />}
+      {page && <SEO title={page.publicTitle || page.title || 'Untitled'} description={page.excerpt} image={page.mainImage} />}
 
       {errors && (
         <Container>
