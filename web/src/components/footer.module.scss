@@ -2,7 +2,6 @@
 .root {
   --color-fg: var(--color-white);
   --color-bg: var(--color-black);
-  color: var(--color-fg);
   background-color: var(--color-bg);
 }
 
@@ -27,7 +26,6 @@
 
   & ul li a {
     display: block;
-    color: var(--color-fg);
     text-decoration: none;
     line-height: var(--font-base-line-height);
 

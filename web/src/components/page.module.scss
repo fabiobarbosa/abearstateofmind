@@ -4,7 +4,6 @@
   @include container('wide');
   background-color: var(--color-black);
   --color-fg: var(--color-white);
-  color: var(--color-fg);
 }
 
 .title {
@@ -16,6 +15,7 @@
   margin-top: var(--font-base-line-height);
 
   p {
+    max-width: 30rem;
     margin-bottom: 0
   }
 }
@@ -26,13 +26,17 @@
     180deg,
     var(--color-black) 0,
     var(--color-black) 50%,
-    var(--color-white) 0,
-    var(--color-white)
+    var(--color-beige) 0,
+    var(--color-beige)
   );
 }
 
 .mainImageContainer {
   @include container('wide');
+
+  figure {
+    margin-bottom: 0;
+  }
 
   @media ($media-min-medium) {
     & > div {
@@ -44,12 +48,13 @@
 
 .mainContainer {
   @include bodyContainer;
+  background-color: var(--color-beige);
 
   & a {
     color: inherit;
 
     @media (hover: hover) {
-      @nest &:hover {
+      &:hover {
         color: var(--color-accent);
       }
     }

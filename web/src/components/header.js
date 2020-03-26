@@ -40,7 +40,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
             <Link to='/about/'>About</Link>
           </li>
           <li>
-            <Link to='/services/'>Services</Link>
+            <Link to='/work/'>Work</Link>
           </li>
           <li className={styles.separator}/>
           <li>

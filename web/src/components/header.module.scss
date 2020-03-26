@@ -59,7 +59,6 @@
   margin: calc(14 / 17 / 2 * -1rem) 0 0;
   padding: calc(14 / 17 / 2 * 1rem);
   outline: none;
-  color: var(--color-fg);
 
   & svg {
     display: block;
@@ -82,7 +81,6 @@
 
   & ul li a {
     display: block;
-    color: var(--color-fg);
     text-decoration: none;
     line-height: var(--font-base-line-height);
 

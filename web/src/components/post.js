@@ -75,7 +75,7 @@ function Post (props) {
           </div>
         )}
 
-        <section className={styles.mainContainer}>
+        <div className={styles.mainContainer}>
           {_rawLead && (
             <PortableText blocks={_rawLead} className={`size-large ${styles.lead}`} />
           )}
@@ -83,7 +83,7 @@ function Post (props) {
           {_rawBody && (
             <PortableText blocks={_rawBody} />
           )}
-        </section>
+        </div>
 
       </article>
 

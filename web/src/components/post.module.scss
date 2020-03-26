@@ -15,6 +15,10 @@
 .mainImageContainer {
   @include container('wide');
 
+  figure {
+    margin-bottom: 0;
+  }
+
   @media ($media-min-medium) {
     & > div {
       padding-top: 0;
@@ -27,7 +31,6 @@
   @include container('wide');
   background-color: var(--color-black);
   --color-fg: var(--color-white);
-  color: var(--color-fg);
 }
 
 .title {
@@ -50,11 +53,7 @@
   }
 
   & a {
-    color: var(--color-accent);
-    text-decoration: none;
-    border: 1px solid var(--color-accent);
-    padding: .5rem 1rem;
-    border-radius: 2px;
+    @include button
   }
 
   @media (hover: hover) {

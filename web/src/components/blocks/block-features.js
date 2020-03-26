@@ -1,13 +1,17 @@
 import React from 'react'
 import {imageUrlFor} from '../../lib/image-url'
 import {buildImageObj} from '../../lib/helpers'
+import PortableText from '../portableText'
 
 import styles from './block-features.module.scss'
 
 export default ({node}) => {
   console.log({node})
   return (
-    <div className={node.layout}>
+    <div className={
+      `${node.cssClass ? node.cssClass : ''}
+      ${node.layout ? node.layout : ''}`
+    }>
       {node.title && (
         <h2 className={styles.title}>{node.title}</h2>
       )}
@@ -20,10 +24,19 @@ export default ({node}) => {
                 src={imageUrlFor(buildImageObj(feature.icon))
                   .width(100)
                   .url()}
+                alt
               />
             )}
-            <h3 className={styles.title}>{feature.title}</h3>
-            <div>{feature.content}</div>
+
+            {feature.title && (
+              <h3 className={styles.title}>{feature.title}</h3>
+            )}
+
+            {feature.content && (
+              <div>
+                <PortableText blocks={feature.content} />
+              </div>
+            )}
           </div>
         ))}
       </div>
