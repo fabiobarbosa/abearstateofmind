@@ -147,11 +147,7 @@ figcaption {
 // Specifics
 
 .workfields-feature-block {
-  background-color: var(--color-accent);
-
-  & div[class*='block-features-module--item'] {
-    border-color: var(--color-beige);
-  }
+  background-color: var(--color-white);
 }
 
 .brandwall-image-block picture {
