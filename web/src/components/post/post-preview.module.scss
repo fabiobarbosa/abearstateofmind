@@ -58,7 +58,8 @@
   margin-top: 0;
 
   @media (hover: hover) {
-    .root:hover & {
+    .root:hover &,
+    .root:active & {
       text-decoration: underline;
     }
   }

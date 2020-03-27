@@ -1,3 +1,33 @@
+@-webkit-keyframes rotating { // Safari + Chrome
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
 .root {
   --color-bg: var(--color-black);
   --color-fg: var(--color-white);
@@ -22,11 +52,12 @@
     text-decoration: none;
 
     @media (hover: hover) {
-      &:hover {
+      &:hover,
+      &:active {
         color: var(--color-accent);
 
         & svg {
-          fill: var(--color-accent);
+          fill: var(--color-fg);
         }
       }
     }
@@ -41,12 +72,28 @@
 }
 
 .logo {
+  position: relative;
   width: 7vw;
   max-width: 3.25rem;
   height: auto;
 
   svg {
-    fill: var(--color-fg);
+    fill: var(--color-accent);
+    transition: fill 0.5s ease;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    top: -200%;
+    left: -200%;
+    z-index: -1;
+    background: url('../static/logo_rays.svg') center no-repeat;
+    -webkit-animation: rotating 60s linear infinite;
+    -o-animation: rotating 77s linear infinite;
+    animation: rotating 77s linear infinite;
   }
 }
 
@@ -89,7 +136,8 @@
     }
 
     @media (hover: hover) {
-      &:hover {
+      &:hover,
+      &:active {
         color: var(--color-accent);
       }
     }
@@ -132,7 +180,8 @@
       }
 
       @media (hover: hover) {
-        &:hover {
+        &:hover,
+        &:active {
           color: var(--color-accent);
         }
       }

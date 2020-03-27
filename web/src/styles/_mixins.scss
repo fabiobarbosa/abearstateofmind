@@ -111,7 +111,8 @@
   text-decoration: none;
 
   @media (hover: hover) {
-    &:hover {
+    &:hover,
+    &:active {
       text-decoration: underline;
     }
   }
@@ -128,7 +129,8 @@
   border: 2px solid var(--color-accent);
 
   @media (hover: hover) {
-    &:hover {
+    &:hover,
+    &:active {
       color: var(--color-black);
       background-color: var(--color-accent);
     }

@@ -57,7 +57,8 @@
   }
 
   @media (hover: hover) {
-    & a:hover {
+    & a:hover,
+    & a:active {
       color: var(--color-black);
       background-color: var(--color-accent);
     }
@@ -92,7 +93,8 @@
     color: inherit;
 
     @media (hover: hover) {
-      &:hover {
+      &:hover,
+      &:active {
         color: var(--color-accent);
       }
     }

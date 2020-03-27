@@ -30,7 +30,8 @@
   }
 
   @media (hover: hover) {
-    & a:hover {
+    & a:hover,
+    & a:active {
       text-decoration: underline;
     }
   }

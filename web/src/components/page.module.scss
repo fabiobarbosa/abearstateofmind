@@ -54,7 +54,8 @@
     color: inherit;
 
     @media (hover: hover) {
-      &:hover {
+      &:hover,
+      &:active {
         color: var(--color-accent);
       }
     }
