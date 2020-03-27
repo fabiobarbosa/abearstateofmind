@@ -21,7 +21,7 @@ const PostNav = ({next, previous}) => {
               title='Previous post'
             >
               <span className={styles.headline}>Previous Post:</span>
-              {previous.title}
+              <p>{previous.title}</p>
             </Link>
           </div>
         )}
@@ -32,7 +32,7 @@ const PostNav = ({next, previous}) => {
               title='Next post'
             >
               <span className={styles.headline}>Next Post:</span>
-              {next.title}
+              <p>{next.title}</p>
             </Link>
           </div>
         )}

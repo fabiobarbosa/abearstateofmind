@@ -12,6 +12,7 @@
 
 .nav {
   @include textAlt;
+  text-transform: none;
 
   & ul {
     list-style: none;

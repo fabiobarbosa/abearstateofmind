@@ -17,7 +17,6 @@
   font-weight: 400;
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
-  letter-spacing: -0.015em;
   margin-top: var(--font-base-line-height);
   margin-bottom: calc(var(--font-base-line-height) * 2);
 
@@ -31,7 +30,6 @@
   font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
-  letter-spacing: -0.015em;
   margin-top: calc(var(--font-base-line-height) * 1.5);
   margin-bottom: calc(var(--font-base-line-height) * 0.5);
 
@@ -50,7 +48,6 @@
   font-weight: 600;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
-  letter-spacing: -0.015em;
   margin-top: var(--font-base-line-height);
   margin-bottom: calc(var(--font-base-line-height) * 0.5);
 
@@ -76,7 +73,6 @@
 @mixin large {
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
-  letter-spacing: -0.015em;
 }
 
 @mixin base {
@@ -87,7 +83,6 @@
 @mixin small {
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
-  letter-spacing: -0.015em;
 }
 
 @mixin micro {
@@ -99,9 +94,8 @@
   font-family: var(--font-family-mono);
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
-  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
 }
 
 @mixin navLink {

@@ -1,7 +1,7 @@
 :root {
   // These go here otherwise they'll be bundled separately on each component
-  --font-family-serif: 'EB Garamond', 'Garamond', 'Athelas', Georgia, Times, serif;
-  --font-family-mono: 'Roboto Mono', 'Menlo', 'Courier New', monospace;
+  --font-family-serif: 'Calendas Plus', 'EB Garamond', 'Garamond', 'Athelas', Georgia, Times, serif;
+  --font-family-mono: 'IBM Plex Mono', 'Roboto Mono', 'Menlo', 'Courier New', monospace;
 
   --color-black: #13111e;
   --color-dark-gray: #2a2834;
@@ -22,7 +22,7 @@
   --font-unit: 16px;
   --font-ratio: 0.5vw;
   --font-micro-size: calc(var(--font-unit) * 0.625 + var(--font-ratio)); /* 10px */
-  --font-micro-line-height: calc(var(--font-unit) * 0.75 + var(--font-ratio)); /* 12px */
+  --font-micro-line-height: calc(var(--font-unit) * 0.85 + var(--font-ratio)); /* 12px */
   --font-small-size: calc(var(--font-unit) * 0.875 + var(--font-ratio)); /* 14px */
   --font-small-line-height: calc(var(--font-unit) * 1.3125 + var(--font-ratio)); /* 21px */
   --font-base-size: calc(var(--font-unit) + var(--font-ratio)); /* 16px */
@@ -136,7 +136,7 @@ figcaption {
 }
 
 .hero__module--home {
-  background-image: url('../static/flos_vitae.svg');
+  background-image: url('../static/images/flos_vitae.svg');
   background-repeat: no-repeat;
   background-position: center -35%;
   background-size: 100%;
@@ -157,6 +157,11 @@ figcaption {
   margin-bottom: 0;
 }
 
+.heroDescription {
+  @include title2;
+  max-width: 37.5rem;
+  margin-bottom: 0;
+}
 
 // Specifics
 

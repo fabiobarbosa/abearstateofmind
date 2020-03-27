@@ -9,6 +9,11 @@
 }
 
 .content {
+  p {
+    margin-top: calc(var(--font-base-line-height)* .25);
+    margin-bottom: 0;
+  }
+
   @media ($media-min-medium) {
     display: grid;
     grid-template-columns: 1fr 1fr;

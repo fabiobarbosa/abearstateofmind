@@ -91,7 +91,7 @@
     top: -204%;
     left: -165.5%;
     pointer-events: none;
-    background: url('../static/logo_rays.svg') center no-repeat;
+    background: url('../static/images/logo_rays.svg') center no-repeat;
   }
 
   @media ($media-min-medium) and (prefers-reduced-motion: no-preference) {
@@ -127,6 +127,7 @@
 .nav {
   display: none;
   @include textAlt;
+  text-transform: none;
 
   & ul {
     margin: 0;
@@ -207,7 +208,7 @@
 
   @media($media-min-medium) {
     display: block;
-    width: 7vw;
-    max-width: 3.25rem;
+    width: 25vw;
+    max-width: 10rem;
   }
 }
