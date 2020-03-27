@@ -1,3 +1,7 @@
+.root {
+  margin-bottom: var(--font-base-line-height);
+}
+
 .title {
   @include textAlt;
 }
@@ -15,11 +19,8 @@
   border-bottom: 1px solid var(--color-accent);
 }
 
-svg {
-  stroke: var(--color-gold);
-  stroke-width: 3px;
-}
-
-div[class*='icon-normal'] svg {
-  max-width: 7rem;
+div[class*='icon-size-normal'] svg {
+  max-width: 3.5rem;
+  height: auto;
+  margin-bottom: var(--font-base-line-height);
 }

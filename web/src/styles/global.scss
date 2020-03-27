@@ -9,6 +9,7 @@
   --color-light-gray: #b4bcc7;
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
+  --color-teal: #1a2831;
   --color-red: #ff3530;
   --color-gold: #b79b30;
   --color-beige: #f1ecd9;
@@ -145,6 +146,13 @@ figcaption {
 
 
 // Specifics
+
+.principles-feature-block {
+  & svg {
+    stroke: var(--color-gold);
+    stroke-width: 3px;
+  }
+}
 
 .workfields-feature-block {
   background-color: var(--color-white);

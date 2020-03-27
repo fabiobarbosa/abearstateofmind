@@ -1,16 +1,13 @@
 import React from 'react'
-import {imageUrlFor} from '../../lib/image-url'
-import Img from 'gatsby-image'
-import {getFluidGatsbyImage} from 'gatsby-source-sanity'
-import clientConfig from '../../../client-config'
 import PortableText from '../portableText'
 
 import styles from './block-features.module.scss'
 
 export default ({node}) => {
   return (
-    <div className={
-      `${node.cssClass ? node.cssClass : ''}
+    <div className={`
+      ${styles.root}
+      ${node.cssClass ? node.cssClass : ''}
       ${node.iconSize ? node.iconSize : ''}
       ${node.layout ? node.layout : ''}`
     }>

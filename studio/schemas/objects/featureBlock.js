@@ -34,8 +34,8 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Normal', value: 'icon-normal'},
-          {title: 'Full', value: 'icon-full'}
+          {title: 'Normal', value: 'icon-size-normal'},
+          {title: 'Full', value: 'icon-size-full'}
         ],
         layout: 'dropdown'
       }

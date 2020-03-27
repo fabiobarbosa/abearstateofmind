@@ -1,8 +1,8 @@
 import {format, distanceInWords, differenceInDays} from 'date-fns'
 import React from 'react'
 import {Link} from 'gatsby'
-import Subscribe from './subscribe'
 import PortableText from './portableText'
+import Subscribe from './subscribe'
 import Container from './container'
 
 import Img from 'gatsby-image'
@@ -75,15 +75,13 @@ function Post (props) {
           </div>
         )}
 
-        <div className={styles.mainContainer}>
-          {_rawLead && (
-            <PortableText blocks={_rawLead} className={`size-large ${styles.lead}`} />
-          )}
+        {_rawLead && (
+          <PortableText blocks={_rawLead} className={styles.lead} />
+        )}
 
-          {_rawBody && (
-            <PortableText blocks={_rawBody} />
-          )}
-        </div>
+        {_rawBody && (
+          <PortableText blocks={_rawBody} className={styles.mainContainer} />
+        )}
 
       </article>
 

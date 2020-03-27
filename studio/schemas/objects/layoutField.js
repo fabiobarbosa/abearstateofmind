@@ -4,11 +4,11 @@ export default {
   type: 'string',
   options: {
     list: [
-      {title: 'Normal', value: 'size-normal'},
-      {title: 'Large', value: 'size-large'},
-      {title: 'Wide', value: 'size-wide'},
-      {title: 'Full', value: 'size-full'},
-      {title: 'Full+Filled', value: 'size-fullfilled'}
+      {title: 'Normal', value: 'layout-size-normal'},
+      {title: 'Large', value: 'layout-size-large'},
+      {title: 'Wide', value: 'layout-size-wide'},
+      {title: 'Full', value: 'layout-size-full'},
+      {title: 'Full+Filled', value: 'layout-size-fullfilled'}
     ],
     layout: 'dropdown'
   }

@@ -111,7 +111,7 @@
   text-decoration: none;
 
   @media (hover: hover) {
-    @nest &:hover {
+    &:hover {
       text-decoration: underline;
     }
   }
@@ -123,7 +123,7 @@
   color: var(--color-accent);
   line-height: var(--font-base-line-height);
   text-decoration: none;
-  padding: .25rem 1rem;
+  padding: 0.25rem 1rem;
   border-radius: 1rem;
   border: 2px solid var(--color-accent);
 
@@ -183,11 +183,11 @@
 @mixin bodyContainer {
   padding: var(--font-base-line-height);
 
-  & > *[class*='size-wide'] {
+  & > *[class*='layout-size-wide'] {
     margin-bottom: var(--font-base-line-height);
   }
 
-  & > *[class*='size-full'] {
+  & > *[class*='layout-size-full'] {
     // This selector applies to both full and fulfilled divs
     margin-left: calc(var(--font-base-line-height) * -1);
     margin-right: calc(var(--font-base-line-height) * -1);
@@ -195,7 +195,7 @@
     margin-bottom: calc(var(--font-base-line-height) * 2);
   }
 
-  & > *[class*='size-fullfilled'] {
+  & > *[class*='layout-size-fullfilled'] {
     padding: var(--font-base-line-height);
   }
 
@@ -213,13 +213,13 @@
     padding-top: calc(var(--font-base-line-height) * 3);
     padding-bottom: calc(var(--font-base-line-height) * 3);
 
-    & > *:not([class*='size-large']):not([class*='size-wide']):not([class*='size-full']) {
+    & > *:not([class*='layout-size-large']):not([class*='layout-size-wide']):not([class*='layout-size-full']) {
       max-width: 30rem;
       margin-left: auto;
       margin-right: auto;
     }
 
-    & > *[class*='size-large'] {
+    & > *[class*='layout-size-large'] {
       max-width: 37.5rem;
       margin-left: auto;
       margin-right: auto;
@@ -227,7 +227,7 @@
       margin-bottom: calc(var(--font-base-line-height) * 2);
     }
 
-    & > *[class*='size-wide'] {
+    & > *[class*='layout-size-wide'] {
       max-width: 85rem;
       margin-left: auto;
       margin-right: auto;
@@ -235,7 +235,7 @@
       margin-bottom: calc(var(--font-base-line-height) * 3);
     }
 
-    & > *[class*='size-full'] {
+    & > *[class*='layout-size-full'] {
       // This selector applies to both full and fulfilled divs
       margin-left: calc(var(--font-base-line-height) * -2);
       margin-right: calc(var(--font-base-line-height) * -2);
@@ -243,7 +243,7 @@
       margin-bottom: calc(var(--font-base-line-height) * 3);
     }
 
-    & > *[class*='size-fullfilled'] {
+    & > *[class*='layout-size-fullfilled'] {
       padding-left: calc(var(--font-base-line-height) * 2);
       padding-right: calc(var(--font-base-line-height) * 2);
       padding-top: calc(var(--font-base-line-height) * 3);

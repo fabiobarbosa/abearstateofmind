@@ -6,8 +6,8 @@ import {
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
-import Subscribe from '../components/subscribe'
 import PostPreviewList from '../components/post/post-preview-list'
+import Subscribe from '../components/subscribe'
 import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'

@@ -15,9 +15,9 @@ export default ({node}) => {
     clientConfig.sanity
   )
   return (
-    <figure className={
-      `${node.cssClass ? node.cssClass : ''}
-      ${node.layout ? node.layout : ''}`
+    <figure className={`
+      ${node.layout ? node.layout : ''}
+      ${node.cssClass ? node.cssClass : ''}`
     }>
       {node.title && (<h3 className={styles.title}>{node.title}</h3>)}
       <Img loading='lazy' fluid={fluidProps} alt={node.image.alt} />
