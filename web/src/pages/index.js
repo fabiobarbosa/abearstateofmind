@@ -106,7 +106,8 @@ const IndexPage = props => {
       />
 
       <Container containerClass='hero__module hero__module--home'>
-        <h2 className='heroTitle'>{site.intro}</h2>
+        <h2 className='heroTitle'>Welcome!</h2>
+        <h3 className='heroSubtitle'>{site.intro}</h3>
       </Container>
 
       {postNodes && (

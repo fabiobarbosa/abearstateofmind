@@ -94,7 +94,7 @@
     background: url('../static/logo_rays.svg') center no-repeat;
   }
 
-  @media ($media-min-medium) {
+  @media ($media-min-medium) and (prefers-reduced-motion: no-preference) {
     &:after {
       transform-origin: center;
       -webkit-animation: rotating 60s linear infinite;

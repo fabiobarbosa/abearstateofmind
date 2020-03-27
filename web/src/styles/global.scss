@@ -131,26 +131,30 @@ figcaption {
 .hero__module {
   --color-fg: var(--color-white);
   --color-bg: var(--color-black);
-  @include container('normal');
+  @include container('wide');
   background-color: var(--color-bg);
 }
 
 .hero__module--home {
-  position: relative;
-
   background-image: url('../static/flos_vitae.svg');
   background-repeat: no-repeat;
-  background-position: center -40%;
-  background-size: 70%;
+  background-position: center -35%;
+  background-size: 100%;
+
+  @media($media-min-large) {
+    background-position: center -40%;
+    background-size: 70%;
+  }
 }
 
 .heroTitle {
-  @include title1;
-  margin-top: 0;
+  @include titleMega;
 }
 
 .heroSubtitle {
-  @include title2;
+  @include title1;
+  max-width: 37.5rem;
+  margin-bottom: 0;
 }
 
 
