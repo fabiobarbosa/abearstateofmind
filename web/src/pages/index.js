@@ -105,7 +105,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
 
-      <Container containerClass='hero--module'>
+      <Container containerClass='hero__module hero__module--home'>
         <h2 className='heroTitle'>{site.intro}</h2>
       </Container>
 

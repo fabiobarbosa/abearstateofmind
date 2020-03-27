@@ -49,7 +49,7 @@ const BlogPage = props => {
     <Layout>
       <SEO title='Blog' />
 
-      <Container containerClass={'hero--module'}>
+      <Container containerClass={'hero__module'}>
         <h1 className='heroTitle'>Blog</h1>
       </Container>
 

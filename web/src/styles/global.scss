@@ -4,13 +4,13 @@
   --font-family-mono: 'Roboto Mono', 'Menlo', 'Courier New', monospace;
 
   --color-black: #13111e;
-  --color-dark-gray: #32373e;
-  --color-gray: #5a697c;
-  --color-light-gray: #b4bcc7;
-  --color-very-light-gray: #e7ebed;
+  --color-dark-gray: #2a2834;
+  --color-gray: #595861;
+  --color-light-gray: #b8b7bb;
+  --color-very-light-gray: #e7e7e8;
   --color-white: #fff;
-  --color-teal: #1a2831;
-  --color-red: #ff3530;
+  // --color-teal: #1a2831;
+  // --color-red: #ff3530;
   --color-gold: #b79b30;
   --color-beige: #f1ecd9;
 
@@ -128,11 +128,20 @@ figcaption {
   background: var(--color-very-light-gray);
 }
 
-.hero--module {
+.hero__module {
   --color-fg: var(--color-white);
   --color-bg: var(--color-black);
   @include container('normal');
   background-color: var(--color-bg);
+}
+
+.hero__module--home {
+  position: relative;
+
+  background-image: url('../static/flos_vitae.svg');
+  background-repeat: no-repeat;
+  background-position: center -40%;
+  background-size: 70%;
 }
 
 .heroTitle {

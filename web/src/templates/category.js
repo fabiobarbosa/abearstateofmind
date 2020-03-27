@@ -51,7 +51,7 @@ const CategoryPage = props => {
   return (
     <Layout>
       <SEO title={title} />
-      <Container containerClass='hero--module'>
+      <Container containerClass='hero__module'>
         <h1 className='heroTitle'>{title}</h1>
         {description && <h2 className='heroSubtitle'>{description}</h2>}
       </Container>

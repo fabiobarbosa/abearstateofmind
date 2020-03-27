@@ -34,6 +34,7 @@
 
   position: relative;
   background-color: var(--color-bg);
+  z-index: 50;
 }
 
 .container {
@@ -57,7 +58,7 @@
         color: var(--color-accent);
 
         & svg {
-          fill: var(--color-fg);
+          fill: var(--color-accent);
         }
       }
     }
@@ -78,23 +79,28 @@
   height: auto;
 
   svg {
-    fill: var(--color-accent);
+    fill: var(--color-fg);
     transition: fill 0.5s ease;
   }
 
   &:after {
     content: '';
     position: absolute;
-    width: 500%;
+    width: 430%;
     height: 500%;
     top: -204%;
-    left: -200%;
-    z-index: -1;
+    left: -165.5%;
     pointer-events: none;
     background: url('../static/logo_rays.svg') center no-repeat;
-    -webkit-animation: rotating 60s linear infinite;
-    -o-animation: rotating 77s linear infinite;
-    animation: rotating 77s linear infinite;
+  }
+
+  @media ($media-min-medium) {
+    &:after {
+      transform-origin: center;
+      -webkit-animation: rotating 60s linear infinite;
+      -o-animation: rotating 77s linear infinite;
+      animation: rotating 77s linear infinite;
+    }
   }
 }
 
@@ -131,6 +137,7 @@
     display: block;
     text-decoration: none;
     line-height: var(--font-base-line-height);
+    transition: color 0.5s ease;
 
     &[aria-current='page'] {
       color: var(--color-accent);
