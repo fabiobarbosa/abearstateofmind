@@ -87,9 +87,10 @@
     position: absolute;
     width: 500%;
     height: 500%;
-    top: -200%;
+    top: -204%;
     left: -200%;
     z-index: -1;
+    pointer-events: none;
     background: url('../static/logo_rays.svg') center no-repeat;
     -webkit-animation: rotating 60s linear infinite;
     -o-animation: rotating 77s linear infinite;
