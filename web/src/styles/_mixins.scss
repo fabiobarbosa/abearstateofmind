@@ -45,7 +45,7 @@
 }
 
 @mixin title3 {
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   margin-top: var(--font-base-line-height);
@@ -58,7 +58,7 @@
 }
 
 @mixin title4 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
   margin-top: var(--font-base-line-height);
