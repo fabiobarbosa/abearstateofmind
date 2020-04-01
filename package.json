@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "sanity-gatsby-blog",
   "version": "1.0.4",
   "scripts": {
@@ -12,6 +11,15 @@
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fabiobarbosa/abearstateofmind.git"
+  },
+  "author": {
+    "name": "Fábio Barbosa",
+    "email": "hello@fabiobarbosa.net",
+    "url": "https://fabiobarbosa.net/"
   },
   "devDependencies": {
     "@sanity/cli": "^0.146.0",
