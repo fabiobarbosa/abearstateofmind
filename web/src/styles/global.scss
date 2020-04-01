@@ -301,8 +301,8 @@ textarea
   border-bottom: 1px solid var(--color-accent);
 }
 
-input:invalid,
-textarea:invalid {
+input:not(:placeholder-shown):invalid,
+textarea:not(:placeholder-shown):invalid {
   box-shadow: none;
   border-right: 1px solid red;
   border-bottom: 1px solid red;
