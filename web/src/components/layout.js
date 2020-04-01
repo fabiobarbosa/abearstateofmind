@@ -8,8 +8,8 @@ import '../styles/global.scss'
 import styles from './layout.module.scss'
 import '@reach/skip-nav/styles.css' // this will auto show and hide the link on focus
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, isHome }) => (
-  <>
+const Layout = ({ children, template, onHideNav, onShowNav, showNav, siteTitle, isHome }) => (
+  <div className={`template--${template}`}>
     <SkipNavLink />
     <Header
       siteTitle={siteTitle}
@@ -21,7 +21,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, isHome }) 
     <SkipNavContent />
     <main className={styles.content}>{children}</main>
     <Footer />
-  </>
+  </div>
 )
 
 export default Layout

@@ -17,7 +17,7 @@ export default {
     },
     {
       name: 'intro',
-      type: 'text',
+      type: 'leadPortableText',
       title: 'Introduction',
       description: 'Write a short introduction to your blog\'s homepage.'
     },

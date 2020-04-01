@@ -46,7 +46,7 @@ const BlogPage = props => {
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
-    <Layout>
+    <Layout template='blog'>
       <SEO title='Blog' />
 
       <Container containerClass={'hero__module'}>

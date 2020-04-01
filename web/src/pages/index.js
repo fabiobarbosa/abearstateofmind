@@ -8,6 +8,7 @@ import {
 import GraphQLErrorList from '../components/graphql-error-list'
 import PostPreviewList from '../components/post/post-preview-list'
 import Subscribe from '../components/subscribe'
+import PortableText from '../components/portableText'
 import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
@@ -46,7 +47,7 @@ export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
-      intro
+      _rawIntro
       description
       keywords
     }
@@ -98,7 +99,7 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout isHome='true'>
+    <Layout isHome='true' template='home'>
       <SEO
         title={site.title}
         description={site.description}
@@ -107,7 +108,9 @@ const IndexPage = props => {
 
       <Container containerClass='hero__module hero__module--home'>
         <h2 className='heroTitle'>Welcome!</h2>
-        <h3 className='heroSubtitle'>{site.intro}</h3>
+        {site._rawIntro && (
+          <PortableText blocks={site._rawIntro} className='heroSubtitle' />
+        )}
       </Container>
 
       {postNodes && (

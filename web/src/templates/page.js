@@ -30,7 +30,7 @@ const PageTemplate = props => {
   const {data, errors} = props
   const page = data && data.page
   return (
-    <Layout>
+    <Layout template='page'>
       {errors && <SEO title='GraphQL Error' />}
       {page && <SEO title={page.publicTitle || page.title || 'Untitled'} description={page.excerpt} image={page.mainImage} />}
 

@@ -12,7 +12,8 @@
 
 .lead {
   @include title2;
-  margin-top: var(--font-base-line-height);
+  margin-top: 0;
+  font-family: var(--font-family-mono);
 
   p {
     max-width: 30rem;

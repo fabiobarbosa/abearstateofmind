@@ -21,11 +21,11 @@ module.exports = {
         overlayDrafts: !isProd
       }
     },
-    {
+    { 
       resolve: 'gatsby-plugin-sass',
       options: {
         data: '@import "_variables.scss", "_mixins.scss";',
-        includePaths: [path.resolve(__dirname, './src/styles/')],
+        includePaths: [path.resolve(__dirname, './src/styles/')]
       }
     }
   ]
