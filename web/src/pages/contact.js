@@ -26,7 +26,7 @@ const ContactPage = () => {
         <h2>Or just use this contact form.</h2>
         <p>I promise to reply within 24 hours. Your time is precious. I get that. Required fields are highlighted with an asterisk.</p>
 
-        <form name='contact' method='POST' netlify-honeypot='bot-field' data-netlify='true' action='/success'>
+        <form name='contact' method='POST' netlify-honeypot='bot-field' data-netlify='true' action='#'>
           <input type='hidden' name='form-name' value='contact' />
           <input type='hidden' name='bot-field' />
 
