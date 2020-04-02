@@ -2,8 +2,9 @@
 
 .headerContainer {
   @include container('wide');
-  background-color: var(--color-black);
-  --color-fg: var(--color-white);
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-black);
+  background-color: var(--color-bg);
 }
 
 .title {
@@ -25,8 +26,8 @@
   display: block;
   background: linear-gradient(
     180deg,
-    var(--color-black) 0,
-    var(--color-black) 50%,
+    var(--color-white) 0,
+    var(--color-white) 50%,
     var(--color-beige) 0,
     var(--color-beige)
   );

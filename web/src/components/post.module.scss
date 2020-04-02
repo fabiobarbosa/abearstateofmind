@@ -28,9 +28,10 @@
 }
 
 .headerContainer {
-  @include container('wide');
-  background-color: var(--color-black);
+  --color-bg: var(--color-black);
   --color-fg: var(--color-white);
+  @include container('wide');
+  background-color: var(--color-bg);
 }
 
 .title {

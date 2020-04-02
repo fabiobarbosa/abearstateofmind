@@ -205,9 +205,26 @@ figcaption {
   }
 }
 
+.template--page {
+  header[class*='header-module--root'] {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
+}
+
 .template--contact {
   --color-bg: var(--color-black);
   --color-fg: var(--color-white);
+
+  header[class*='header-module--root'] {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
+
+  .hero__module {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
 }
 
 .contact__section {
