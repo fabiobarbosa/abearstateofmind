@@ -22,27 +22,26 @@ const ContactPage = () => {
         <p className='emailAddress'>
           <a href='mailto:hello@fabiobarbosa.net'>hello[at]fabio&#8203;barbosa[dot]net</a>
         </p>
-        
+
         <h2>Or just use this contact form.</h2>
         <p>I promise to reply within 24 hours. Your time is precious. I get that. Required fields are highlighted with an asterisk.</p>
 
-        <form name='contact' method='POST' netlify-honeypot='bot-field' data-netlify='true' action='/contact'>
-          <label htmlFor='form-name'>Your name</label>
-          <input id='form-name' name='name' type='text' required placeholder={`You may use your superhero name, but should you?`} />
-          
-          <label htmlFor='form-replyto'>Your e-mail address</label>
-          <input id='form-replyto' name='_replyto' type='email' required placeholder={`Yes, I'm fine even with Hotmail and AOL.`} />
+        <form name='contact' method='POST' netlify-honeypot='bot-field' data-netlify='true' action='/success'>
+          <input type='hidden' name='form-name' value='contact' />
+          <input type='hidden' name='bot-field' />
 
-          <label htmlFor='form-phone'>Your phone number</label>
-          <input id='form-phone' name='telephone' placeholder={`Don't forget your country's international prefix!`} type='tel' />
+          <label htmlFor='name'>Your name</label>
+          <input id='name' name='name' type='text' required placeholder='You may use your superhero name, but should you?' />
 
-          <label htmlFor='form-message'>Your message</label>
-          <textarea id='form-message' required placeholder={`Type your message here…`} name='message' rows='6' />
+          <label htmlFor='replyto'>Your e-mail address</label>
+          <input id='replyto' name='_replyto' type='email' required placeholder={`Yes, I'm fine even with Hotmail and AOL.`} />
 
-          <label className='visuallyHidden'>
-            Don’t fill this out if you're human: 
-            <input name='bot-field' />
-          </label>
+          <label htmlFor='phone'>Your phone number</label>
+          <input id='phone' name='telephone' placeholder={`Don't forget your country's international prefix!`} type='tel' />
+
+          <label htmlFor='message'>Your message</label>
+          <textarea id='message' required placeholder={`Type your message here…`} name='message' rows='6' />
+
 
           <button type='submit' id='contact-submit' data-submit='…Sending'>Submit</button>
         </form>
