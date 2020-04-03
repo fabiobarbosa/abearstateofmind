@@ -32,6 +32,14 @@
   --color-fg: var(--color-white);
   @include container('wide');
   background-color: var(--color-bg);
+
+  & > .headerContent {
+    padding-top: calc(var(--font-base-line-height) * 7);
+
+    @media($media-min-medium) {
+      padding-top: calc(var(--font-base-line-height) * 12);
+    }
+  }
 }
 
 .title {

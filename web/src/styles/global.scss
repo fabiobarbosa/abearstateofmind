@@ -180,12 +180,20 @@ figcaption {
   --color-bg: var(--color-black);
   @include container('wide');
   background-color: var(--color-bg);
+
+  > .content {
+    padding-top: calc(var(--font-base-line-height) * 7);
+
+    @media($media-min-medium) {
+      padding-top: calc(var(--font-base-line-height) * 12);
+    }
+  }
 }
 
 .hero__module--home {
   background-image: url('../static/images/flos_vitae.svg');
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center calc(100% - var(--font-base-line-height) * -2.5);
   background-size: 100%;
 }
 
@@ -213,7 +221,7 @@ figcaption {
 }
 
 .template--contact {
-  --color-bg: var(--color-black);
+  --color-bg: var(--color-dark-gray);
   --color-fg: var(--color-white);
 
   header[class*='header-module--root'] {

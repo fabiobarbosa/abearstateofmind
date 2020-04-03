@@ -32,8 +32,10 @@
   --color-bg: var(--color-black);
   --color-fg: var(--color-white);
 
-  position: relative;
-  background-color: var(--color-bg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
 }
 
@@ -49,6 +51,7 @@
   flex: 1;
 
   & a {
+    display: inline-block;
     color: inherit;
     text-decoration: none;
 
@@ -74,22 +77,22 @@
 
 .logo {
   position: relative;
-  width: 7vw;
-  max-width: 3.25rem;
+  width: 12vw;
   height: auto;
+  max-width: 3.25rem;
 
   svg {
     fill: var(--color-fg);
-    transition: fill 0.5s ease;
+    transition: fill 0.25s ease;
   }
 
   &:after {
     content: '';
     position: absolute;
-    width: 430%;
-    height: 500%;
-    top: -204%;
-    left: -165.5%;
+    width: 447%;
+    height: 520%;
+    top: -215%;
+    left: -172.5%;
     pointer-events: none;
     background: url('../static/images/logo_rays.svg') center no-repeat;
   }
@@ -107,7 +110,7 @@
 .toggleNavButton {
   cursor: pointer;
   appearance: none;
-  font-size: 25px;
+  font-size: 45px;
   border: none;
   background: none;
   margin: calc(14 / 17 / 2 * -1rem) 0 0;
@@ -132,13 +135,14 @@
   & ul {
     margin: 0;
     padding: 0;
+    list-style: none;
   }
 
   & ul li a {
     display: block;
     text-decoration: none;
     line-height: var(--font-base-line-height);
-    transition: color 0.5s ease;
+    transition: color 0.25s ease;
 
     &[aria-current='page'] {
       color: var(--color-accent);
@@ -155,10 +159,12 @@
   @media ($media-max-medium) {
     position: absolute;
     background: var(--color-bg);
-    left: 0;
-    right: 0;
-    top: 4.3rem;
+    left: calc(var(--font-base-line-height) * 5);
+    right: var(--font-base-line-height);
+    top: 4.5rem;
     z-index: 100;
+    border-left: 6px solid var(--color-accent);
+    box-shadow: 0 0 1rem rgba(0,0,0,.25); 
 
     & ul {
       padding: 1rem 0;
@@ -174,7 +180,6 @@
     width: 100%;
 
     & ul {
-      list-style: none;
       display: flex;
       justify-content: space-between;
     }

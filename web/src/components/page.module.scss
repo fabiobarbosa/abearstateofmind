@@ -5,6 +5,17 @@
   --color-bg: var(--color-white);
   --color-fg: var(--color-black);
   background-color: var(--color-bg);
+  background-image: url('../static/images/hermit_lamp.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+
+  & > .headerContent {
+    padding-top: calc(var(--font-base-line-height) * 7);
+
+    @media($media-min-medium) {
+      padding-top: calc(var(--font-base-line-height) * 12);
+    }
+  }
 }
 
 .title {
