@@ -9,7 +9,7 @@ import styles from './page.module.scss'
 function Page (props) {
   const {_rawLead, _rawBody, title, publicTitle, mainImage} = props
   return (
-    <article className={styles.root} itemScope itemType='http://schema.org/WebPage'>
+    <article className={styles.root} itemScope itemType='http://schema.org/Article'>
       <meta itemProp='author' content='Fábio Barbosa' />
       <header>
         <Container

@@ -13,7 +13,7 @@ function Post (props) {
   const {_rawLead, _rawBody, categories, title, mainImage, publishedAt} = props
   return (
     <>
-      <article className={styles.root} itemScope itemType='http://schema.org/BlogPosting'>
+      <article className={styles.root} itemScope itemType='http://schema.org/Article'>
         <meta itemProp='author' content='Fábio Barbosa' />
         <header>
           <Container
