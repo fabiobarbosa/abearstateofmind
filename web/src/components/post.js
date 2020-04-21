@@ -14,7 +14,10 @@ function Post (props) {
   return (
     <>
       <article className={styles.root} itemScope itemType='http://schema.org/Article'>
-        <meta itemProp='author publisher' itemType='http://schema.org/Person' content='Fábio Barbosa' />
+        <span itemProp='author' itemScope itemType='http://schema.org/Person'>
+          <meta itemProp='name' content='Fábio Barbosa' />
+        </span>
+
         <header>
           <Container
             containerClass={styles.headerContainer}
@@ -56,11 +59,11 @@ function Post (props) {
             >
               <figure>
                 <Img
+                  itemProp='image'
                   loading='lazy'
                   fluid={mainImage.image.asset.fluid}
                   sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                   alt={mainImage.image.alt}
-                  itemProp='image'
                 />
                 {(mainImage.image.caption || mainImage.image.attribution) && (
                   <figcaption>
