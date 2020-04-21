@@ -242,7 +242,7 @@ figcaption {
   @include titleMega;
 
   &:after {
-    content: '\2009\2009\AC\2009';
+    content: '\2009\AC';
     display: inline-block;
     color: var(--color-accent);
   }
