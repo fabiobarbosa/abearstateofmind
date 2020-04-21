@@ -13,12 +13,8 @@ function Post (props) {
   const {_rawLead, _rawBody, categories, title, mainImage, publishedAt} = props
   return (
     <>
-      <article className={styles.root} itemScope itemType='http://schema.org/Article'>
-        <span itemProp='author' itemScope itemType='http://schema.org/Person'>
-          <meta itemProp='name' content='Fábio Barbosa' />
-        </span>
-
-        <span itemProp='publisher' itemScope itemType='http://schema.org/Person'>
+      <article itemScope itemType='http://schema.org/Article'>
+        <span itemProp='author publisher' itemScope itemType='http://schema.org/Person'>
           <meta itemProp='name' content='Fábio Barbosa' />
         </span>
 
@@ -92,7 +88,7 @@ function Post (props) {
         )}
 
         {_rawBody && (
-          <div itemProp='articleBody'>
+          <div itemProp='articleBody' className={styles.mainContainer}>
             <PortableText blocks={_rawBody} className={styles.mainContent} />
           </div>
         )}

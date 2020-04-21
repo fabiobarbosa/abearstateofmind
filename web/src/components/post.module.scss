@@ -1,6 +1,3 @@
-.root {
-}
-
 .mainImage {
   display: block;
   background: linear-gradient(
@@ -34,10 +31,11 @@
   background-color: var(--color-bg);
 
   & > .headerContent {
-    padding-top: calc(var(--font-base-line-height) * 7);
+    padding-top: calc(var(--font-base-line-height) * 8);
 
     @media($media-min-medium) {
       padding-top: calc(var(--font-base-line-height) * 12);
+      padding-bottom: calc(var(--font-base-line-height) * 2);
       text-align: center;
     }
   }

@@ -9,12 +9,8 @@ import styles from './page.module.scss'
 function Page (props) {
   const {_rawLead, _rawBody, title, publicTitle, mainImage} = props
   return (
-    <article className={styles.root} itemScope itemType='http://schema.org/Article'>
-      <span itemProp='author' itemScope itemType='http://schema.org/Person'>
-        <meta itemProp='name' content='Fábio Barbosa' />
-      </span>
-
-      <span itemProp='publisher' itemScope itemType='http://schema.org/Person'>
+    <article itemScope itemType='http://schema.org/Article'>
+      <span itemProp='author publisher' itemScope itemType='http://schema.org/Person'>
         <meta itemProp='name' content='Fábio Barbosa' />
       </span>
 
@@ -64,7 +60,7 @@ function Page (props) {
       )}
 
       {_rawBody && (
-        <div itemProp='articleBody'>
+        <div itemProp='articleBody' className={styles.mainContainer}>
           <PortableText blocks={_rawBody} className={styles.mainContent} />
         </div>
       )}

@@ -1,5 +1,3 @@
-.root {}
-
 .headerContainer {
   @include container('wide');
   --color-bg: var(--color-white);
@@ -7,27 +5,51 @@
   background-color: var(--color-bg);
 
   & > .headerContent {
-    padding-top: calc(var(--font-base-line-height) * 7);
+    padding-top: calc(var(--font-base-line-height) * 8);
 
-    @media($media-min-medium) {
+    @media ($media-min-medium) {
       padding-top: calc(var(--font-base-line-height) * 12);
-      text-align: center;
+      padding-bottom: calc(var(--font-base-line-height) * 2);
+    }
+
+    @media ($media-min-large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
 
 .title {
   @include titleMega;
+
+  &:after {
+    content: '\2009\2009\AC\2009';
+    display: inline-block;
+    color: var(--color-accent);
+  }
 }
 
 .lead {
   @include title2;
+  position: relative;
   margin-top: 0;
   font-family: var(--font-family-mono);
 
   p {
-    max-width: 30rem;
-    margin: 0 auto;
+    max-width: 37.5rem;
+    margin: 0;
+  }
+
+  @media($media-min-medium) {
+    &:after {
+      position: absolute;
+      content: '';
+      width: 0.275rem;
+      height: calc(var(--font-base-line-height) * 3);
+      top: calc(var(--font-base-line-height) + 100%);
+      left: 0;
+      background: var(--color-accent);
+    }
   }
 }
 
