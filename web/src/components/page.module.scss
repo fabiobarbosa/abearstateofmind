@@ -5,15 +5,13 @@
   --color-bg: var(--color-white);
   --color-fg: var(--color-black);
   background-color: var(--color-bg);
-  background-image: url('../static/images/hermit_lamp.svg');
-  background-repeat: no-repeat;
-  background-position: top right;
 
   & > .headerContent {
     padding-top: calc(var(--font-base-line-height) * 7);
 
     @media($media-min-medium) {
       padding-top: calc(var(--font-base-line-height) * 12);
+      text-align: center;
     }
   }
 }
@@ -29,7 +27,7 @@
 
   p {
     max-width: 30rem;
-    margin-bottom: 0
+    margin: 0 auto;
   }
 }
 
@@ -59,7 +57,7 @@
   }
 }
 
-.mainContainer {
+.mainContent {
   @include bodyContainer;
   background-color: var(--color-beige);
 

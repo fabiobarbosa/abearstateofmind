@@ -55,10 +55,12 @@
   --color-light-gray: #b8b7bb;
   --color-very-light-gray: #e7e7e8;
   --color-white: #fff;
-  // --color-teal: #1a2831;
-  // --color-red: #ff3530;
+
   --color-gold: #b79b30;
+  // --color-gold: #c5ab71;
   --color-beige: #f1ecd9;
+  --color-purple: #3d3956;
+  --color-purple-light: #554f75;
 
   --color-fg: var(--color-black);
   --color-bg: var(--color-white);
@@ -186,6 +188,7 @@ figcaption {
 
     @media($media-min-medium) {
       padding-top: calc(var(--font-base-line-height) * 12);
+      text-align: center;
     }
   }
 }
@@ -208,8 +211,13 @@ figcaption {
   margin-top: 0;
   margin-bottom: 0;
 
+  @media($media-min-medium) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   & p {
-    margin-bottom: 0;
+    margin: 0 auto;
   }
 }
 
@@ -221,7 +229,7 @@ figcaption {
 }
 
 .template--contact {
-  --color-bg: var(--color-dark-gray);
+  --color-bg: var(--color-purple);
   --color-fg: var(--color-white);
 
   header[class*='header-module--root'] {
@@ -237,10 +245,6 @@ figcaption {
 
 .contact__section {
   @include container(normal);
-
-  > .content {
-    margin-right: 0;
-  }
 
   .emailAddress {
     @include title1;
@@ -276,22 +280,7 @@ figcaption {
 }
 
 
-/* ----------------------------------------------------------------------------------------------------
-
-Super Form Reset
-
-A couple of things to watch out for:
-
-- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
-- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
-- You NEED to set the font-size and family on all form elements
-- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
-- You can style the upload button in webkit using ::-webkit-file-upload-button
-- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
-- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
-- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
-
-----------------------------------------------------------------------------------------------------*/
+// Forms
 
 input,
 select,

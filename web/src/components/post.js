@@ -13,7 +13,7 @@ function Post (props) {
   const {_rawLead, _rawBody, categories, title, mainImage, publishedAt} = props
   return (
     <>
-      <article className={styles.root}>
+      <article className={styles.root} itemScope itemType='http://schema.org/BlogPosting'>
         <header>
           <Container
             containerClass={styles.headerContainer}
@@ -31,12 +31,13 @@ function Post (props) {
               </ul>
             )}
 
-            <h1 className={styles.title}>{title}</h1>
+            <h1 className={styles.title} itemProp='headline'>{title}</h1>
 
             {publishedAt && (
               <time
                 dateTime={format(new Date(publishedAt), 'YYYY-MM-DD')}
                 className={styles.publishedAt}
+                itemProp='dateCreated pubdate datePublished'
               >
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? distanceInWords(new Date(publishedAt), new Date())
@@ -58,6 +59,7 @@ function Post (props) {
                   fluid={mainImage.image.asset.fluid}
                   sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                   alt={mainImage.image.alt}
+                  itemProp='image'
                 />
                 {(mainImage.image.caption || mainImage.image.attribution) && (
                   <figcaption>
@@ -76,11 +78,15 @@ function Post (props) {
         )}
 
         {_rawLead && (
-          <PortableText blocks={_rawLead} className={styles.lead} />
+          <div itemProp='description'>
+            <PortableText blocks={_rawLead} className={styles.lead} />
+          </div>
         )}
 
         {_rawBody && (
-          <PortableText blocks={_rawBody} className={styles.mainContainer} />
+          <div itemProp='articleBody'>
+            <PortableText blocks={_rawBody} className={styles.mainContent} />
+          </div>
         )}
 
       </article>

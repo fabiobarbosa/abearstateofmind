@@ -13,6 +13,7 @@ export default ({node}) => {
           url={url}
           width='100%'
           height='100%'
+          light
         />
       </div>
     </div>

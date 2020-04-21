@@ -7,7 +7,7 @@ const PortableText = ({blocks, className}) => (
   <BasePortableText
     blocks={blocks}
     serializers={serializers}
-    renderContainerOnSingleChild
+    renderContainerOnSingleChild={React.Fragment}
     className={className}
     {...clientConfig.sanity} />
 )
