@@ -21,11 +21,23 @@ module.exports = {
         overlayDrafts: !isProd
       }
     },
-    { 
+    {
       resolve: 'gatsby-plugin-sass',
       options: {
         data: '@import "_variables.scss", "_mixins.scss";',
         includePaths: [path.resolve(__dirname, './src/styles/')]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Fábio Barbosa',
+        short_name: 'Fábio Barbosa',
+        start_url: '/',
+        background_color: '#13111e',
+        theme_color: '#b79b30',
+        display: 'standalone',
+        icon: 'src/static/images/favicon.svg'
       }
     }
   ]
