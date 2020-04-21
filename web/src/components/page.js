@@ -14,6 +14,10 @@ function Page (props) {
         <meta itemProp='name' content='Fábio Barbosa' />
       </span>
 
+      <span itemProp='publisher' itemScope itemType='http://schema.org/Person'>
+        <meta itemProp='name' content='Fábio Barbosa' />
+      </span>
+
       <header>
         <Container
           containerClass={styles.headerContainer}
