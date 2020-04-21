@@ -28,7 +28,7 @@ const Footer = () => (
 
     <div className={styles.colophon}>
       <Container containerClass={styles.colophonContainer}>
-        &copy; {new Date().getFullYear()} Fábio Barbosa
+        &copy; 2008–{new Date().getFullYear()} Fábio Barbosa
       </Container>
     </div>
   </footer>

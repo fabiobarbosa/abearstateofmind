@@ -88,7 +88,7 @@ function Post (props) {
         )}
 
         {_rawBody && (
-          <div itemProp='articleBody' className={styles.mainContainer}>
+          <div itemProp='articleBody'>
             <PortableText blocks={_rawBody} className={styles.mainContent} />
           </div>
         )}

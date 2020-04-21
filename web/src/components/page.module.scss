@@ -40,6 +40,11 @@
     margin: 0;
   }
 
+  strong {
+    font-weight: normal;
+    color: var(--color-accent);
+  }
+
   @media($media-min-medium) {
     &:after {
       position: absolute;

@@ -168,6 +168,14 @@
 
     & ul {
       padding: 1rem 0;
+
+      &:first-child {
+        padding-bottom: 0;
+      }
+
+      &:last-child {
+        padding-top: 0;
+      }
     }
 
     & ul li a {
@@ -176,12 +184,21 @@
   }
 
   @media ($media-min-medium) {
-    display: block;
+    display: grid;
     width: 100%;
+    grid-template-columns: 1fr 2fr 1fr;
 
     & ul {
       display: flex;
       justify-content: space-between;
+
+      &:first-child {
+        grid-column: 1/2;
+      }
+
+      &:last-child {
+        grid-column: 3/4;
+      }
     }
 
     & ul li a {
@@ -205,15 +222,4 @@
 
 .showNav {
   display: block;
-}
-
-.separator {
-  display: none;
-  visibility: hidden;
-
-  @media($media-min-medium) {
-    display: block;
-    width: 25vw;
-    max-width: 10rem;
-  }
 }
