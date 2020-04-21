@@ -10,7 +10,7 @@ function Page (props) {
   const {_rawLead, _rawBody, title, publicTitle, mainImage} = props
   return (
     <article className={styles.root} itemScope itemType='http://schema.org/Article'>
-      <meta itemProp='author' content='Fábio Barbosa' />
+      <meta itemProp='author' itemType='http://schema.org/Person' content='Fábio Barbosa' />
       <header>
         <Container
           containerClass={styles.headerContainer}
@@ -32,12 +32,13 @@ function Page (props) {
             containerClass={styles.mainImageContainer}
             contentClass={styles.mainImageContent}
           >
-            <figure itemProp='image'>
+            <figure>
               <Img
                 loading='lazy'
                 fluid={mainImage.image.asset.fluid}
                 sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                 alt={mainImage.image.alt}
+                itemProp='image'
               />
               {(mainImage.image.caption || mainImage.image.attribution) && (
                 <figcaption>
