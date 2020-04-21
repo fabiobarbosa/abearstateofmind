@@ -9,7 +9,8 @@ import styles from './page.module.scss'
 function Page (props) {
   const {_rawLead, _rawBody, title, publicTitle, mainImage} = props
   return (
-    <article className={styles.root} itemScope itemType='http://schema.org/BlogPosting'>
+    <article className={styles.root} itemScope itemType='http://schema.org/WebPage'>
+      <meta itemProp='author' content='Fábio Barbosa' />
       <header>
         <Container
           containerClass={styles.headerContainer}
@@ -31,13 +32,12 @@ function Page (props) {
             containerClass={styles.mainImageContainer}
             contentClass={styles.mainImageContent}
           >
-            <figure>
+            <figure itemProp='image'>
               <Img
                 loading='lazy'
                 fluid={mainImage.image.asset.fluid}
                 sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                 alt={mainImage.image.alt}
-                itemProp='image'
               />
               {(mainImage.image.caption || mainImage.image.attribution) && (
                 <figcaption>

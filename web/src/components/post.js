@@ -14,6 +14,7 @@ function Post (props) {
   return (
     <>
       <article className={styles.root} itemScope itemType='http://schema.org/BlogPosting'>
+        <meta itemProp='author' content='Fábio Barbosa' />
         <header>
           <Container
             containerClass={styles.headerContainer}
@@ -37,7 +38,7 @@ function Post (props) {
               <time
                 dateTime={format(new Date(publishedAt), 'YYYY-MM-DD')}
                 className={styles.publishedAt}
-                itemProp='dateCreated pubdate datePublished'
+                itemProp='dateCreated datePublished'
               >
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? distanceInWords(new Date(publishedAt), new Date())
@@ -53,13 +54,12 @@ function Post (props) {
               containerClass={styles.mainImageContainer}
               contentClass={styles.mainImageContent}
             >
-              <figure>
+              <figure itemProp='image'>
                 <Img
                   loading='lazy'
                   fluid={mainImage.image.asset.fluid}
                   sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
                   alt={mainImage.image.alt}
-                  itemProp='image'
                 />
                 {(mainImage.image.caption || mainImage.image.attribution) && (
                   <figcaption>
