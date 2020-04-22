@@ -204,47 +204,9 @@ figcaption {
   background: var(--color-very-light-gray);
 }
 
-.template--page {
-  header[class*='header-module--root'],
-  div[class*='hero-module--root'] {
-    --color-bg: var(--color-white);
-    --color-fg: var(--color-black);
-  }
-}
-
-.template--contact {
-  --color-bg: var(--color-black);
-  --color-fg: var(--color-white);
-
-  header[class*='header-module--root'],
-  div[class*='hero-module--root'] {
-    --color-bg: var(--color-white);
-    --color-fg: var(--color-black);
-  }
-}
-
-// Specifics
-
-.principles-feature-block {
-  & svg {
-    stroke: var(--color-gold);
-    stroke-width: 3px;
-  }
-}
-
-.workfields-feature-block {
-  background-color: var(--color-white);
-}
-
-.brandwall-image-block {
-  margin-top: calc(var(--font-base-line-height) * 3);
-
-  & picture {
-    mix-blend-mode: multiply;
-  }
-}
-
-// Forms
+/* 
+ * FORMS
+-----------------------------------------------*/
 
 input,
 select,
@@ -331,4 +293,47 @@ textarea {
 select[multiple] {
   /* Move the label to the top */
   vertical-align: top;
+}
+
+
+/* 
+ * SPECIFICS
+-----------------------------------------------*/
+
+.template--page {
+  header[class*='header-module--root'],
+  div[class*='hero-module--root'] {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
+}
+
+.template--contact {
+  --color-bg: var(--color-black);
+  --color-fg: var(--color-white);
+
+  header[class*='header-module--root'],
+  div[class*='hero-module--root'] {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
+}
+
+.principles-feature-block {
+  & svg {
+    stroke: var(--color-gold);
+    stroke-width: 3px;
+  }
+}
+
+.workfields-feature-block {
+  background-color: var(--color-white);
+}
+
+.brandwall-image-block {
+  margin-top: calc(var(--font-base-line-height) * 3);
+
+  & picture {
+    mix-blend-mode: multiply;
+  }
 }
