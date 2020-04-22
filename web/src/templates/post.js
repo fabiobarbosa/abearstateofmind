@@ -40,7 +40,7 @@ const PostTemplate = props => {
   const post = data && data.post
   const postNav = next || previous
   return (
-    <Layout template='post'>
+    <Layout>
       {errors && <SEO title='GraphQL Error' />}
       {post && (
         <SEO

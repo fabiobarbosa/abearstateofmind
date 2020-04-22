@@ -204,7 +204,7 @@ figcaption {
   background: var(--color-very-light-gray);
 }
 
-/* 
+/*
  * FORMS
 -----------------------------------------------*/
 
@@ -296,28 +296,9 @@ select[multiple] {
 }
 
 
-/* 
+/*
  * SPECIFICS
 -----------------------------------------------*/
-
-.template--page {
-  header[class*='header-module--root'],
-  div[class*='hero-module--root'] {
-    --color-bg: var(--color-white);
-    --color-fg: var(--color-black);
-  }
-}
-
-.template--contact {
-  --color-bg: var(--color-black);
-  --color-fg: var(--color-white);
-
-  header[class*='header-module--root'],
-  div[class*='hero-module--root'] {
-    --color-bg: var(--color-white);
-    --color-fg: var(--color-black);
-  }
-}
 
 .principles-feature-block {
   & svg {

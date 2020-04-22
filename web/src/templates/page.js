@@ -7,6 +7,8 @@ import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
+import styles from './page.module.scss'
+
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
     page: sanityPage(id: {eq: $id}) {
@@ -30,7 +32,7 @@ const PageTemplate = props => {
   const {data, errors} = props
   const page = data && data.page
   return (
-    <Layout template='page'>
+    <Layout className={styles.root}>
       {errors && <SEO title='GraphQL Error' />}
       {page && <SEO title={page.publicTitle || page.title || 'Untitled'} description={page.excerpt} image={page.mainImage} />}
 

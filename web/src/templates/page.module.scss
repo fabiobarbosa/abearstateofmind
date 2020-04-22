@@ -1,0 +1,7 @@
+.root {
+  header[class*='header-module--root'],
+  div[class*='hero-module--root'] {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
+}

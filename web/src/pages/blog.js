@@ -47,13 +47,10 @@ const BlogPage = props => {
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
-    <Layout template='blog'>
+    <Layout>
       <SEO title='Blog' />
 
-      <Hero 
-        title='Blog'
-        headingLevel='h1'
-      />
+      <Hero title='Blog' headingLevel='h1' />
 
       <Container>
         {postNodes && postNodes.length > 0 && (

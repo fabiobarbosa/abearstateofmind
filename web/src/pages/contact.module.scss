@@ -1,3 +1,14 @@
+.root {
+  --color-bg: var(--color-black);
+  --color-fg: var(--color-white);
+
+  header[class*='header-module--root'],
+  div[class*='hero-module--root'] {
+    --color-bg: var(--color-white);
+    --color-fg: var(--color-black);
+  }
+}
+
 .contact__section {
   @include container(normal);
 

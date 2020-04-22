@@ -49,7 +49,7 @@ const CategoryPage = props => {
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
-    <Layout template='category'>
+    <Layout>
       <SEO title={title} />
       <Container containerClass='hero__module'>
         <h1 className='heroTitle'>{title}</h1>
