@@ -33,7 +33,10 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
+                type: 'url',
+                validation: Rule => Rule.uri({
+                  allowRelative: 'true'
+                })
               }
             ]
           }
