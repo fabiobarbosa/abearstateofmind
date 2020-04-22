@@ -1,0 +1,42 @@
+.container {
+  @include container('wide');
+
+  figure {
+    margin-bottom: 0;
+  }
+
+  @media ($media-min-medium) {
+    & > div {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+figcaption {
+  @include textAlt;
+  text-transform: none;
+  color: var(--color-gray);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-light-gray);
+  margin-bottom: var(--font-base-line-height);
+}
+
+.separator {
+  position: relative;
+  padding-left: calc(var(--font-base-line-height) * 0.5);
+  padding-right: calc(var(--font-base-line-height) * 0.5);
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: calc(var(--font-base-line-height) * 0.5);
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-light-gray);
+  }
+}
+.attribution {
+  text-transform: uppercase;
+}

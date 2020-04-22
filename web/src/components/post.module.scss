@@ -9,21 +9,6 @@
   );
 }
 
-.mainImageContainer {
-  @include container('wide');
-
-  figure {
-    margin-bottom: 0;
-  }
-
-  @media ($media-min-medium) {
-    & > div {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  }
-}
-
 .headerContainer {
   --color-bg: var(--color-black);
   --color-fg: var(--color-white);

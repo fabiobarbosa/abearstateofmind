@@ -2,10 +2,9 @@ import {format, distanceInWords, differenceInDays} from 'date-fns'
 import React from 'react'
 import {Link} from 'gatsby'
 import PortableText from './portableText'
+import FeaturedImage from './featuredImage'
 import Subscribe from './subscribe'
 import Container from './container'
-
-import Img from 'gatsby-image'
 
 import styles from './post.module.scss'
 
@@ -14,7 +13,11 @@ function Post (props) {
   return (
     <>
       <article itemScope itemType='http://schema.org/Article'>
-        <span itemProp='author publisher' itemScope itemType='http://schema.org/Person'>
+        <span
+          itemProp='author publisher'
+          itemScope
+          itemType='http://schema.org/Person'
+        >
           <meta itemProp='name' content='Fábio Barbosa' />
         </span>
 
@@ -35,7 +38,9 @@ function Post (props) {
               </ul>
             )}
 
-            <h1 className={styles.title} itemProp='headline'>{title}</h1>
+            <h1 className={styles.title} itemProp='headline'>
+              {title}
+            </h1>
 
             {publishedAt && (
               <time
@@ -52,33 +57,7 @@ function Post (props) {
         </header>
 
         {mainImage && mainImage.image && mainImage.image.asset && (
-          <div className={styles.mainImage}>
-            <Container
-              containerClass={styles.mainImageContainer}
-              contentClass={styles.mainImageContent}
-            >
-              <figure>
-                <Img
-                  itemProp='image'
-                  loading='lazy'
-                  fluid={mainImage.image.asset.fluid}
-                  sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
-                  alt={mainImage.image.alt}
-                />
-                {(mainImage.image.caption || mainImage.image.attribution) && (
-                  <figcaption>
-                    {mainImage.image.caption}
-                    {mainImage.image.caption && mainImage.image.attribution && (
-                      <span className='separator' />
-                    )}
-                    {mainImage.image.attribution && (
-                      <span className='attribution'>{mainImage.image.attribution}</span>
-                    )}
-                  </figcaption>
-                )}
-              </figure>
-            </Container>
-          </div>
+          <FeaturedImage image={mainImage.image} className={styles.mainImage} />
         )}
 
         {_rawLead && (
@@ -92,7 +71,6 @@ function Post (props) {
             <PortableText blocks={_rawBody} className={styles.mainContent} />
           </div>
         )}
-
       </article>
 
       <Subscribe />

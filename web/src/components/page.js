@@ -1,9 +1,7 @@
 import React from 'react'
 import PortableText from './portableText'
+import FeaturedImage from './featuredImage'
 import Hero from './hero'
-import Container from './container'
-
-import Img from 'gatsby-image'
 
 import styles from './page.module.scss'
 
@@ -11,12 +9,16 @@ function Page (props) {
   const {_rawLead, _rawBody, title, publicTitle, mainImage} = props
   return (
     <article itemScope itemType='http://schema.org/Article'>
-      <span itemProp='author publisher' itemScope itemType='http://schema.org/Person'>
+      <span
+        itemProp='author publisher'
+        itemScope
+        itemType='http://schema.org/Person'
+      >
         <meta itemProp='name' content='Fábio Barbosa' />
       </span>
 
       <header>
-        <Hero 
+        <Hero
           title={publicTitle || title}
           headingLevel='h1'
           rawDescription={_rawLead}
@@ -25,33 +27,7 @@ function Page (props) {
       </header>
 
       {mainImage && mainImage.image && mainImage.image.asset && (
-        <div className={styles.mainImage}>
-          <Container
-            containerClass={styles.mainImageContainer}
-            contentClass={styles.mainImageContent}
-          >
-            <figure>
-              <Img
-                itemProp='image'
-                loading='lazy'
-                fluid={mainImage.image.asset.fluid}
-                sizes={{...mainImage.image.asset.fluid, aspectRatio: 16 / 9}}
-                alt={mainImage.image.alt}
-              />
-              {(mainImage.image.caption || mainImage.image.attribution) && (
-                <figcaption>
-                  {mainImage.image.caption}
-                  {mainImage.image.caption && mainImage.image.attribution && (
-                    <span className='separator' />
-                  )}
-                  {mainImage.image.attribution && (
-                    <span className='attribution'>{mainImage.image.attribution}</span>
-                  )}
-                </figcaption>
-              )}
-            </figure>
-          </Container>
-        </div>
+        <FeaturedImage image={mainImage.image} className={styles.mainImage} />
       )}
 
       {_rawBody && (
