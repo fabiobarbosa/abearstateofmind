@@ -13,16 +13,33 @@ const serializers = {
   },
   marks: {
     link: ({mark, children}) => {
+      /*
+       * I prefer to check whether a link is absolute here
+       * instead of having to implement different buttons
+       * on the content editor, which would hurt the
+       * editorial flow.
+       */
       const {href} = mark
-      const isUrlAbsolute = (url) => (url.indexOf('//') === 0 ? true : url.indexOf('://') === -1 ? false : url.indexOf('.') === -1 ? false : url.indexOf('/') === -1 ? false : url.indexOf(':') > url.indexOf('/') ? false : url.indexOf('://') < url.indexOf('.'))
+      const isUrlAbsolute = url =>
+        url.indexOf('//') === 0
+          ? true
+          : url.indexOf('://') === -1
+            ? false
+            : url.indexOf('.') === -1
+              ? false
+              : url.indexOf('/') === -1
+                ? false
+                : url.indexOf(':') > url.indexOf('/')
+                  ? false
+                  : url.indexOf('://') < url.indexOf('.')
 
       if (!isUrlAbsolute(href)) {
-        return (
-          <Link to={href}>{children}</Link>
-        )
+        return <Link to={href}>{children}</Link>
       } else {
         return (
-          <a href={href} target='_blank' rel='noopener'>{children}</a>
+          <a href={href} target='_blank' rel='noopener'>
+            {children}
+          </a>
         )
       }
     }
