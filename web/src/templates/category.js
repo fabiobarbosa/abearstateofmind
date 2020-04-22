@@ -1,8 +1,9 @@
-import { graphql } from 'gatsby'
+import {graphql} from 'gatsby'
 import React from 'react'
-import { mapEdgesToNodes } from '../lib/helpers'
+import {mapEdgesToNodes} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import PostPreviewList from '../components/post/post-preview-list'
+import Hero from '../components/hero'
 import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
@@ -10,12 +11,13 @@ import Layout from '../containers/layout'
 export const query = graphql`
   query categoryPageQuery($id: String!) {
     posts: allSanityPost(
-      sort: { fields: [publishedAt], order: DESC }
+      sort: {fields: [publishedAt], order: DESC}
       filter: {
-        categories: { elemMatch: { id: { eq: $id } } },
-        slug: { current: { ne: null } },
-        publishedAt: { ne: null } }
-      ) {
+        categories: {elemMatch: {id: {eq: $id}}}
+        slug: {current: {ne: null}}
+        publishedAt: {ne: null}
+      }
+    ) {
       edges {
         node {
           id
@@ -51,12 +53,10 @@ const CategoryPage = props => {
   return (
     <Layout>
       <SEO title={title} />
-      <Container containerClass='hero__module'>
-        <h1 className='heroTitle'>{title}</h1>
-        {description && <h2 className='heroSubtitle'>{description}</h2>}
-      </Container>
-
-      {postNodes && postNodes.length > 0 && <PostPreviewList nodes={postNodes} />}
+      <Hero title={title} headingLevel='h1' plainDescription={description} />
+      {postNodes && postNodes.length > 0 && (
+        <PostPreviewList nodes={postNodes} />
+      )}
     </Layout>
   )
 }
