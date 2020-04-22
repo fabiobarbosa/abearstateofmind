@@ -9,17 +9,17 @@
   }
 }
 
-.contact__section {
+.body {
   @include container(normal);
+}
 
-  .emailAddress {
-    @include title1;
+.email {
+  @include title1;
 
-    @media (hover: hover) {
-      & a:hover,
-      & a:active {
-        color: var(--color-accent);
-      }
+  @media (hover: hover) {
+    & a:hover,
+    & a:active {
+      color: var(--color-accent);
     }
   }
 }

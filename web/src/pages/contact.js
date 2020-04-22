@@ -20,9 +20,9 @@ const ContactPage = () => {
         />
       </header>
 
-      <Container containerClass={styles.contact__section}>
+      <Container containerClass={styles.body}>
         <h2>Write me a letter.</h2>
-        <p className='emailAddress'>
+        <p className={styles.email}>
           <a href='mailto:hello@fabiobarbosa.net'>
             hello[at]fabio&#8203;barbosa[dot]net
           </a>
