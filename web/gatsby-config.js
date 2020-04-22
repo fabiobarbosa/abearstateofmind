@@ -35,7 +35,7 @@ module.exports = {
         short_name: 'Fábio Barbosa',
         start_url: '/',
         background_color: '#13111e',
-        theme_color: '#b79b30',
+        theme_color: '#b78f30',
         display: 'standalone',
         icon: 'src/static/images/favicon.svg'
       }

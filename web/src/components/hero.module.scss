@@ -1,0 +1,64 @@
+.root {
+  --color-fg: var(--color-white);
+  --color-bg: var(--color-black);
+  @include container('wide');
+  background-color: var(--color-bg);
+}
+
+.root > .content {
+  padding-top: calc(var(--font-base-line-height) * 8);
+
+  @media ($media-min-medium) {
+    padding-top: calc(var(--font-base-line-height) * 12);
+    padding-bottom: calc(var(--font-base-line-height) * 2);
+  }
+
+  @media ($media-min-large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.title {
+  @include titleMega;
+
+  &:after {
+    content: '\2009\AC';
+    display: inline-block;
+    color: var(--color-accent);
+  }
+}
+
+.description {
+  @include title2;
+  position: relative;
+  font-family: var(--font-family-mono);
+  max-width: 37.5rem;
+  margin-top: 0;
+  margin-bottom: calc(var(--font-base-line-height) * 0.5);
+
+  & p:last-child {
+    margin-bottom: 0;
+  }
+
+  a:focus,
+  a:hover {
+    color: var(--color-accent);
+  }
+
+  strong {
+    color: var(--color-accent);
+  }
+
+  @media($media-min-medium) {
+    &:after {
+      position: absolute;
+      content: '';
+      width: 0.275rem;
+      height: calc(var(--font-base-line-height) * 3);
+      top: calc(var(--font-base-line-height) + 100%);
+      left: 0;
+      background: var(--color-accent);
+    }
+  }
+}

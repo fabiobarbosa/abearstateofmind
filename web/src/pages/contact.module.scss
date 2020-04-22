@@ -1,0 +1,14 @@
+.contact__section {
+  @include container(normal);
+
+  .emailAddress {
+    @include title1;
+
+    @media (hover: hover) {
+      & a:hover,
+      & a:active {
+        color: var(--color-accent);
+      }
+    }
+  }
+}

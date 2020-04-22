@@ -4,6 +4,7 @@ import {mapEdgesToNodes} from '../lib/helpers'
 import PostPreviewList from '../components/post/post-preview-list'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Subscribe from '../components/subscribe'
+import Hero from '../components/hero'
 import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
@@ -49,9 +50,10 @@ const BlogPage = props => {
     <Layout template='blog'>
       <SEO title='Blog' />
 
-      <Container containerClass={'hero__module'}>
-        <h1 className='heroTitle'>Blog</h1>
-      </Container>
+      <Hero 
+        title='Blog'
+        headingLevel='h1'
+      />
 
       <Container>
         {postNodes && postNodes.length > 0 && (

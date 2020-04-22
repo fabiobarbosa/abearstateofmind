@@ -1,5 +1,6 @@
 import React from 'react'
 import PortableText from './portableText'
+import Hero from './hero'
 import Container from './container'
 
 import Img from 'gatsby-image'
@@ -15,18 +16,12 @@ function Page (props) {
       </span>
 
       <header>
-        <Container
-          containerClass={styles.headerContainer}
-          contentClass={styles.headerContent}
-        >
-          <h1 className={styles.title} itemProp='headline'>{publicTitle || title}</h1>
-
-          {_rawLead && (
-            <div itemProp='description'>
-              <PortableText blocks={_rawLead} className={styles.lead} />
-            </div>
-          )}
-        </Container>
+        <Hero 
+          title={publicTitle || title}
+          headingLevel='h1'
+          rawDescription={_rawLead}
+          itemProps='true'
+        />
       </header>
 
       {mainImage && mainImage.image && mainImage.image.asset && (

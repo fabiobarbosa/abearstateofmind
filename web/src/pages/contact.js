@@ -1,8 +1,11 @@
 import React from 'react'
 import Subscribe from '../components/subscribe'
 import Container from '../components/container'
+import Hero from '../components/hero'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+
+import styles from './contact.module.scss'
 
 const ContactPage = () => {
   return (
@@ -12,12 +15,15 @@ const ContactPage = () => {
         description='Here&apos;s how you can contact me'
       />
 
-      <Container containerClass='hero__module hero__module--contact'>
-        <h1 className='heroTitle'>Say hello!</h1>
-        <p className='heroSubtitle'>Here's how you can contact me.</p>
-      </Container>
+      <header>
+        <Hero 
+          title='Say hello!'
+          headingLevel='h1'
+          plainDescription='Here&apos;s how you can contact me.'
+        />
+      </header>
 
-      <Container containerClass='contact__section'>
+      <Container containerClass={styles.contact__section}>
         <h2>Write me a letter.</h2>
         <p className='emailAddress'>
           <a href='mailto:hello@fabiobarbosa.net'>hello[at]fabio&#8203;barbosa[dot]net</a>

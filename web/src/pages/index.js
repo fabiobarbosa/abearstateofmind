@@ -8,6 +8,7 @@ import {
 import GraphQLErrorList from '../components/graphql-error-list'
 import PostPreviewList from '../components/post/post-preview-list'
 import Subscribe from '../components/subscribe'
+import Hero from '../components/hero'
 import PortableText from '../components/portableText'
 import Container from '../components/container'
 import SEO from '../components/seo'
@@ -106,12 +107,11 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
 
-      <Container containerClass='hero__module hero__module--home'>
-        <h2 className='heroTitle'>Welcome!</h2>
-        {site._rawIntro && (
-          <PortableText blocks={site._rawIntro} className='heroSubtitle' />
-        )}
-      </Container>
+      <Hero 
+        title='Welcome!'
+        headingLevel='h2'
+        rawDescription={site._rawIntro}
+      />
 
       {postNodes && (
         <PostPreviewList

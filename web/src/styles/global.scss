@@ -53,8 +53,7 @@
   --color-very-light-gray: #e7e7e8;
   --color-white: #fff;
 
-  --color-gold: #b79b30;
-  // --color-gold: #c5ab71;
+  --color-gold: #b78f30;
   --color-beige: #f6f3e8;
   --color-purple: #3d3956;
   --color-purple-light: #554f75;
@@ -205,76 +204,9 @@ figcaption {
   background: var(--color-very-light-gray);
 }
 
-.hero__module {
-  --color-fg: var(--color-white);
-  --color-bg: var(--color-black);
-  @include container('wide');
-  background-color: var(--color-bg);
-
-  > .content {
-    padding-top: calc(var(--font-base-line-height) * 8);
-
-    @media ($media-min-medium) {
-      padding-top: calc(var(--font-base-line-height) * 12);
-      padding-bottom: calc(var(--font-base-line-height) * 2);
-    }
-
-    @media ($media-min-large) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-
-/*.hero__module--home {
-  background-image: url('../static/images/flos_vitae.svg');
-  background-repeat: no-repeat;
-  background-position: center calc(100% - var(--font-base-line-height) * -2.5);
-  background-size: 100%;
-}*/
-
-.heroTitle {
-  @include titleMega;
-
-  &:after {
-    content: '\2009\AC';
-    display: inline-block;
-    color: var(--color-accent);
-  }
-}
-
-.heroSubtitle {
-  @include title2;
-  position: relative;
-  font-family: var(--font-family-mono);
-  max-width: 37.5rem;
-  margin-top: 0;
-  margin-bottom: calc(var(--font-base-line-height) * 0.5);
-
-  & p {
-    margin: 0;
-  }
-
-  strong {
-    font-weight: normal;
-    color: var(--color-accent);
-  }
-
-  @media($media-min-medium) {
-    &:after {
-      position: absolute;
-      content: '';
-      width: 0.275rem;
-      height: calc(var(--font-base-line-height) * 3);
-      top: calc(var(--font-base-line-height) + 100%);
-      left: 0;
-      background: var(--color-accent);
-    }
-  }
-}
-
 .template--page {
-  header[class*='header-module--root'] {
+  header[class*='header-module--root'],
+  div[class*='hero-module--root'] {
     --color-bg: var(--color-white);
     --color-fg: var(--color-black);
   }
@@ -284,29 +216,10 @@ figcaption {
   --color-bg: var(--color-black);
   --color-fg: var(--color-white);
 
-  header[class*='header-module--root'] {
+  header[class*='header-module--root'],
+  div[class*='hero-module--root'] {
     --color-bg: var(--color-white);
     --color-fg: var(--color-black);
-  }
-
-  .hero__module {
-    --color-bg: var(--color-white);
-    --color-fg: var(--color-black);
-  }
-}
-
-.contact__section {
-  @include container(normal);
-
-  .emailAddress {
-    @include title1;
-
-    @media (hover: hover) {
-      & a:hover,
-      & a:active {
-        color: var(--color-accent);
-      }
-    }
   }
 }
 

@@ -37,7 +37,10 @@
 
   p {
     max-width: 37.5rem;
-    margin: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   strong {
