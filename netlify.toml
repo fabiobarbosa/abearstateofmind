@@ -1,2 +1,7 @@
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
+
+[build]
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+  base = "/"
