@@ -113,6 +113,7 @@
 
 @mixin button {
   @include textAlt;
+  font-weight: bold;
   display: inline-block;
   color: var(--color-accent);
   line-height: var(--font-base-line-height);

@@ -28,6 +28,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, isHome}) => (
       </div>
 
       <button
+        aria-label='Navigation Menu'
         className={styles.toggleNavButton}
         onClick={showNav ? onHideNav : onShowNav}
       >
