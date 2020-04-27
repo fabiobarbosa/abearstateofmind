@@ -43,7 +43,7 @@ const PageTemplate = props => {
         <SEO
           title={page.publicTitle || page.title || 'Untitled'}
           description={page.excerpt}
-          image={page.mainImage.image}
+          image={page.mainImage ? page.mainImage.image : ''}
         />
       )}
 

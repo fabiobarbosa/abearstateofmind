@@ -51,7 +51,7 @@ const PostTemplate = props => {
         <SEO
           title={post.title || 'Untitled'}
           description={post.excerpt}
-          image={post.mainImage.image}
+          image={post.mainImage ? post.mainImage.image : ''}
         />
       )}
 
