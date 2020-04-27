@@ -15,14 +15,14 @@ function Hero (props) {
     <Container containerClass={styles.root} contentClass={styles.content}>
       <Heading
         className={styles.title}
-        itemProp={!itemProps ? 'title' : null}>
+        itemProp={itemProps ? 'title' : null}>
         {title}
       </Heading>
 
       {rawDescription && (
         <div
           className={styles.description}
-          itemProp={!itemProps ? 'description' : null}>
+          itemProp={itemProps ? 'description' : null}>
           <PortableText blocks={rawDescription} />
         </div>
       )}
@@ -30,7 +30,7 @@ function Hero (props) {
       {plainDescription && (
         <div
           className={styles.description}
-          itemProp={!itemProps ? 'description' : null}>
+          itemProp={itemProps ? 'description' : null}>
           <p>{plainDescription}</p>
         </div>
       )}
