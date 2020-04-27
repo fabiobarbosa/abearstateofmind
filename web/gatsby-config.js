@@ -30,6 +30,12 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://cdn.sanity.io']
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Fábio Barbosa',
@@ -42,9 +48,9 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-preconnect',
+      resolve: 'gatsby-plugin-offline',
       options: {
-        domains: ['https://cdn.sanity.io']
+        precachePages: ['work']
       }
     }
   ]
