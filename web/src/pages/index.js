@@ -9,8 +9,6 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import PostPreviewList from '../components/post/post-preview-list'
 import Subscribe from '../components/subscribe'
 import Hero from '../components/hero'
-import PortableText from '../components/portableText'
-import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
@@ -107,7 +105,7 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
 
-      <Hero 
+      <Hero
         title='Welcome!'
         headingLevel='h2'
         rawDescription={site._rawIntro}

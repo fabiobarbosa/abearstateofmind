@@ -1,6 +1,6 @@
 import {graphql} from 'gatsby'
 import React from 'react'
-import {toPlainText} from '../lib/helpers'
+// import {toPlainText} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import PostNav from '../components/post/post-navigation'
 import Post from '../components/post'
@@ -21,6 +21,11 @@ export const query = graphql`
         }
       }
       mainImage {
+        image {
+          asset {
+            id
+          }
+        }
         ...SanityImage
       }
       title
@@ -46,7 +51,7 @@ const PostTemplate = props => {
         <SEO
           title={post.title || 'Untitled'}
           description={post.excerpt}
-          image={post.mainImage}
+          image={post.mainImage.image}
         />
       )}
 

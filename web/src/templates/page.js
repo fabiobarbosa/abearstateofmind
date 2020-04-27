@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import {toPlainText} from '../lib/helpers'
+// import {toPlainText} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Page from '../components/page'
 import Container from '../components/container'
@@ -14,6 +14,11 @@ export const query = graphql`
     page: sanityPage(id: {eq: $id}) {
       id
       mainImage {
+        image {
+          asset {
+            id
+          }
+        }
         ...SanityImage
       }
       title
@@ -34,7 +39,13 @@ const PageTemplate = props => {
   return (
     <Layout className={styles.root}>
       {errors && <SEO title='GraphQL Error' />}
-      {page && <SEO title={page.publicTitle || page.title || 'Untitled'} description={page.excerpt} image={page.mainImage} />}
+      {page && (
+        <SEO
+          title={page.publicTitle || page.title || 'Untitled'}
+          description={page.excerpt}
+          image={page.mainImage.image}
+        />
+      )}
 
       {errors && (
         <Container>

@@ -5,7 +5,6 @@ import PostPreviewList from '../components/post/post-preview-list'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Subscribe from '../components/subscribe'
 import Hero from '../components/hero'
-import Container from '../components/container'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
@@ -52,11 +51,9 @@ const BlogPage = props => {
 
       <Hero title='Blog' headingLevel='h1' />
 
-      <Container>
-        {postNodes && postNodes.length > 0 && (
-          <PostPreviewList nodes={postNodes} />
-        )}
-      </Container>
+      {postNodes && postNodes.length > 0 && (
+        <PostPreviewList nodes={postNodes} />
+      )}
 
       <Subscribe isFeed='true' />
     </Layout>
