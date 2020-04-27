@@ -42,8 +42,8 @@ const PageTemplate = props => {
       {page && (
         <SEO
           title={page.publicTitle || page.title || 'Untitled'}
-          description={page.excerpt}
-          image={page.mainImage ? page.mainImage.image : ''}
+          description={page.excerpt ? page.excerpt : null}
+          image={page.mainImage ? page.mainImage.image : null}
         />
       )}
 

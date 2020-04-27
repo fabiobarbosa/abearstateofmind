@@ -50,8 +50,8 @@ const PostTemplate = props => {
       {post && (
         <SEO
           title={post.title || 'Untitled'}
-          description={post.excerpt}
-          image={post.mainImage ? post.mainImage.image : ''}
+          description={post.excerpt ? post.excerpt : null}
+          image={post.mainImage ? post.mainImage.image : null}
         />
       )}
 
