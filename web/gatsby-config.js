@@ -40,6 +40,12 @@ module.exports = {
         display: 'standalone',
         icon: 'src/static/images/favicon.svg'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://cdn.sanity.io']
+      }
     }
   ]
 }
