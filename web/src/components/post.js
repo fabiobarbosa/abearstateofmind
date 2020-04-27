@@ -1,9 +1,9 @@
 import {format, distanceInWords, differenceInDays} from 'date-fns'
 import React from 'react'
-import {Link} from 'gatsby'
-import PortableText from './portableText'
-import FeaturedImage from './featuredImage'
 import Subscribe from './subscribe'
+import PortableText from './portableText'
+import {Link} from 'gatsby'
+import FeaturedImage from './featuredImage'
 import Container from './container'
 
 import styles from './post.module.scss'
