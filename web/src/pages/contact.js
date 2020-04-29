@@ -84,7 +84,7 @@ const ContactPage = () => {
         </form>
       </Container>
 
-      <Subscribe isFeed='true' />
+      <Subscribe />
     </Layout>
   )
 }

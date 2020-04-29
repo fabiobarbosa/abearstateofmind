@@ -6,10 +6,10 @@
 .atEntry {
   @include container('normal');
   text-align: center;
-}
 
-.content {
-  border-top: 1px solid rgba(70,70,70,.5);
+  .content {
+    border-top: 1px solid rgba(70,70,70,.5);
+  }
 }
 
 .title {

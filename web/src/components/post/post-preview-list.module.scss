@@ -1,5 +1,7 @@
 .root {
   @include container('wide');
+	--color-bg: var(--color-beige);
+	background: var(--color-bg);
 }
 
 .header {
