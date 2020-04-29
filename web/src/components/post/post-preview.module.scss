@@ -12,50 +12,19 @@
 
   @media ($media-min-large) {
     @include grid;
-
-    .leadMediaThumb {
-      @include gridMinor;
-      order: 2;
-    }
-
-    .text {
-      @include gridMain;
-      @include grid;
-    }
-
-    .content {
-      @include gridMain;
-      order: 2;
-    }
-
-    .date {
-      @include gridMinor;
-      order: 1;
-    }
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
-.leadMediaThumb {
-  position: relative;
+.content {
+  @include gridMain;
   margin-bottom: var(--font-base-line-height);
-
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.text {
-  padding-bottom: var(--font-base-line-height);
 }
 
 .title {
   @include title2;
   margin-top: 0;
+  margin-bottom: calc(var(--font-base-line-height) * .25);
 
   @media (hover: hover) {
     .root:hover &,
@@ -67,19 +36,21 @@
 
 .excerpt {
   & p {
-    margin: 0 0 var(--font-small-line-height);
+    margin: 0 0 var(--font-base-line-height);
   }
 
   & strong {
-    font-weight: 700;
+    font-weight: bold;
   }
 }
 
-.excerptContent {
-
-}
 
 .date {
   @include textAlt;
-  color: var(--color-gray);
+  @include gridMinor;
+  color: var(--color-accent);
+
+  @media ($media-min-large) {
+    padding-top: .5rem;
+  }
 }

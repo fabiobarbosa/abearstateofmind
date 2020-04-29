@@ -9,7 +9,7 @@ import styles from './contact.module.scss'
 
 const ContactPage = () => {
   return (
-    <Layout template='contact' className={styles.root}>
+    <Layout className={styles.root}>
       <SEO title='Say hello!' description="Here's how you can contact me" />
 
       <header>
