@@ -12,6 +12,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-loadable-components-ssr',
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -42,7 +43,7 @@ module.exports = {
         short_name: 'Fábio Barbosa',
         start_url: '/',
         background_color: '#13111e',
-        theme_color: '#b79b30',
+        theme_color: '#bb9845',
         display: 'standalone',
         icon: 'src/static/images/favicon.svg'
       }
