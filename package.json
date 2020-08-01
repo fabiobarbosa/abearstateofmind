@@ -22,8 +22,8 @@
     "url": "https://fabiobarbosa.net/"
   },
   "devDependencies": {
-    "@sanity/cli": "^0.146.0",
-    "lerna": "^3.20.2"
+    "@sanity/cli": "^1.149.19",
+    "lerna": "^3.22.1"
   },
   "dependencies": {}
 }
